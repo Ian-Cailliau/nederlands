@@ -27,7 +27,8 @@
  "colours": {
   "wit": "#FFFFFF", "geel": "#F7D23E", "rood": "#D7372F", "blauw": "#2E62C9", "groen": "#3C9A55", "oranje": "#F08A24",
   "paars": "#7D4FB8", "roze": "#F3A6C2", "bruin": "#8A5A34", "grijs": "#9AA1A8", "zwart": "#25272B",
-  "lichtblauw": "#93C8F2", "donkerblauw": "#1F2F6E"
+  "lichtblauw": "#93C8F2", "donkerblauw": "#1F2F6E",
+  "lichtgroen": "#9BD88A", "donkergroen": "#1E5A32", "lichtpaars": "#C3A8E6", "donkerpaars": "#4A2A78", "beige": "#E6D7B8"
  },
  "materials": {"houten": "#B98149", "glazen": "#CFE9F4", "leren": "#6B3F22", "stoffen": null, "ijzeren": "#6E7378", "plastic": null},
  "patterns": {"effen": "plain", "gestreept": "striped", "geruit": "checked", "gebloemd": "flowered", "met bolletjes": "polka-dot"},

@@ -16,14 +16,16 @@ const PORT=process.argv[2]||'8765',MODE=['write','update'].includes(process.argv
   Math.random=R;return out});
  const save=o=>fs.writeFileSync(FILE,JSON.stringify(o));
  if(MODE==='write'){save(snap);console.log('recorded',snap.ids.length,'terms →',FILE);await b.close();return}
- const old=JSON.parse(fs.readFileSync(FILE,'utf8'));let bad=0;const say=m=>{bad++;if(bad<=25)console.log('✗',m)};
+ const old=JSON.parse(fs.readFileSync(FILE,'utf8'));let bad=0;const badIds=new Set();const say=(m,id)=>{bad++;if(id)badIds.add(id);if(bad<=25)console.log('✗',m)};
  const gone=old.ids.filter(i=>!snap.ids.includes(i)),added=snap.ids.filter(i=>!old.ids.includes(i));
  if(gone.length)say('term ids missing (their progress would be lost): '+gone.join(', '));
  if(MODE==='compare'){if(added.length)say('new term ids not in the fixture (run with update): '+added.join(', '));
   if(JSON.stringify(old.order)!==JSON.stringify(snap.order))say('learning order differs')}
- /* options and the order can shift when new words join a deck (the distractors are drawn from the deck); prompts and accepted answers may not */
- const loose=MODE==='update'?new Set(['options','valid']):new Set();
- old.ids.forEach(id=>{const a=old.terms[id],c=snap.terms[id];if(!c)return;a.forEach((r,k)=>Object.keys(r).forEach(f=>{if(loose.has(f))return;if(JSON.stringify(r[f])!==JSON.stringify(c[k][f]))say(`${id} [${r.st}] ${f}: ${JSON.stringify(r[f])} → ${JSON.stringify(c[k][f])}`)}))});
+ /* options and the order can shift when new words join a deck (the distractors are drawn from the deck); prompts and accepted answers may not.
+    Er-zinnen (ez:) are drawn at random from the rooms and the colour / material lists, so a new colour changes the drawn sentence: only their kind is kept. */
+ const loose=MODE==='update'?new Set(['options','valid']):new Set(),drawn=id=>MODE==='update'&&/^ez:/.test(id),fixed=new Set(['st','eyebrow','kind','block','stage']);
+ old.ids.forEach(id=>{const a=old.terms[id],c=snap.terms[id];if(!c)return;a.forEach((r,k)=>Object.keys(r).forEach(f=>{if(loose.has(f)||drawn(id)&&!fixed.has(f))return;if(JSON.stringify(r[f])!==JSON.stringify(c[k][f]))say(`${id} [${r.st}] ${f}: ${JSON.stringify(r[f])} → ${JSON.stringify(c[k][f])}`,id)}))});
+ if(badIds.size)console.log('  terms that changed: '+[...badIds].slice(0,40).join(', ')+(badIds.size>40?' …':''));
  if(MODE==='update'){if(bad){console.log(`✗ ${bad} problems: fixture not updated`);process.exitCode=1}
   else{save(snap);console.log(`✓ existing ${old.ids.length} terms unchanged · added ${added.length} new: ${added.join(', ')||'none'} → fixture updated`)}}
  else console.log(bad?`✗ ${bad} differences`:`✓ all ${old.ids.length} term ids, the learning order and every term's prompts and accepted answers are unchanged`);

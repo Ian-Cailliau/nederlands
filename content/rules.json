@@ -107,7 +107,7 @@
    {"nl": "gezellig", "en": "cosy"}, {"nl": "zacht", "en": "soft"}, {"nl": "dun", "en": "thin"},
    {"nl": "hard", "en": "hard"}, {"nl": "zwaar", "en": "heavy"},
    {"nl": "elegant", "en": "elegant"}, {"nl": "sportief", "en": "sporty"},
-   {"nl": "beige", "en": "beige", "cat": "colour", "noE": true}, {"nl": "zilveren", "en": "silver", "cat": "material", "noE": true},
+   {"nl": "zilveren", "en": "silver", "cat": "material", "noE": true},
    {"nl": "gouden", "en": "golden", "cat": "material", "noE": true}, {"nl": "wollen", "en": "woollen", "cat": "material", "noE": true},
    {"nl": "katoenen", "en": "cotton", "cat": "material", "noE": true}, {"nl": "gestippeld", "en": "dotted", "cat": "pattern"},
    {"nl": "lederen", "en": "leather", "cat": "material", "noE": true}, {"nl": "staand", "en": "standing", "eForm": "staande"},
