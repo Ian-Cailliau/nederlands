@@ -1321,7 +1321,7 @@ function finish(res,given,msg,quick,r){r=r||{};
  if(res==='right'&&counts&&!sess.test)acts.push(`<button class="act ov" id="easy">${IC.later}${L('Te makkelijk','too easy · later','','Pushes this term further back.')}</button>`);
  if(!(sess.test||cur.practice))acts.push(`<button class="act ov hidebtn" id="hideit">${IC.hide}${L('Verberg','hide this term')}</button>`);
  const notes=[msg||'',
-  q.note&&(res!=='right'||q.kind==='mc')?esc(q.note):'',
+  q.note&&(res!=='right'||q.kind==='mc')&&!(msg||'').replace(/<[^>]*>/g,'').includes(q.note)?esc(q.note):'',
   res==='hint'?'Write it once without the hint and it counts as known.':'',
   res==='accent'?'Spelling counts on the exam, so this one stays on your list.':'',
   warmup?'Warm-up: you write it later this round, and that answer counts. Tap any option to see what it means.':''].filter(Boolean);
