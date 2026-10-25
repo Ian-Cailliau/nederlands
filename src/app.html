@@ -1,0 +1,1692 @@
+<title>Nederlands · Test 1.2</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Caveat:wght@600;700&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+/* Layout: the sibling of the Polish app. One-column phone app on squared notebook paper.
+   The "Tegels" look: ink blue for actions, ochre like old cement tiles, terracotta as the teacher's pen. */
+:root{
+  --paper:#F4EFE5; --slate:#E9E4D9; --grid:rgba(35,58,94,.065); --card:#FFFFFF; --ink:#1C2230; --muted:#5D6370; --line:#DDD5C6;
+  --blue:#233A5E; --blue-soft:#E1E7F0; --on-blue:#F4EFE5; --ochre:#D9A441; --ochre-soft:#F6EBD3;
+  --pen:#B0502D; --pen-soft:#F6E3DA; --ok:#1F7A4D; --ok-soft:#E1F1E7;
+  --f-display:'Bricolage Grotesque','Segoe UI',system-ui,sans-serif;
+  --f-body:'Source Sans 3',system-ui,-apple-system,sans-serif;
+  --f-hand:'Caveat','Bradley Hand','Comic Sans MS',cursive;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#121826; --slate:#1E2638; --grid:rgba(217,164,65,.05); --card:#1A2232; --ink:#ECEFF4; --muted:#9AA3B4; --line:#2C3548;
+  --blue:#A9C0E8; --blue-soft:#23304A; --on-blue:#121826; --ochre:#E3B45A; --ochre-soft:#3A3120;
+  --pen:#F08A64; --pen-soft:#3A2420; --ok:#4FCB8E; --ok-soft:#14322A; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#121826; --slate:#1E2638; --grid:rgba(217,164,65,.05); --card:#1A2232; --ink:#ECEFF4; --muted:#9AA3B4; --line:#2C3548;
+  --blue:#A9C0E8; --blue-soft:#23304A; --on-blue:#121826; --ochre:#E3B45A; --ochre-soft:#3A3120;
+  --pen:#F08A64; --pen-soft:#3A2420; --ok:#4FCB8E; --ok-soft:#14322A; color-scheme:dark}
+
+body{background-color:var(--paper);background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:22px 22px;color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.45;min-height:100vh}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.app{max-width:560px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:18px calc(92px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;gap:16px}
+.app.quiz{padding-bottom:calc(28px + env(safe-area-inset-bottom,0px))}
+h1,h2{font-family:var(--f-display);text-wrap:balance;margin:0;letter-spacing:-.01em}
+h1{font-size:30px;font-weight:800;line-height:1.05}
+p{margin:0}
+.eyebrow{font-size:12.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.lede{color:var(--muted);font-size:15.5px;max-width:60ch}
+
+/* home */
+.hero{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;padding-top:6px}
+.hero>div{min-width:0;display:flex;flex-direction:column;gap:6px}
+.when{color:var(--muted);font-size:15px}
+.when b{color:var(--pen);font-weight:700}
+.grade-wrap{display:flex;flex-direction:column;align-items:center;gap:2px}
+.grade{font-family:var(--f-hand);font-weight:700;font-size:62px;line-height:1;color:var(--pen);width:88px;height:88px;display:grid;place-items:center;border:3px solid var(--pen);border-radius:52% 46% 55% 44% / 48% 55% 45% 52%;transform:rotate(-7deg)}
+.grade-lbl{font-family:var(--f-hand);font-size:21px;color:var(--pen);line-height:1}
+.cta{display:flex;flex-direction:column;align-items:flex-start;gap:2px;width:100%;border:0;border-radius:16px;padding:18px 20px;background:var(--blue);color:var(--on-blue);text-align:left}
+.cta span{font-family:var(--f-display);font-weight:800;font-size:24px}
+.cta small{font-size:15px;opacity:.85}
+.cta2{width:100%;border:2px solid var(--pen);background:var(--pen-soft);color:var(--pen);border-radius:14px;padding:13px 18px;font-weight:700;text-align:left}
+.sec{font-size:19px;font-weight:600;margin-top:6px}
+.decks{display:flex;flex-direction:column;gap:10px}
+.deck{display:grid;grid-template-columns:1fr auto;gap:2px 12px;align-items:baseline;width:100%;text-align:left;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.dn{font-weight:700;font-size:17.5px;min-width:0}
+.dp{font-variant-numeric:tabular-nums;font-weight:700;color:var(--blue);font-size:15px}
+.de{grid-column:1/-1;color:var(--muted);font-size:14.5px}
+.meter{grid-column:1/-1;height:6px;border-radius:3px;background:var(--blue-soft);margin-top:8px;overflow:hidden}
+.meter i{display:block;height:100%;background:var(--blue);border-radius:3px}
+.foot{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;margin-top:6px}
+.ghost{background:none;border:1px solid var(--line);border-radius:10px;padding:8px 12px;font-size:14.5px;color:var(--muted)}
+.ghost.armed{border-color:var(--pen);color:var(--pen)}
+.toggle{display:flex;align-items:center;gap:8px;font-size:14.5px;color:var(--muted)}
+.toggle input{width:20px;height:20px;accent-color:var(--blue)}
+
+/* quiz */
+.qtop{display:flex;align-items:center;gap:12px}
+.qx{width:40px;height:40px;border-radius:12px;border:1px solid var(--line);background:var(--card);display:grid;place-items:center;flex:none}
+.bar{flex:1;height:8px;background:var(--blue-soft);border-radius:4px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--blue);transition:width .25s}
+.count{font-variant-numeric:tabular-nums;font-size:14.5px;color:var(--muted);flex:none}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px 18px 22px;display:flex;flex-direction:column;gap:10px}
+.prow{display:flex;gap:10px;align-items:flex-start}
+.prompt{font-family:var(--f-display);font-weight:600;font-size:26px;line-height:1.2;flex:1;min-width:0;overflow-wrap:anywhere}
+.prompt.big{font-size:56px;font-weight:800}
+.sub{color:var(--muted);font-size:15.5px}
+.blank{display:inline-block;min-width:2.6em;height:.9em;border-bottom:3px solid var(--blue);margin:0 .12em;vertical-align:-.05em}
+.spk{width:40px;height:40px;flex:none;border-radius:50%;border:1px solid var(--line);background:var(--blue-soft);color:var(--blue);display:grid;place-items:center}
+.spk svg{width:20px;height:20px}
+.opts{display:flex;flex-direction:column;gap:10px}
+.opt{width:100%;text-align:left;background:var(--card);border:1.5px solid var(--line);border-radius:13px;padding:14px 16px;font-size:17.5px;line-height:1.3}
+.opt.right{border-color:var(--ok);background:var(--ok-soft);color:var(--ok);font-weight:700}
+.opt.wrong{border-color:var(--pen);background:var(--pen-soft);color:var(--pen);text-decoration:line-through}
+.opt:disabled{cursor:default}
+.typed{display:flex;flex-direction:column;gap:10px}
+.typed input{width:100%;box-sizing:border-box;font:inherit;font-size:23px;font-weight:600;padding:13px 14px;border-radius:13px;border:1.5px solid var(--line);background:var(--card);color:var(--ink)}
+.typed input:focus{border-color:var(--blue);outline:none}
+.keys{display:flex;flex-wrap:wrap;gap:6px}
+.keys button{min-width:40px;height:42px;border-radius:10px;border:1px solid var(--line);background:var(--card);font-size:19px;font-weight:600}
+.check{width:100%;border:0;border-radius:13px;padding:14px;background:var(--blue);color:var(--on-blue);font-weight:700;font-size:18px}
+.fb{display:flex;flex-direction:column;gap:8px;border-radius:16px;padding:14px 16px;border:1.5px solid var(--line);background:var(--card)}
+.fb.r{border-color:var(--ok)} .fb.w,.fb.a{border-color:var(--pen)}
+.mark{font-family:var(--f-hand);font-weight:700;font-size:32px;line-height:1}
+.fb.r .mark{color:var(--ok)} .fb.w .mark,.fb.a .mark{color:var(--pen)}
+.ansline{display:flex;gap:10px;align-items:center}
+.ansline p{flex:1;min-width:0;font-size:19px;font-weight:700}
+/* modes: colour of the label, the top of the question card and the answer box */
+.app[data-mode="betek"]{--mc:#4F5D75;--ms:#E8ECF2}.app[data-mode="vert"]{--mc:#2F5596;--ms:#E1E7F0}.app[data-mode="lidw"]{--mc:#0E7C86;--ms:#DCF1F2}
+.app[data-mode="meerv"]{--mc:#6D3FC0;--ms:#EEE7FB}.app[data-mode="adj"]{--mc:#A35A06;--ms:#FBEEDC}.app[data-mode="erzin"]{--mc:#3B7A12;--ms:#E6F2DA}
+.app[data-mode="regels"]{--mc:#A4401F;--ms:#F6E3DA}.app[data-mode="examen"]{--mc:#8A5A10;--ms:#F6EBD3}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .app[data-mode]{--ms:color-mix(in srgb,var(--mc) 22%,var(--card))}
+ :root:not([data-theme="light"]) .app[data-mode="betek"]{--mc:#A9B6CC}:root:not([data-theme="light"]) .app[data-mode="vert"]{--mc:#A9C0E8}:root:not([data-theme="light"]) .app[data-mode="lidw"]{--mc:#4FC7CF}
+ :root:not([data-theme="light"]) .app[data-mode="meerv"]{--mc:#B79BFF}:root:not([data-theme="light"]) .app[data-mode="adj"]{--mc:#F0A85A}:root:not([data-theme="light"]) .app[data-mode="erzin"]{--mc:#9BD36A}
+ :root:not([data-theme="light"]) .app[data-mode="regels"]{--mc:#F08A64}:root:not([data-theme="light"]) .app[data-mode="examen"]{--mc:#E3B45A}}
+:root[data-theme="dark"] .app[data-mode]{--ms:color-mix(in srgb,var(--mc) 22%,var(--card))}
+:root[data-theme="dark"] .app[data-mode="betek"]{--mc:#A9B6CC}:root[data-theme="dark"] .app[data-mode="vert"]{--mc:#A9C0E8}:root[data-theme="dark"] .app[data-mode="lidw"]{--mc:#4FC7CF}
+:root[data-theme="dark"] .app[data-mode="meerv"]{--mc:#B79BFF}:root[data-theme="dark"] .app[data-mode="adj"]{--mc:#F0A85A}:root[data-theme="dark"] .app[data-mode="erzin"]{--mc:#9BD36A}
+:root[data-theme="dark"] .app[data-mode="regels"]{--mc:#F08A64}:root[data-theme="dark"] .app[data-mode="examen"]{--mc:#E3B45A}
+.app[data-mode] .qtop+.card{border-top:4px solid var(--mc)}
+.app[data-mode] .typed input,.app[data-mode] .typed textarea{border-color:color-mix(in srgb,var(--mc) 55%,var(--line))}.app[data-mode] .typed input:focus,.app[data-mode] .typed textarea:focus{border-color:var(--mc)}
+.app[data-mode] .card .blank{border-bottom-color:var(--mc)}
+.lab{display:flex;align-items:center;gap:6px 8px;flex-wrap:wrap}
+.mode{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mc,var(--blue));background:var(--ms,var(--blue-soft));border-radius:99px;padding:4px 10px 4px 8px}
+.mode svg{width:16px;height:16px;flex:none}
+.mdet{font-size:12.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.mx{font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);background:var(--paper);border-radius:99px;padding:3px 9px}
+.lab .mdet+.mx,.lab .mode+.mx{margin-left:auto}.mx.r{color:var(--pen);background:var(--pen-soft)}
+.plate{display:flex;align-items:baseline;gap:4px 10px;flex-wrap:wrap;background:var(--ms,var(--blue-soft));border-radius:12px;padding:10px 14px}
+.plate b{font-family:var(--f-display);font-size:30px;font-weight:800;color:var(--mc,var(--blue));line-height:1.05}
+.plate>span{font-size:15.5px}.plate em{font-style:normal;font-size:12.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--mc,var(--blue))}
+/* the result sheet after an answer: slides up over the bottom of the screen */
+.fb.sheet{position:fixed;left:0;right:0;bottom:0;z-index:6;max-width:560px;margin:0 auto;box-sizing:border-box;border:0;border-top:1px solid var(--line);border-radius:24px 24px 0 0;
+ box-shadow:0 -10px 30px rgba(10,16,28,.16);padding:8px max(18px,env(safe-area-inset-left,0px)) calc(16px + env(safe-area-inset-bottom,0px));gap:12px;max-height:calc(100dvh - 96px);overflow-y:auto;overscroll-behavior:contain;animation:sheetup .22s ease-out}
+@keyframes sheetup{from{transform:translateY(30px);opacity:.4}to{transform:none;opacity:1}}
+@media (prefers-reduced-motion:reduce){.fb.sheet{animation:none}}
+.fb.sheet .grip{align-self:center;width:44px;height:5px;border-radius:3px;background:var(--line);flex:none}
+.fb.sheet .mark{font-size:30px}
+.fb.sheet .ansline p{font-size:20px;line-height:1.35}
+.fb.sheet .next{width:100%}
+.ansline ins{color:var(--ok);background:var(--ok-soft);text-decoration:none;border-bottom:2px solid var(--ok);border-radius:3px;padding:0 1px}
+.yb{display:grid;grid-template-columns:minmax(0,1fr);gap:10px}.yb.side{grid-template-columns:repeat(2,minmax(0,1fr))}
+.yb .box{background:var(--paper);border-radius:12px;padding:9px 12px 10px;display:flex;flex-direction:column;gap:4px;font-size:15px;line-height:1.4;min-width:0}
+.yb .box small{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.yb .box p{margin:0}.yb .said,.yb .want{font-size:16.5px}.yb .said b{color:var(--pen)}.yb .want{color:var(--ok)}.yb .same{color:var(--ok);font-weight:600}
+.yb .box{gap:10px}.yb .yr{display:flex;flex-direction:column;gap:2px}.yb .yr+.yr{border-top:1px solid var(--line);padding-top:9px}.yb .yr small{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.acts{display:grid;grid-template-columns:repeat(var(--n,3),minmax(0,1fr));gap:6px;margin-top:-4px}
+.act{display:flex;flex-direction:column;align-items:center;gap:3px;background:none;border:0;border-radius:10px;padding:6px 2px;font-size:13.5px;font-weight:600;color:var(--muted)}
+.act svg{width:22px;height:22px;color:var(--blue)}.act:hover{background:var(--blue-soft)}
+.fbpad{flex:none}
+.ser{white-space:nowrap}
+.rv-body .fb.sheet{position:static;max-height:none;box-shadow:none;border:1px solid var(--line);border-radius:16px;animation:none}.rv-body .fbpad,.rv-body .grip,.rv-body .acts{display:none}
+.note{color:var(--muted);font-size:15px}
+.next{width:100%;border:0;border-radius:13px;padding:14px;background:var(--ink);color:var(--paper);font-weight:700;font-size:18px}
+
+/* results */
+.score{font-family:var(--f-display);font-weight:800;font-size:64px;line-height:1;font-variant-numeric:tabular-nums}
+.score small{font-size:26px;color:var(--muted)}
+.miss{display:flex;flex-direction:column;gap:8px}
+.miss li{list-style:none;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 14px}
+.miss ul{margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.miss .q{color:var(--muted);font-size:14.5px}
+.miss .a{font-weight:700}
+.row{display:flex;flex-direction:column;gap:10px}
+
+/* sheet */
+details{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:4px 16px}
+details[open]{padding-bottom:14px}
+summary{font-family:var(--f-display);font-weight:600;font-size:19px;padding:12px 0;cursor:pointer}
+.tw{overflow-x:auto;margin:0 -4px}
+table{border-collapse:collapse;width:100%;font-size:15.5px}
+th{text-align:left;font-size:12px;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);font-weight:700;padding:6px 8px;border-bottom:1.5px solid var(--line)}
+td{padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:0}
+td.say{color:var(--blue);cursor:pointer}
+td.say:active{opacity:.6}
+.tip{font-size:15px;color:var(--muted);margin-top:10px}
+.tip b{color:var(--ink)}
+
+/* learning path + ladder */
+.stage{display:flex;flex-direction:column;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px}
+.stage-h{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.stage-h p{font-weight:700;font-size:17.5px;min-width:0}
+.stage-h span{font-variant-numeric:tabular-nums;color:var(--muted);font-size:14px;flex:none}
+.path{display:grid;grid-template-columns:repeat(9,1fr);gap:5px}
+.path i{display:block;height:9px;border-radius:5px;background:var(--blue-soft);overflow:hidden}
+.path i b{display:block;height:100%;background:var(--blue)}
+.path i.cur{outline:2px solid var(--blue);outline-offset:1px}
+.ladder{display:flex;flex-wrap:wrap;gap:6px;font-size:13.5px;color:var(--muted)}
+.ladder span{border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.next.alt{background:var(--pen-soft);color:var(--pen)}
+.hint{font-family:var(--f-hand);font-size:24px;color:var(--blue);line-height:1.1}
+.intro .meaning{color:var(--muted);font-size:16px}
+.intro .prompt b,.fill{color:var(--blue)}
+.tag{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border-radius:999px;padding:2px 9px;background:var(--blue-soft);color:var(--blue);margin-left:6px;vertical-align:2px}
+.ov{align-self:flex-start}
+
+.plan{display:flex;flex-direction:column;gap:10px;border-top:1px solid var(--line);padding-top:12px}
+.plan p{font-size:15.5px;color:var(--muted)} .plan b{color:var(--ink)}
+.seg{display:flex;align-items:center;flex-wrap:wrap;gap:6px}
+.seg span{font-size:14px;color:var(--muted);margin-right:4px}
+.seg button{min-width:46px;height:38px;border-radius:10px;border:1px solid var(--line);background:var(--paper);font-weight:700;font-variant-numeric:tabular-nums}
+.seg button[aria-pressed="true"]{background:var(--blue);border-color:var(--blue);color:var(--on-blue)}
+
+.gw{border-bottom:1.5px dotted currentColor;cursor:pointer;border-radius:3px;-webkit-tap-highlight-color:transparent}
+.gw.on{background:var(--blue-soft)}
+#tip{position:fixed;z-index:30;display:flex;flex-direction:column;gap:3px;max-width:min(300px,calc(100vw - 32px));background:var(--ink);color:var(--paper);font-family:var(--f-body);font-size:14.5px;font-weight:600;line-height:1.3;padding:7px 11px;border-radius:9px;pointer-events:none;box-shadow:0 6px 18px rgba(0,0,0,.2)}
+
+.pill{font-size:13px;font-weight:700;border-radius:999px;padding:3px 10px;flex:none}
+.pill.ok{background:var(--ok-soft);color:var(--ok)}
+.pill.behind{background:var(--pen-soft);color:var(--pen)}
+.meter.tm{height:10px;margin-top:0;border-radius:5px}
+.today .tline{font-size:15.5px;font-variant-numeric:tabular-nums}
+
+#tip b{font-size:15.5px}
+#tip .tf{font-weight:600;opacity:.8;font-size:13.5px}
+#tip .ty{font-weight:400;opacity:.92;font-size:13.5px}
+
+.btab td{font-size:16.5px}
+.btab .end{color:var(--blue)}
+.sayrow{cursor:pointer}.sayrow:active td{background:var(--blue-soft)}
+.fam{display:flex;flex-direction:column;gap:6px;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:10px 12px;font-size:15px}
+.fam p:empty{display:none}
+.ttab td{vertical-align:middle;padding:6px 6px}
+.ttab .tl{color:var(--muted);font-size:14.5px;width:42%}
+.ttab input{width:100%;box-sizing:border-box;font:inherit;font-size:19px;font-weight:600;padding:9px 10px;border-radius:10px;border:1.5px solid var(--line);background:var(--card);color:var(--ink)}
+.ttab input:focus{border-color:var(--blue);outline:none}
+.ttab input.ok{border-color:var(--ok);background:var(--ok-soft);color:var(--ok)}
+.ttab input.almost{border-color:var(--pen);background:var(--pen-soft)}
+.ttab input.bad{border-color:var(--pen);background:var(--pen-soft);color:var(--pen);text-decoration:line-through}
+.ttab .given{font-size:19px;font-weight:600;color:var(--muted);padding-left:11px}
+.ttab .corr{display:block;font-weight:700;color:var(--ok);padding:4px 0 0 2px}
+
+.gw-plain{border-bottom:0;cursor:pointer}
+button.grade-wrap{background:none;border:0;padding:0;font:inherit}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.stat{display:flex;flex-direction:column;gap:2px;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:10px 10px 9px}
+.stat b{font-family:var(--f-display);font-weight:800;font-size:24px;line-height:1;font-variant-numeric:tabular-nums}
+.stat b small{font-size:15px;color:var(--muted);font-weight:600}
+.stat span{font-size:13px;color:var(--muted)}
+.trow{display:flex;align-items:center;gap:10px}.trow .meter{flex:1;min-width:0}
+
+p.diff{font-size:21px;font-weight:600;letter-spacing:.01em;line-height:1.5;overflow-wrap:anywhere}
+.diff del,.dkey del{color:var(--pen);text-decoration:line-through;text-decoration-thickness:2px;background:var(--pen-soft);border-radius:3px}
+.diff ins,.dkey ins{color:var(--ok);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px;background:var(--ok-soft);border-radius:3px}
+.dkey{white-space:nowrap}
+
+.mix{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.mixl{grid-column:1/-1;font-size:14px;color:var(--muted)}
+.stp{display:grid;grid-template-columns:32px 1fr 32px;grid-template-rows:auto auto;align-items:center;justify-items:center;column-gap:4px;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:5px 5px 3px}
+.stp button{width:32px;height:32px;padding:0;border-radius:9px;border:1px solid var(--line);background:var(--card);font-size:19px;font-weight:700;line-height:1}
+.stp b{font-family:var(--f-display);font-size:20px;min-width:24px;text-align:center;font-variant-numeric:tabular-nums}
+.stp small{grid-column:1/-1;font-size:12px;color:var(--muted)}
+
+.kn{display:none}
+@media (hover:hover) and (pointer:fine){.kn{display:inline-grid;place-items:center;min-width:20px;height:20px;margin-right:10px;border:1px solid var(--line);border-radius:5px;font:600 12px/1 var(--f-body);color:var(--muted);vertical-align:2px}}
+.opt.khit{border-color:var(--blue);background:var(--blue-soft)}
+.ktyped{font-size:14px;color:var(--muted);margin-top:-4px}
+
+.muted{color:var(--muted);font-size:14px}
+
+#review{position:fixed;inset:0;z-index:20;overflow-y:auto;background:var(--paper);padding-top:env(safe-area-inset-top,0px);padding-bottom:calc(24px + env(safe-area-inset-bottom,0px));padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.rv-bar{position:sticky;top:0;z-index:2;display:flex;align-items:center;gap:10px;background:var(--paper);padding:12px 0;max-width:560px;margin:0 auto;border-bottom:1px solid var(--line)}
+.rv-bar span{flex:1;min-width:0;font-size:14px;color:var(--muted)}
+.rv-back{border:0;border-radius:11px;padding:10px 12px;background:var(--blue);color:var(--on-blue);font-weight:700;font-size:14.5px}
+.rv-body{max-width:560px;margin:14px auto 0;display:flex;flex-direction:column;gap:16px;opacity:.95}
+.qx:disabled{opacity:.35}
+
+.opt.done{cursor:help}
+.opt .omean{display:block;font-size:14px;font-weight:600;margin-top:4px;text-decoration:none;opacity:.9}
+.opt.wrong .omean{text-decoration:none}
+.opt.wrong{text-decoration:none}.opt.wrong .ot{text-decoration:line-through}
+
+.conf{background:var(--blue-soft);color:var(--ink);border-radius:10px;padding:8px 10px}
+
+.hidl summary{cursor:pointer;color:var(--muted);font-size:15px;padding:6px 0}
+.hidrow{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}.hidrow .ghost{text-align:left}
+.hidebtn{align-self:center;font-size:13.5px;padding:6px 10px}
+
+#go-nut{border-color:var(--ink);color:var(--ink);background:var(--card)}
+
+.drills{display:flex;flex-wrap:wrap;gap:8px}
+.drill{background:var(--card);color:var(--ink);font-weight:600;font-size:15px;padding:10px 12px;border-radius:12px}
+
+.tag.burst{background:var(--ink);color:var(--paper)}
+
+.moved{position:sticky;top:env(safe-area-inset-top,0px);z-index:6;background:var(--pen);color:#fff;font-size:14.5px;line-height:1.4;padding-block:10px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.moved a{color:#fff;font-weight:700}
+
+
+/* redesign: home, tiles, topics, settings */
+.ico{display:inline-grid;place-items:center;line-height:0}.ico svg{width:100%;height:100%}
+.gx{-webkit-touch-callout:none;-webkit-user-select:none;user-select:none}
+.hd2{display:flex;align-items:center;gap:14px}.hd2 .t{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
+.hd2 h1{font-size:30px}.when2{color:var(--pen);font-weight:700;font-size:15.5px;margin:2px 0 0}
+#gradeb{background:none;border:0;padding:0}
+.hint1{font-size:14px;color:var(--muted);background:var(--card);border:1px dashed var(--line);border-radius:12px;padding:8px 12px}
+.today2{display:flex;align-items:center;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:14px 16px}
+.ring{width:60px;height:60px;flex:none}.ring .r0{fill:none;stroke:var(--blue-soft);stroke-width:5}.ring .r1{fill:none;stroke:var(--blue);stroke-width:5;stroke-linecap:round}
+.today2 .tx{display:flex;flex-direction:column;min-width:0}.today2 .tx b{font-family:var(--f-display);font-weight:800;font-size:23px;font-variant-numeric:tabular-nums}.today2 .tx .gx{color:var(--muted);font-size:14px}
+.pill2{margin-left:auto;font-size:12.5px;font-weight:700;border-radius:99px;padding:5px 10px;white-space:nowrap;flex:none}
+.pill2.ok{background:var(--ok-soft);color:var(--ok)}.pill2.behind{background:var(--pen-soft);color:var(--pen)}
+.go2{display:flex;align-items:center;gap:12px;width:100%;border:0;border-radius:20px;background:var(--blue);color:var(--on-blue);padding:16px 18px;text-align:left;box-shadow:0 8px 20px rgba(36,80,196,.22)}
+.go2 .gi{width:38px;height:38px;flex:none}.go2 .l{display:flex;flex-direction:column;gap:2px;min-width:0}
+.go2 b{font-family:var(--f-display);font-weight:800;font-size:26px;line-height:1.1}.go2 .sub{font-size:14px;opacity:.9;color:inherit}
+.mixrow2{display:flex;flex-wrap:wrap;gap:5px;margin-top:6px}.mixrow2 i{font-style:normal;font-size:11.5px;font-weight:700;border-radius:99px;padding:3px 8px;background:rgba(255,255,255,.18);white-space:nowrap}
+.newr{align-self:center;margin-top:-6px;font-size:14px}
+.tiles2{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.tile2{border:0;border-radius:16px;padding:14px 12px;min-height:104px;display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;gap:10px;text-align:left;font-weight:700;font-size:14.5px;line-height:1.2;color:var(--ink)}
+.tile2 .ti{width:32px;height:32px}
+.t-nut{background:var(--slate)}.t-nut .ti{color:var(--ink)}.t-fix{background:var(--pen-soft)}.t-fix .ti{color:var(--pen)}.t-test{background:var(--blue-soft)}.t-test .ti{color:var(--blue)}
+.tile2.off .ti,.tile2.off>.gx{opacity:.45}
+.sec2{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-top:4px}.sec2 h2{font-size:19px}.sec2>span{font-size:13.5px;color:var(--muted)}
+.pills{display:flex;flex-direction:column;gap:8px}
+.pill3{position:relative;overflow:hidden;display:flex;align-items:center;gap:12px;width:100%;background:var(--card);border:1px solid var(--line);border-radius:99px;padding:10px 18px 10px 14px;text-align:left;font-weight:700;font-size:15.5px;color:var(--ink)}
+.pill3 .pi{width:24px;height:24px;color:var(--blue);flex:none}.pill3 .gx{flex:1;min-width:0}
+.pill3 .pc{font-weight:700;font-size:14px;color:var(--blue);font-variant-numeric:tabular-nums}
+.pill3 .pb{position:absolute;left:0;right:0;bottom:0;height:3px;background:transparent}.pill3 .pb i{display:block;height:100%;background:var(--blue);opacity:.55}
+.setc{display:flex;flex-direction:column;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 16px}.setc h2{font-size:17px}
+.nav button{display:flex;flex-direction:column;align-items:center;gap:3px}.nav .ico{width:24px;height:24px}
+
+.rule{margin:10px 0 0;font-size:15px;line-height:1.45}.rule .muted{font-size:12.5px}
+details.later{margin-top:12px;background:var(--paper)}
+.why{display:flex;flex-direction:column;gap:6px;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:10px 12px;font-size:14.5px}
+.why p{margin:0;line-height:1.4}.why .wk{display:inline-block;font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--pen);background:var(--pen-soft);border-radius:99px;padding:1px 8px;margin-right:4px}
+
+/* nav */
+.nav{position:fixed;left:0;right:0;bottom:0;z-index:5;background:var(--card);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom,0px);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;justify-content:center;gap:8px}
+.nav button{flex:1;max-width:220px;background:none;border:0;padding:12px 8px 14px;font-weight:700;font-size:15.5px;color:var(--muted);border-top:3px solid transparent}
+.nav button[aria-current="page"]{color:var(--blue);border-top-color:var(--blue)}
+@media (prefers-reduced-motion: reduce){*{transition:none!important}}
+
+/* the Tegels look: a band of cement tiles on top of the home screen, the app mark in the header */
+.band{display:block;height:30px;margin:-18px calc(-1 * max(16px,env(safe-area-inset-left,0px))) 0;flex:none}
+.band svg{display:block;width:100%;height:30px}
+.logo{width:48px;height:48px;flex:none;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.14)}
+.logo svg{width:100%;height:100%;display:block}
+.go2{box-shadow:0 8px 20px rgba(20,26,40,.22)}
+.mixrow2 i{background:rgba(244,239,229,.18)}
+.grade{font-size:50px}.grade small{font-size:22px;margin-left:1px}
+.tag.nieuw{background:var(--pen);color:#fff;margin-left:6px}
+.exb i.okc{color:var(--ok)}
+.sent.tip{border-left-color:var(--ochre)}
+.yr .wk{display:inline-block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--pen);background:var(--pen-soft);border-radius:99px;padding:1px 8px;margin-right:6px;vertical-align:1px}
+.yr p+p{margin-top:4px}
+
+/* exam drills */
+.exam{display:flex;flex-direction:column;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:14px 16px}
+.exam .exh{display:flex;justify-content:space-between;align-items:baseline;gap:10px}.exam .exh h2{font-size:19px}.exam .exh span{font-size:13px;color:var(--muted)}
+.exbtns{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.exb{border:0;border-radius:14px;background:var(--blue-soft);padding:11px 10px;text-align:left;display:flex;flex-direction:column;gap:3px;color:var(--ink);min-width:0}
+.exb b{font-family:var(--f-display);font-size:20px;font-weight:800;line-height:1}
+.exb span{font-size:13px;line-height:1.25;color:var(--ink);opacity:.8}
+.exb i{font-style:normal;font-size:12px;font-weight:700;color:var(--muted)}
+.task{font-size:15px;color:var(--muted)}
+.pic{background:#FFFDF6;border:1px solid var(--line);border-radius:16px;padding:6px;display:flex;justify-content:center;position:relative}
+.pic svg{width:100%;height:auto;display:block}
+.pic2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.pic .ptag{position:absolute;left:10px;top:6px;font-family:var(--f-hand);font-size:22px;font-weight:700;color:#17150F}
+.signs{display:grid;grid-template-columns:repeat(auto-fill,minmax(92px,1fr));gap:12px 8px;width:100%;padding:6px 2px}
+.sign{display:flex;flex-direction:column;align-items:center;gap:5px;text-align:center;font-size:13px;line-height:1.25;color:#4b4638}
+.sign svg{width:64px;height:64px}
+.place{font-family:var(--f-display);font-weight:800;font-size:22px;text-align:center;width:100%;padding:6px 0 0;color:#17150F}
+.enlist{font-size:14.5px;color:var(--muted);margin:0;padding-left:18px;display:flex;flex-direction:column;gap:2px}
+.exrow{display:flex;gap:8px;flex-wrap:wrap}
+.typed textarea{width:100%;box-sizing:border-box;font:inherit;font-size:18px;line-height:1.5;padding:12px 13px;border-radius:13px;border:1.5px solid var(--line);background:var(--card);color:var(--ink);min-height:8.5em;resize:vertical}
+.typed textarea:focus{border-color:var(--blue);outline:none}
+.tlab{font-family:var(--f-hand);font-size:23px;font-weight:700;color:var(--ink);margin-bottom:-6px}
+.count2{font-size:13.5px;color:var(--muted);text-align:right;margin-top:-6px;font-variant-numeric:tabular-nums}
+.chk{display:flex;flex-direction:column;gap:8px}
+.chk h3{margin:6px 0 0;font-family:var(--f-display);font-size:18px}
+.sum{display:flex;flex-direction:column;gap:6px;border-radius:14px;padding:12px 14px;border:1.5px solid var(--line);background:var(--card)}
+.sum.ok{border-color:var(--ok)}.sum.bad{border-color:var(--pen)}
+.sum .mark{font-size:30px}.sum.ok .mark{color:var(--ok)}.sum.bad .mark{color:var(--pen)}
+.sent{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--ok);border-radius:12px;padding:9px 12px;display:flex;flex-direction:column;gap:6px}
+.sent.bad{border-left-color:var(--pen)}
+.sent .st{font-size:17px;font-weight:600;line-height:1.4}
+.sent .st .n{color:var(--muted);font-weight:700;font-size:13px;margin-right:6px}
+.sent .st del{color:var(--pen);text-decoration:line-through;text-decoration-thickness:2px;background:var(--pen-soft);border-radius:3px}
+.sent .st ins{color:var(--ok);text-decoration:none;background:var(--ok-soft);border-bottom:2px solid var(--ok);border-radius:3px}
+.iss{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:5px}
+.iss li{font-size:14.5px;line-height:1.4}
+.iss .wk{display:inline-block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--pen);background:var(--pen-soft);border-radius:99px;padding:1px 8px;margin-right:5px;vertical-align:1px}
+.iss .wk.t{color:var(--muted);background:var(--slate)}
+.okline{font-size:14px;color:var(--ok);font-weight:600}
+.model{background:var(--paper);border:1px dashed var(--line);border-radius:12px;padding:10px 12px;font-size:16.5px;line-height:1.5;display:flex;flex-direction:column;gap:6px}
+.model small{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.wl td.say{white-space:nowrap}
+</style>
+
+<main class="app" id="app"></main>
+<nav class="nav" id="nav">
+  <button id="t-home" aria-current="page"></button>
+  <button id="t-sheet"></button>
+  <button id="t-set"></button>
+</nav>
+
+<script>
+/* ---------- helpers ---------- */
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[a[i],a[j]]=[a[j],a[i]]}return a};
+const pick=a=>a[Math.random()*a.length|0];
+const mc=(ans,pool,n=3)=>shuffle([ans,...shuffle([...new Set(pool.filter(x=>x!==ans))]).slice(0,n)]);
+const sp=t=>String(t).replace(/ \/ /g,', ').replace(/…/g,'');
+const norm=s=>String(s==null?'':s).toLowerCase().replace(/[’`]/g,"'").replace(/[.,!?;:…]/g,'').replace(/\s+/g,' ').trim();
+const strip=s=>String(s).normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/-/g,'');
+const lo=s=>String(s==null?'':s).toLowerCase();
+const cap=s=>{s=String(s);return s.charAt(0).toUpperCase()+s.slice(1)};
+/* letter-level comparison with the closest correct answer: what is wrong, missing or extra */
+function editOps(a,b){const n=a.length,m=b.length,D=Array.from({length:n+1},(_,i)=>{const r=new Array(m+1).fill(0);r[0]=i;return r});
+ for(let j=0;j<=m;j++)D[0][j]=j;
+ for(let i=1;i<=n;i++)for(let j=1;j<=m;j++)D[i][j]=Math.min(D[i-1][j]+1,D[i][j-1]+1,D[i-1][j-1]+(a[i-1]===b[j-1]?0:strip(a[i-1])===strip(b[j-1])?0.5:1));
+ const ops=[];let i=n,j=m;
+ while(i>0||j>0){if(i>0&&j>0&&D[i][j]===D[i-1][j-1]+(a[i-1]===b[j-1]?0:strip(a[i-1])===strip(b[j-1])?0.5:1)){ops.push(a[i-1]===b[j-1]?['=',a[i-1]]:['~',a[i-1],b[j-1]]);i--;j--}
+  else if(i>0&&D[i][j]===D[i-1][j]+1){ops.push(['-',a[i-1]]);i--}else{ops.push(['+',b[j-1]]);j--}}
+ return{dist:D[n][m],ops:ops.reverse()}}
+const dist=(a,b)=>editOps(a,b).dist;
+/* a repeatable random sequence, so a picture can be drawn again from its number */
+function rng(seed){let a=seed>>>0||1;return()=>{a=(a+0x6D2B79F5)>>>0;let t=a;t=Math.imul(t^t>>>15,t|1);t^=t+Math.imul(t^t>>>7,t|61);return((t^t>>>14)>>>0)/4294967296}}
+
+/* ---------- content: content/*.json, put in by build.py ---------- */
+const CONTENT=/*CONTENT*/null;
+const CH=CONTENT.chapters.slice().sort((a,b)=>a.ch-b.ch);
+const WL=[];CH.forEach(c=>c.words.forEach(w=>WL.push(w)));
+const WID=new Map(WL.map(w=>[w.id,w]));
+const RULES=CONTENT.rules.rules,LEXX=CONTENT.rules.lexicon,EXAM=CONTENT.exam;
+const isNew=x=>!!(x&&x.new&&(Date.now()-new Date(x.new).getTime())<14*864e5);
+const enFirst=en=>String(en||'').split(/,\s*|\s*\/\s*/)[0].replace(/\s*\(.*?\)\s*/g,' ').trim();
+
+/* ======================================================================
+   The Dutch grammar layer
+   LEX holds every word the app knows: the study words (content/ch*.json) and the checker's extra words
+   (content/rules.json → lexicon), each with its forms. FORMS indexes every form in lower case → readings
+   {e, f}: nouns sg | pl · adjectives base | e · verbs inf | ik | t | inv | pre (separable prefix).
+   ====================================================================== */
+const LEX=[];
+const NOUNS_ALL=[],ADJ_ALL=[],VERB_ALL=[];
+function nounOf(src,study){const m=String(src.nl).match(/^(de|het)\s+(.+)$/i);const art=lo(src.art||(m?m[1]:''))||null,word=src.word||(m?m[2]:src.nl);
+ return {pos:'noun',art,word,lw:lo(word),pl:src.pl||null,en:src.en,id:src.id||null,study,src,er:src.er||null}}
+const VOWS='aeiouyéëïöüèŸ';
+const hasV=s=>new RegExp('['+VOWS+']').test(s);
+/* adjective + e, with the spelling rules: groot → grote, wit → witte, grijs → grijze, lief → lieve; -en / -e words never change */
+function eForm(a){const s=a.replace(/ij/g,'Ÿ');const m=s.match(new RegExp('^(.*?)(['+VOWS+']+)([^'+VOWS+']*)$'));if(!m)return a+'e';
+ let [,pre,V,K]=m;const back=x=>x.replace(/Ÿ/g,'ij');const groups=(pre.match(new RegExp('['+VOWS+']+','g'))||[]).length;
+ const voice=k=>k==='f'?'v':k==='s'?'z':k;
+ if(!K)return back(pre+V)+'e';
+ if(K.length===1&&K!=='w'&&K!=='j'){
+  if(['aa','ee','oo','uu'].includes(V))return back(pre+V[0]+voice(K))+'e';
+  if(V.length===1&&'aeiou'.includes(V)){if(groups>0&&/^(ig|er|el|em|en)$/.test(V+K))return back(pre+V+K)+'e';return back(pre+V+K+K)+'e'}
+  return back(pre+V+voice(K))+'e'}
+ if(/[lr]f$/.test(K))return back(pre+V+K.slice(0,-1)+'v')+'e';
+ return back(pre+V+K)+'e'}
+const neverE=(a,e)=>!!(e&&e.noE)||/\s/.test(a)||/[^aeiouy]en$/.test(a)||(/e$/.test(a)&&!/ee$/.test(a));
+/* comparative: groot → groter, duur → duurder (after r: + der); goed → beter, veel → meer, weinig → minder, graag → liever */
+const COMP_IRR={goed:'beter',veel:'meer',weinig:'minder',graag:'liever'};
+function compOf(a){if(COMP_IRR[a])return COMP_IRR[a];if(/\s/.test(a)||/[^aeiouy]en$/.test(a))return null;if(/r$/.test(a))return a+'der';const e=eForm(a);return /e$/.test(e)?e.slice(0,-1)+'er':a+'er'}
+function adjOf(src,study){const base=lo(src.word||src.nl),noE=neverE(base,src),c=src.comp||compOf(base);
+ return {pos:'adj',base,e:noE?base:(src.eForm||eForm(base)),noE,c,ce:c?c+'e':null,cat:src.cat||null,attr:src.attr!==false,en:src.en,id:src.id||null,study,src}}
+/* present tense: ik + stem, jij / hij + stem + t, wij + infinitive; jij after the verb: stem */
+const IRR={zijn:['ben','bent','is','zijn','ben'],hebben:['heb','hebt','heeft','hebben','heb'],kunnen:['kan','kan','kan','kunnen','kan',['kunt']],
+ mogen:['mag','mag','mag','mogen','mag'],willen:['wil','wil','wil','willen','wil',['wilt']],zullen:['zal','zal','zal','zullen','zal',['zult']],
+ gaan:['ga','gaat','gaat','gaan','ga'],staan:['sta','staat','staat','staan','sta'],doen:['doe','doet','doet','doen','doe'],zien:['zie','ziet','ziet','zien','zie'],
+ slaan:['sla','slaat','slaat','slaan','sla'],komen:['kom','komt','komt','komen','kom']};
+const NATIVE_EREN=new Set(['luisteren','voederen','veranderen','herinneren','verbeteren','bewonderen']);
+function verbStem(inf){if(IRR[inf])return IRR[inf][0];let b=inf.replace(/en$/,'');if(b===inf)return inf.replace(/n$/,'');
+ const s=b.replace(/ij/g,'Ÿ');
+ if(/([^aeiouŸ])\1$/.test(s))b=b.slice(0,-1);
+ else{const m=s.match(/^(.*?)([aeiouŸ]+)([^aeiouŸ])$/);
+  if(m&&m[2].length===1&&'aeou'.includes(m[2])&&!/[aeiouŸ]$/.test(m[1])){const groups=(m[1].match(/[aeiouŸ]+/g)||[]).length;
+   const unst=groups>0&&/^e[rlmn]$/.test(m[2]+m[3])&&!(/eren$/.test(inf)&&!NATIVE_EREN.has(inf));
+   if(!unst)b=m[1].replace(/Ÿ/g,'ij')+m[2]+m[2]+m[3]}}
+ return b.replace(/v$/,'f').replace(/z$/,'s')}
+function verbOf(src,study){const inf=lo(src.inf||src.word||src.nl);let stem,pre=null,main=inf;
+ if(src.sep){const [st,p]=src.sep.split(/\s*…\s*/);stem=lo(st);pre=lo(p);main=inf.startsWith(pre)?inf.slice(pre.length):inf}
+ const ir=src.irr||IRR[main],base=ir?main:null;stem=stem||(ir?ir[0]:verbStem(main));
+const t=ir?ir[2]:/t$/.test(stem)?stem:stem+'t',jij=ir?ir[1]:t,wij=main;
+ return {pos:'verb',inf,main,pre,stem,t,jij,inv:ir?ir[4]:stem,wij,alt:ir&&ir[5]||[],en:src.en,id:src.id||null,study,src,sep:src.sep||null,irr:!!base}}
+WL.forEach(w=>{if(w.pos==='noun')NOUNS_ALL.push(nounOf(w,1));else if(w.pos==='adj')ADJ_ALL.push(adjOf(w,1));else if(w.pos==='verb')VERB_ALL.push(verbOf(w,1));else LEX.push({pos:w.pos,word:lo(w.nl),en:w.en,id:w.id,study:1,src:w})});
+(LEXX.nouns||[]).forEach(n=>NOUNS_ALL.push(nounOf(n,0)));(LEXX.adjectives||[]).forEach(a=>ADJ_ALL.push(adjOf(a,0)));(LEXX.verbs||[]).forEach(v=>VERB_ALL.push(verbOf(v,0)));
+LEX.push(...NOUNS_ALL,...ADJ_ALL,...VERB_ALL);
+const FORMS=new Map();const putF=(k,r)=>{if(!k)return;k=lo(k);let a=FORMS.get(k);if(!a)FORMS.set(k,a=[]);if(!a.some(x=>x.e===r.e&&x.f===r.f))a.push(r)};
+NOUNS_ALL.forEach(e=>{putF(e.lw,{e,f:'sg'});if(e.pl)putF(e.pl,{e,f:'pl'});const ws=e.lw.split(' ');if(ws.length>1){putF(ws[ws.length-1],{e,f:'sg',tail:1})}});
+ADJ_ALL.forEach(e=>{if(/\s/.test(e.base))return;putF(e.base,{e,f:'base'});if(e.e!==e.base)putF(e.e,{e,f:'e'});if(e.c&&!['meer','minder','liever'].includes(e.c)){putF(e.c,{e,f:'comp'});putF(e.ce,{e,f:'compe'})}});
+VERB_ALL.forEach(e=>{putF(e.inf,{e,f:'inf'});putF(e.stem,{e,f:'ik'});putF(e.t,{e,f:'t'});putF(e.jij,{e,f:'jij'});putF(e.inv,{e,f:'inv'});e.alt.forEach(a=>putF(a,{e,f:'jij'}));
+ if(e.pre){putF(e.main,{e,f:'pl'});putF(e.pre,{e,f:'pre'})}else putF(e.wij,{e,f:'pl'})});
+LEX.filter(e=>e.pos==='prep').forEach(e=>{if(!/\s/.test(e.word))putF(e.word,{e,f:'prep'})});
+/* a few past forms, so a sentence with had or was still has its verb (no agreement check on them) */
+[['had','hebben'],['hadden','hebben'],['was','zijn'],['waren','zijn'],['kon','kunnen'],['konden','kunnen'],['moest','moeten'],['mocht','mogen'],['wilde','willen'],['ging','gaan'],['stond','staan'],['lag','liggen'],['hing','hangen'],['zat','zitten']]
+ .forEach(([f,inf])=>{const e=VERB_ALL.find(v=>v.inf===inf);if(e)putF(f,{e,f:'past'})});
+const FN=new Set(String(LEXX.words||'').split(/\s+/).filter(Boolean));
+LEX.forEach(e=>{const w=e.word||e.base||e.lw;if(w&&/\s/.test(w))w.split(/\s+/).forEach(x=>FN.add(x))});
+const NUMW={een:1,'één':1,twee:2,drie:3,vier:4,vijf:5,zes:6,zeven:7,acht:8,negen:9,tien:10,elf:11,twaalf:12};
+const PREPS=new Set(['in','op','onder','naast','voor','achter','tussen','boven','tegen','aan','bij','over','met','zonder','tijdens','van','uit','naar','rond','door','om','tot']);
+const PLACE_PREPS=['in','op','onder','naast','voor','achter','tussen','boven','tegen','aan','rond'];
+const PRON={ik:{p:1,n:'sg'},jij:{p:2,n:'sg'},je:{p:2,n:'sg'},u:{p:2,n:'sg',u:1},hij:{p:3,n:'sg'},zij:{p:3,n:'any'},ze:{p:3,n:'any'},het:{p:3,n:'sg'},
+ we:{p:1,n:'pl'},wij:{p:1,n:'pl'},jullie:{p:2,n:'pl'},men:{p:3,n:'sg'}};
+const DEF=new Set(['de','het','deze','dit','die','dat','mijn','jouw','je','zijn','haar','uw','ons','onze','hun','jullie']);
+const INDEF=new Set(['een','geen',"zo'n"]);
+const lookup=w=>FORMS.get(lo(w))||[];
+const nounR=w=>lookup(w).filter(r=>r.e.pos==='noun');
+const adjR=w=>lookup(w).filter(r=>r.e.pos==='adj');
+const verbR=w=>lookup(w).filter(r=>r.e.pos==='verb');
+const FINITE=new Set(['ik','t','jij','inv','pl','past']);
+const finR=w=>verbR(w).filter(r=>FINITE.has(r.f)&&!(r.f==='pl'&&r.e.pre));
+const isInf=w=>verbR(w).some(r=>r.f==='inf'||(r.f==='pl'&&!r.e.pre));
+const known=w=>FORMS.has(lo(w))||FN.has(lo(w))||NUMW[lo(w)]!=null||PRON[lo(w)]||PREPS.has(lo(w))||/^\d/.test(w);
+const ALLKEYS=()=>{if(!ALLKEYS.k){const s=new Set([...FORMS.keys(),...FN,...Object.keys(NUMW),...Object.keys(PRON),...PREPS]);ALLKEYS.k=[...s].filter(k=>!/\s/.test(k))}return ALLKEYS.k};
+const nounEntry=w=>{const r=nounR(w);return r.length?r[0]:null};
+const AN=a=>a==='het'?'het-word':'de-word';
+
+/* ---------- spelling: what kind of slip turns one word into another ---------- */
+function spellWhy(g,t){g=lo(g);t=lo(t);if(g===t)return '';
+ const drops=(s,re)=>{const out=[];let m;const r=new RegExp(re,'g');while((m=r.exec(s))){out.push(s.slice(0,m.index)+s.slice(m.index+1));r.lastIndex=m.index+1}return out};
+ const V2='(aa|ee|oo|uu)',C2='([bcdfgklmnprstvz])\\1';
+ if(drops(g,V2).includes(t))return 'a long vowel at the end of a syllable is written once';
+ if(drops(t,V2).includes(g))return 'a long vowel with a consonant after it in the same syllable is written twice';
+ if(drops(t,C2).includes(g))return 'short vowel: the consonant after it doubles';
+ if(drops(g,C2).includes(t))return 'long vowel: only one consonant after it';
+ if(g.length===t.length){const D=[...g].map((c,i)=>[c,t[i]]).filter(([a,b])=>a!==b);
+  if(D.length===1){const [a,b]=D[0];if(a==='s'&&b==='z')return 's becomes z between vowels';if(a==='f'&&b==='v')return 'f becomes v between vowels';
+   if(a==='z'&&b==='s')return 'at the end of a word z becomes s';if(a==='v'&&b==='f')return 'at the end of a word v becomes f';
+   if(a==='d'&&b==='t'||a==='t'&&b==='d')return 'd and t sound the same at the end: check the word'}}
+ const sw=(s,a,b)=>s.split(a).join(b);
+ if(sw(g,'ei','ij')===t||sw(g,'ij','ei')===t)return t.includes('ij')?'this word is written with ij':'this word is written with ei';
+ if(sw(g,'au','ou')===t||sw(g,'ou','au')===t)return t.includes('ou')?'this word is written with ou':'this word is written with au';
+ if(strip(g)===strip(t))return 'check the hyphen or accent';
+ return 'spelling'}
+/* the known word closest to an unknown one (small slips only) */
+function nearest(w){w=lo(w);if(w.length<3)return null;const lim=w.length<=5?1:2;let best=null;
+ for(const k of ALLKEYS()){if(Math.abs(k.length-w.length)>lim)continue;if(k[0]!==w[0]&&!(k[1]===w[1]&&k[0]===w[1]))continue;const d=dist(w,k);if(d>lim)continue;const sc=d*10+(k.slice(-1)===w.slice(-1)?0:3)+(FORMS.has(k)?0:1)+Math.abs(k.length-w.length)*0.5;if(!best||sc<best.sc)best={d,k,sc}}
+ return best&&best.k}
+
+/* ---------- reading a sentence ----------
+   tokens() → words and punctuation · checkSentence() → the issues in one sentence, each with the reason,
+   and the facts the exam drills count (which Er-verb, which modal, adjective kinds, prepositions, nouns). */
+const WRE=/[A-Za-zÀ-ÿ][A-Za-zÀ-ÿ'’-]*|\d+(?:[.,]\d+)?|[.,!?;:]/g;
+function tokens(s){const out=[];String(s||'').replace(WRE,(m,i)=>{out.push({raw:m,w:lo(m).replace(/’/g,"'"),i,p:/^[.,!?;:]$/.test(m)});return m});return out}
+function splitSentences(text){const out=[];String(text||'').replace(/[^.!?\n]+[.!?]*/g,m=>{const s=m.trim();if(s&&/[A-Za-zÀ-ÿ]/.test(s))out.push(s);return m});return out}
+const ERW={staan:{sg:'staat',pl:'staan',why:'stands upright'},liggen:{sg:'ligt',pl:'liggen',why:'lies flat'},hangen:{sg:'hangt',pl:'hangen',why:'hangs on the wall or from the ceiling'},zitten:{sg:'zit',pl:'zitten',why:'is a person or an animal'}};
+const ADV_START=new Set(['ook','dan','nu','hier','daar','vandaag','morgen','eerst','soms','altijd','thuis','buiten','binnen','meestal','daarna']);
+const DETS=['de','het','deze','dit','die','dat','mijn','jouw','je','zijn','haar','uw','ons','onze','hun','jullie','een','geen',"zo'n"];
+const COP=new Set(['is','zijn','ben','bent','was','waren','wordt','worden','blijft','blijven','lijkt','lijken']);
+const NAMES=['gent','brugge','kortrijk','antwerpen','brussel','deinze','leuven','mechelen','oostende','hasselt','luik','namen','parijs','londen','amsterdam','belgië','nederland','frankrijk','duitsland','polen','spanje','italië','engeland','vlaanderen','wallonië','nederlands','frans','engels','pools','duits','spaans','italiaans','arabisch','belg','belgisch','pool'];
+const KIND={name:'Hoofdletter',comp:'Vergelijken',conj:'omdat / want',spelling:'Spelling',art:'de / het',adj:'Adjectief',verb:'Werkwoord',subj:'Onderwerp',order:'Woordvolgorde',er:'Er-zin',inf:'Infinitief',neg:'geen / niet',num:'Meervoud',cap:'Hoofdletter',punct:'Punt'};
+
+function checkSentence(raw){
+ const T=tokens(raw),W=T.filter(t=>!t.p),issues=[],tips=[],facts={cats:new Set(),preps:new Set(),nouns:new Set(),verbs:new Set(),er:null,modal:null};
+ const iss=(k,msg,at)=>{if(!issues.some(x=>x.k===k&&x.msg===msg))issues.push({k,msg,at:at||[]})};
+ T.forEach((t,j)=>{if(!t.p)return;const prev=T[j-1];if(t.raw===','&&prev&&!prev.p)prev.comma=1});
+ const s=String(raw).trim();
+ if(/^[a-zà-ÿ]/.test(s))iss('cap',`Start with a capital letter: <b>${esc(cap(W[0]?W[0].raw:''))}</b> …`,[0]);
+ if(!/[.!?]$/.test(s))iss('punct','End the sentence with a full stop.');
+ W.forEach((t,k)=>{if(NAMES.includes(t.w)&&/^[a-zà-ÿ]/.test(t.raw))iss('name',`Names of towns, countries and languages start with a capital: <b>${esc(cap(t.raw))}</b>`,[k])});
+ /* spelling: a word that is not in the word list but close to one */
+ W.forEach((t,k)=>{if(known(t.w)||NAMES.includes(t.w)||/^[A-ZÀ-Þ]/.test(t.raw)&&k>0)return;const nb=nearest(t.w);if(!nb)return;
+  const ne=adjR(nb).find(r=>r.e.noE&&t.w===r.e.base+'e'),why=ne?'never takes -e':spellWhy(t.w,nb);iss('spelling',`<del>${esc(t.raw)}</del> → <ins>${esc(nb)}</ins>${why&&why!=='spelling'?' · '+why:''}`,[k]);t.w=nb;t.fixed=nb});
+ /* noun phrases: determiner? number? adjectives, then the noun */
+ const NPS=[],inNP=new Map(),PRED=[];
+ function parseNP(k){let j=k,num=null;const adjs=[];const t0=W[j];
+  if(t0&&((t0.w!=='een'&&NUMW[t0.w]!=null)||/^\d+$/.test(t0.w))){num=NUMW[t0.w]||parseInt(t0.w,10);j++}
+  while(j<W.length){const t=W[j];if(['heel','erg','zeer','nogal'].includes(t.w)){j++;continue}
+   const n=nounR(t.w),a=adjR(t.w),nx=W[j+1],nextN=nx&&nounR(nx.w).length>0,nextA=nx&&adjR(nx.w).length>0;
+   if(n.length&&!(a.length&&(nextN||nextA)&&!t.comma)){const tl=n.find(r=>r.tail);if(tl){const ws=tl.e.lw.split(' ');const pre=ws.slice(0,-1);
+     if(W.slice(j-pre.length,j).map(x=>x.w).join(' ')===pre.join(' '))adjs.splice(adjs.length-pre.length,pre.length)}return{start:k,head:j,adjs,num}}
+   if(a.length){adjs.push(j);j++;continue}
+   break}
+  return adjs.length||num!=null?{start:k,head:null,adjs,num,end:j}:null}
+ for(let k=0;k<W.length;k++){if(inNP.has(k))continue;const w=W[k].w;
+  const pv=W[k-1];if((w==='zijn'||w==='haar')&&pv&&(pv.w==='er'||PRON[pv.w]&&w==='zijn'||nounR(pv.w).length&&!PREPS.has(pv.w)&&w==='zijn'))continue;
+  if(DETS.includes(w)){const np=parseNP(k+1);if(np&&np.head!=null){const N={det:k,...np};NPS.push(N);for(let j=k;j<=np.head;j++)inNP.set(j,N);k=np.head;continue}
+   if(w==='een'||w==='geen'){/* een / geen with no noun after it */}continue}
+  if(PRON[w]||PREPS.has(w)||FN.has(w)&&!nounR(w).length&&!adjR(w).length&&NUMW[w]==null)continue;
+  const np=parseNP(k);
+  if(np&&np.head!=null){const N={det:null,...np};NPS.push(N);for(let j=k;j<=np.head;j++)inNP.set(j,N);k=np.head;continue}
+  if(np&&np.adjs.length){np.adjs.forEach(j=>PRED.push(j));k=np.end-1}}
+ const headR=N=>{const rs=nounR(W[N.head].w);return(N.num>1?rs.find(r=>r.f==='pl'):null)||rs.find(r=>r.f===(N.num>1?'pl':'sg'))||rs[0]};
+ const isPl=N=>N.num>1||headR(N).f==='pl';
+ const npText=(N,fix)=>{fix=fix||{};const out=[];for(let j=N.det!=null?N.det:N.start;j<=N.head;j++){const v=fix[j]!=null?fix[j]:W[j].w;if(v)out.push(v+(W[j].comma&&j<N.head-1?',':''))}return out.join(' ')};
+ const wantE=(D,pl,art)=>pl?true:D&&!INDEF.has(D)?true:art==='de'?true:art==='het'?false:null;
+ NPS.forEach(N=>{const r=headR(N);if(!r)return;const e=r.e,pl=isPl(N),D=N.det!=null?W[N.det].w:null,H=W[N.head];facts.nouns.add(e.lw);
+  const at=[N.det!=null?N.det:N.start,N.head].filter(x=>x!=null);
+  if((D==='de'||D==='het')&&!r.tail){
+   if(pl&&D==='het')iss('art',`The plural always takes de: <b>${esc(npText(N,{[N.det]:'de'}))}</b>`,at);
+   else if(!pl&&e.art&&D!==e.art)iss('art',`<b>${esc(e.word)}</b> is a ${AN(e.art)}: <b>${esc(npText(N,{[N.det]:e.art}))}</b>`,at)}
+  if((D==='dit'||D==='dat')&&(pl||e.art==='de'))iss('art',`<b>${esc(e.word)}</b> is a ${pl?'plural':'de-word'}: <b>${esc(npText(N,{[N.det]:D==='dit'?'deze':'die'}))}</b>`,at);
+  if((D==='deze'||D==='die')&&!pl&&e.art==='het')iss('art',`<b>${esc(e.word)}</b> is a het-word: <b>${esc(npText(N,{[N.det]:D==='deze'?'dit':'dat'}))}</b>`,at);
+  if(D==='ons'&&(pl||e.art==='de'))iss('art',`${pl?'Plural':'A de-word'}: <b>${esc(npText(N,{[N.det]:'onze'}))}</b>`,at);
+  if(D==='onze'&&!pl&&e.art==='het')iss('art',`A het-word: <b>${esc(npText(N,{[N.det]:'ons'}))}</b>`,at);
+  if(D==='een'&&r.f==='pl')iss('num',`een goes with one thing only. More than one: no een, or a number: <b>${esc(npText(N,{[N.det]:''}))}</b>`,at);
+  if(N.num>1&&r.f==='sg'&&e.pl)iss('num',`After ${esc(W[N.start].w)} comes the plural: <b>${esc(W[N.start].w)} ${esc(e.pl)}</b>`,[N.head]);
+  const want=wantE(D,pl,e.art);const fix={};const why=[];
+  N.adjs.forEach(j=>{const ar=adjR(W[j].w)[0];if(!ar)return;const A=ar.e;if(A.cat)facts.cats.add(A.cat);
+   if(A.noE){if(lo(W[j].w)!==A.base){fix[j]=A.base;why.push(`<b>${esc(A.base)}</b> never takes -e`)}return}
+   if(want==null)return;const cmp=ar.f==='comp'||ar.f==='compe',hasE=ar.f==='e'||ar.f==='compe';if(hasE===want)return;fix[j]=cmp?(want?A.ce:A.c):(want?A.e:A.base);
+   why.push(want?(pl?'plural: + e':D&&!INDEF.has(D)?`after ${esc(D)} the adjective takes -e`:`<b>${esc(e.word)}</b> is a de-word: + e`)
+    :`<b>${esc(e.word)}</b> is a het-word: after ${D?esc(D):'no article'} no -e`)});
+  if(why.length)iss('adj',`${[...new Set(why)].join(' · ')}: <b>${esc(npText(N,fix))}</b>`,Object.keys(fix).map(Number))});
+ /* adjectives on their own (after is / zijn): never -e */
+ PRED.forEach(j=>{const ar=adjR(W[j].w)[0];if(!ar)return;const A=ar.e;if(A.cat)facts.cats.add(A.cat);
+  const cop=W.slice(0,j).some(t=>COP.has(t.w));if(ar.f==='e'&&A.e!==A.base&&cop)iss('adj',`After is / zijn the adjective has no -e: <b>${esc(A.base)}</b>`,[j]);
+  if(ar.f==='compe'&&cop)iss('adj',`After is / zijn no -e: <b>${esc(A.c)}</b>`,[j])});
+ /* comparing: groter dan · not “meer groot” */
+ facts.comp=W.filter(t=>adjR(t.w).some(r=>r.f==='comp'||r.f==='compe')||['meer','minder','beter','liever'].includes(t.w)&&W.some(x=>x.w==='dan')).length;
+ W.forEach((t,k)=>{const nx=W[k+1];if((t.w==='meer'||t.w==='meest')&&nx){const a=adjR(nx.w).find(r=>r.f==='base');if(a&&a.e.c)iss('comp',`One word: <b>${esc(a.e.c)}</b> (not meer ${esc(nx.w)})`,[k,k+1])}
+  if(t.w==='als'&&k>0&&adjR(W[k-1].w).some(r=>r.f==='comp'))iss('comp',`Compare with dan: <b>${esc(W[k-1].w)} dan</b>`,[k])});
+ /* omdat sends the verb to the end of its part of the sentence; want keeps the normal order */
+ W.forEach((t,k)=>{if(t.w!=='omdat'&&t.w!=='want')return;let e=k+1;while(e<W.length&&!W[e-1].comma)e++;const part=W.slice(k+1,e);if(part.length<3)return;
+  const vi=part.findIndex(x=>finR(x.w).length&&!PRON[x.w]);if(vi<0)return;
+  if(t.w==='omdat'&&vi<part.length-1&&!part.slice(vi+1).some(x=>finR(x.w).length)){const ws=part.map(x=>x.w),v=ws.splice(vi,1)[0];iss('conj',`After omdat the verb goes to the end: <b>omdat ${esc([...ws,v].join(' '))}</b>`,[k+1+vi])}
+  if(t.w==='want'&&vi===part.length-1&&part.length>2&&PRON[part[0].w]){const ws=part.map(x=>x.w),v=ws.pop();ws.splice(1,0,v);iss('conj',`After want the normal order (subject + verb): <b>want ${esc(ws.join(' '))}</b>`,[k+part.length])}});
+ W.forEach(t=>{if(PLACE_PREPS.includes(t.w))facts.preps.add(t.w)});
+ /* the verb: the first finite form outside a noun phrase (a bare noun like eten counts as a verb when nothing else does) */
+ let V=W.findIndex((t,k)=>!inNP.has(k)&&finR(t.w).length);
+ if(V<0)V=W.findIndex((t,k)=>{const N=inNP.get(k);return N&&N.det==null&&!N.adjs.length&&N.num==null&&finR(t.w).length})
+ const vr=V>=0?finR(W[V].w)[0]:null,ve=vr&&vr.e,lem=ve&&(ve.main||ve.inf);
+ W.forEach((t,k)=>{verbR(t.w).forEach(r=>{if(!inNP.has(k)||k===V)facts.verbs.add(r.e.main||r.e.inf)})});
+ const words=()=>W.map(t=>t.w);
+ const sentenceWith=ws=>cap(ws.filter(Boolean).join(' '))+'.';
+ const isQ=/\?\s*$/.test(s);
+ if(V<0){if(W.length>=2)iss('verb','No verb yet. Every sentence needs one: draagt, heeft, is, staat, ligt, hangt, moet, mag …')}
+ /* Er at the start (Er staat …), or after a place at the start (In de woonkamer staat er …) */
+ const front=W[0]&&(PREPS.has(W[0].w)||ADV_START.has(W[0].w));
+ const erAt=W[0]&&W[0].w==='er'?0:V>0&&front&&W[V+1]&&W[V+1].w==='er'?V+1:V>1&&front&&W[V-1].w==='er'?V-1:-1,er=erAt>=0;
+ /* Er + verb + what + where */
+ if(er){
+  if(erAt===0&&V!==1){if(V>1)iss('order',`After Er comes the verb: <b>${esc(sentenceWith(['er',W[V].w,...words().filter((w,k)=>k>0&&k!==V)]))}</b>`,[V]);}
+  else{if(erAt>0&&erAt===V-1){const head=W.slice(0,V-1).map(t=>t.w);iss('order',`Verb in 2nd place: after “${esc(head.join(' '))}” comes the verb, then er: <b>${esc(sentenceWith([...head,W[V].w,'er',...W.slice(V+1).map(t=>t.w)]))}</b>`,[V])}
+   const N=NPS.find(n=>(n.det!=null?n.det:n.start)>Math.max(V,erAt));
+   if(N){const pl=isPl(N),e=headR(N).e,want=pl?ve.wij:ve.t;
+    if(lo(W[V].w)!==want&&ve.t!==ve.wij)iss('er',pl?`Two or more (${esc(npText(N))}): <b>Er ${esc(want)}</b>`:`One thing (${esc(npText(N))}): <b>Er ${esc(want)}</b>`,[V]);
+    if(ERW[lem]&&lem!=='zitten'&&e.er&&!e.er.includes(lem)){const g=e.er[0];iss('er',`${cap(e.art?e.art+' '+e.word:e.word)} ${ERW[g].why}: <b>Er ${pl?ERW[g].pl:ERW[g].sg}</b> …`,[V])}
+    if(lem==='zijn')tips.push({k:'erzijn',msg:'Er is / Er zijn is good Dutch, but for a room the exam wants staan, liggen or hangen: Er staat …, Er ligt …, Er hangt …'});
+    facts.er={lemma:lem,num:pl?'pl':'sg'}}
+   else iss('er',`What ${esc(W[V].w)} there? Er ${esc(W[V].w)} + <b>een …</b> + where.`);
+   if(erAt===0&&!W.some(t=>PLACE_PREPS.includes(t.w))&&lem!=='zijn')tips.push({k:'where',msg:'Say where: … onder de tafel, naast de zetel, boven het bed.'})}}
+ /* subject and verb agree; the verb is in 2nd place */
+ let subj=null;
+ if(V>=0&&!er){
+  const b=W[V-1],a=W[V+1];
+  if(b&&PRON[b.w]&&!inNP.has(V-1))subj={k0:V-1,k1:V-1,...PRON[b.w],txt:b.w,before:1};
+  else{let h=V-1;if(b&&/^\d+$/.test(b.w))h=V-2;const N=NPS.find(n=>n.head===h);
+   const st0=N?(N.det!=null?N.det:N.start):0;if(N&&W[st0-1]&&PREPS.has(W[st0-1].w)&&W[st0-1].w!=='en'){/* a noun after a preposition is not the subject */}
+   else if(N){let n=isPl(N)?'pl':'sg';const st=st0;if(W[st-1]&&W[st-1].w==='en')n='pl';subj={k0:st,k1:V-1,p:3,n,txt:W.slice(st,V).map(t=>t.w).join(' '),before:1,np:N}}}
+  if(!subj&&a&&PRON[a.w]&&!(a.w==='het'&&inNP.has(V+1)))subj={k0:V+1,k1:V+1,...PRON[a.w],txt:a.w,before:0};
+  if(!subj){const N=NPS.find(n=>(n.det!=null?n.det:n.start)===V+1);if(N&&V>0)subj={k0:V+1,k1:N.head,p:3,n:isPl(N)?'pl':'sg',txt:npText(N),before:0,np:N}}
+  if(subj){
+   const f=lo(W[V].w);let want;
+   if(subj.n==='pl')want=[ve.wij];else if(subj.p===1)want=[ve.stem];else if(subj.p===2&&!subj.u)want=subj.before?[ve.jij,...ve.alt]:[ve.inv];
+   else if(subj.u)want=[ve.jij,ve.t];else if(subj.n==='any')want=[ve.t,ve.wij];else want=[ve.t];
+   if(ve.pre&&subj.n!=='pl')want=want.map(x=>x);
+   if(vr.f!=='past'&&!want.includes(f)&&!(ve.pre&&subj.n==='pl'&&f===ve.stem+'en'))iss('verb',`${esc(cap(subj.txt))} → <b>${esc(want[0])}</b>${subj.n==='pl'&&subj.np?' (plural)':''}`,[V]);
+   const first=W[0].w;
+   if(subj.before&&subj.k0>0&&(PREPS.has(first)||ADV_START.has(first))){const head=W.slice(0,subj.k0).map(t=>t.w),rest=W.slice(V+1).map(t=>t.w);
+    iss('order',`Verb in 2nd place: after “${esc(head.join(' '))}” comes the verb, then the subject: <b>${esc(sentenceWith([...head,W[V].w,...W.slice(subj.k0,V).map(t=>t.w),...rest]))}</b>`,[V])}
+   else if(subj.before&&subj.k0===0&&subj.k1<V-1){const mid=W.slice(subj.k1+1,V).map(t=>t.w);
+    iss('order',`The verb comes right after the subject: <b>${esc(sentenceWith([...W.slice(0,subj.k1+1).map(t=>t.w),W[V].w,...mid,...W.slice(V+1).map(t=>t.w)]))}</b>`,[V])}}
+  else if(V===0&&!isQ)iss('subj',`Who? Start with the subject: <b>${esc(sentenceWith(['ze',...words()]))}</b> (or hij, je …)`,[0])}
+ /* geen already holds the article: geen de hond → geen hond */
+ W.forEach((t,k)=>{const nx=W[k+1];if(t.w==='geen'&&nx&&['de','het','een'].includes(nx.w))iss('neg',`geen takes the noun without ${esc(nx.w)}: <b>${esc(sentenceWith(words().filter((w,j)=>j!==k+1)))}</b>`,[k+1])});
+ /* moeten / mogen / kunnen / willen + infinitive at the end · geen or niet */
+ if(V>=0&&['moeten','mogen','kunnen','willen'].includes(lem)){
+  const last=W.length-1,isInfAt=k=>isInf(W[k].w)&&(k===last||!nounR(W[k].w).length);
+  const infs=[];for(let k=V+1;k<=last;k++)if(isInfAt(k))infs.push(k);
+  if(!infs.length){if(!(last>V&&/en$/.test(W[last].w)))iss('inf',`After ${esc(W[V].w)} comes an infinitive at the end: ${V>0?esc(cap(W.slice(0,V).map(x=>x.w).join(' '))):'Je'} ${esc(W[V].w)} … <b>drinken</b>.`)}
+  else if(!infs.includes(last)){const k=infs[infs.length-1];iss('order',`The infinitive goes to the end: <b>${esc(sentenceWith([...words().filter((w,j)=>j!==k),W[k].w]))}</b>`,[k])}
+  W.forEach((t,k)=>{const nx=W[k+1];
+   if(t.w==='geen'&&nx&&isInf(nx.w)&&!nounR(nx.w).length)iss('neg',`geen goes with a noun. Before a verb: niet: <b>${esc(sentenceWith(words().map((w,j)=>j===k?'niet':w)))}</b>`,[k]);
+   if(t.w==='niet'&&nx){if(nx.w==='een')iss('neg',`niet een → <b>geen</b>: ${esc(sentenceWith(words().filter((w,j)=>j!==k+1).map((w,j)=>j===k?'geen':w)))}`,[k,k+1]);
+    else{const N=inNP.get(k+1);if(N&&N.det==null&&(N.start===k+1)&&!isInfAt(N.head))iss('neg',`Before a noun without de / het use geen: <b>${esc(sentenceWith(words().map((w,j)=>j===k?'geen':w)))}</b>`,[k]);
+     else if(N&&N.det===k+1&&!['een','geen'].includes(nx.w)&&N.head<last&&infs.includes(last)){const ws=words().filter((w,j)=>j!==k);ws.splice(N.head,0,'niet');iss('neg',`niet comes after ${esc(npText(N))}, right before the infinitive: <b>${esc(sentenceWith(ws))}</b>`,[k])}}}});
+  const neg=W.some(t=>t.w==='geen')?'geen':W.some(t=>t.w==='niet')?'niet':null;
+  facts.modal={lemma:lem,neg,inf:infs.length?W[infs[infs.length-1]].w:null,je:W.some(t=>t.w==='je'||t.w==='jij')}}
+ /* no perfectum on this exam */
+ const lw=W[W.length-1];
+ if(lw&&/^ge.+[dt]$/.test(lw.w)&&!adjR(lw.w).length&&W.some(t=>['heeft','hebben','heb','hebt','is','zijn','ben','bent'].includes(t.w)))tips.push({k:'perf',msg:'No perfectum on this exam: write it in the presens.'});
+ return{raw:s,W,issues,tips,facts,V}}
+
+/* the sentence with the words that have a problem marked */
+function markSentence(r){const bad=new Set();r.issues.forEach(i=>(i.at||[]).forEach(k=>bad.add(k)));let k=0;
+ return esc(r.raw).replace(/[A-Za-zÀ-ÿ][A-Za-zÀ-ÿ'’-]*|\d+(?:[.,]\d+)?/g,m=>{const j=k++;return bad.has(j)?`<del>${m}</del>`:m})}
+
+/* ---------- a whole text: how many sentences, and which required forms are still missing ---------- */
+const NEED={
+ 'er-staan':['Er staat / Er staan','No sentence with <b>Er staat</b> or <b>Er staan</b> yet.',F=>F.some(f=>f.er&&f.er.lemma==='staan')],
+ 'er-liggen':['Er ligt / Er liggen','No sentence with <b>Er ligt</b> or <b>Er liggen</b> yet.',F=>F.some(f=>f.er&&f.er.lemma==='liggen')],
+ 'er-hangen':['Er hangt / Er hangen','No sentence with <b>Er hangt</b> or <b>Er hangen</b> yet.',F=>F.some(f=>f.er&&f.er.lemma==='hangen')],
+ 'er-plural':['a plural (Er liggen …)','No plural yet: <b>Er liggen drie kussens …</b>, <b>Er hangen gordijnen …</b>',F=>F.some(f=>f.er&&f.er.num==='pl')],
+ colour:['a colour','No colour yet (rood, blauw, grijs …).',F=>F.some(f=>f.cats.has('colour'))],
+ material:['a material','No material yet (houten, glazen, leren, stoffen, ijzeren, plastic).',F=>F.some(f=>f.cats.has('material'))],
+ pattern:['a pattern','No pattern yet (gestreept, geruit, gebloemd, effen).',F=>F.some(f=>f.cats.has('pattern'))],
+ shape:['a shape','No shape yet (rond, ovaal, vierkant, rechthoekig).',F=>F.some(f=>f.cats.has('shape'))],
+ preps:['3 prepositions','Use at least 3 different prepositions (onder, naast, boven, tegen, voor, tussen …).',F=>new Set(F.flatMap(f=>[...f.preps])).size>=3],
+ moet:['Je moet + infinitive','No sentence with <b>Je moet … + infinitive</b> yet.',F=>F.some(f=>f.modal&&f.modal.lemma==='moeten'&&f.modal.inf)],
+ mag:['Je mag + infinitive','No sentence with <b>Je mag … + infinitive</b> yet (permission, without geen / niet).',F=>F.some(f=>f.modal&&f.modal.lemma==='mogen'&&!f.modal.neg)],
+ geen:['Je mag geen + noun','No sentence with <b>Je mag geen + noun</b> yet.',F=>F.some(f=>f.modal&&f.modal.lemma==='mogen'&&f.modal.neg==='geen')],
+ niet:['Je mag … niet + infinitive','No sentence with <b>Je mag … niet + infinitive</b> yet.',F=>F.some(f=>f.modal&&f.modal.lemma==='mogen'&&f.modal.neg==='niet')],
+ dragen:['draagt','Use <b>draagt</b> at least once (Ze draagt …).',F=>F.some(f=>f.verbs.has('dragen'))],
+ er3:['3 sentences with Er','Write at least 3 sentences with Er: <b>Er is een aparte wc.</b> <b>Er zijn drie slaapkamers.</b>',F=>F.filter(f=>f.er).length>=3],
+ er3pos:['3 sentences with Er','Start at least 3 sentences with Er: <b>Er staat …</b>, <b>Er ligt …</b>, <b>Er hangt …</b>',F=>F.filter(f=>f.er).length>=3],
+ comp2:['2 comparatives','Write at least 2 sentences with a comparative: <b>Mijn appartement is groter dan …</b>',F=>F.filter(f=>f.comp>0).length>=2]};
+/* an e-mail: the greeting (Beste … / Dag …) and the closing (Met vriendelijke groeten, name) are not sentences */
+const GREET=/^\s*(beste|dag|hallo|hoi|dag beste|lieve|liefste)\b[^.!?\n]*,?\s*$/i,CLOSE=/(groet|groetjes|tot (snel|ziens|straks)|dikke kus|veel liefs|knuffel)/i;
+function letterParts(text){const L=String(text||'').split(/\n/);let greet=null,close=null,name=null;const body=[];
+ L.forEach((l,i)=>{const t=l.trim();if(!t)return;if(greet==null&&!body.length&&GREET.test(t)){greet=t;return}
+  if(CLOSE.test(t)&&t.split(/\s+/).length<=5){close=t;return}if(close&&t.split(/\s+/).length<=3&&!/[.!?]$/.test(t)){name=t;return}body.push(l)});
+ return{greet,close,name,body:body.join('\n')}}
+function checkText(text,spec){spec=spec||{};let letter=null;if(spec.letter){letter=letterParts(text);text=letter.body}
+ const S=splitSentences(text).map(checkSentence),n=S.length,F=S.map(r=>r.facts);
+ S.forEach(r=>{r.tips=r.tips.filter(t=>spec.erPos||t.k!=='erzijn').map(t=>t.msg||t)});
+ let count=null;if(spec.exact&&n!==spec.exact)count=`${n} sentence${n===1?'':'s'}: write exactly ${spec.exact}.`;else if(spec.min&&n<spec.min)count=`${n} sentence${n===1?'':'s'}: write at least ${spec.min}.`;
+ const missing=(spec.needs||[]).filter(k=>NEED[k]&&!NEED[k][2](F)).map(k=>NEED[k][1]);
+ if(letter){if(!letter.greet)missing.unshift('Start the e-mail with a greeting on its own line: <b>Beste Sarah,</b> or <b>Dag Sarah,</b>');
+  if(!letter.close)missing.push('End with a closing on its own line: <b>Met vriendelijke groeten,</b> (or Groetjes,) and your name under it.');else if(!letter.name)missing.push('Write your name under the closing.')}
+ const tips=[];if(spec.scene){const used=new Set(F.flatMap(f=>[...f.nouns]));const left=spec.scene.filter(x=>!x.lw.some(w=>used.has(w)));if(left.length&&left.length<spec.scene.length)tips.push('Also in the picture: '+left.slice(0,4).map(x=>`<b>${esc(x.nl)}</b>`).join(', ')+'.')
+  if(spec.universe){const inScene=new Set(spec.scene.flatMap(x=>x.lw)),extra=[...used].filter(w=>spec.universe.has(w)&&!inScene.has(w)&&![...inScene].some(x=>x.endsWith(w))).map(w=>NOUN_BY_LW.get(w)).filter(Boolean);
+   if(extra.length)tips.unshift('Not in this picture: '+extra.map(e=>`<b>${esc(e.art+' '+e.word)}</b>`).join(', ')+'. Describe what you see.')}}
+ const nIss=S.reduce((a,r)=>a+r.issues.length,0);return{S,n,count,missing,tips,nIss,letter,ok:!count&&!missing.length&&!nIss}}
+
+/* ---------- checking a typed answer ---------- */
+const normS=s=>norm(String(s).replace(/,/g,' '));
+const bag=s=>normS(s).split(' ').sort().join(' ');
+/* a whole sentence: one of the accepted ones, or the same words in another good order; otherwise the checker says why */
+function checkSentAnswer(g,acc){const G=normS(g),A=acc.map(normS);
+ if(A.includes(G))return{res:'right'};if(A.map(strip).includes(strip(G)))return{res:'accent'};
+ let t=String(g).trim();t=cap(t)+(/[.!?]$/.test(t)?'':'.');const r=checkSentence(t),I=r.issues.filter(i=>i.k!=='cap'&&i.k!=='punct');
+ const lastW=x=>x.split(' ').pop();
+ if(!I.length&&A.some(a=>bag(a)===bag(G)&&lastW(a)===lastW(G)))return{res:'right',msg:'Also correct: the same words in another order.'};
+ return{res:'wrong',notes:I.map(i=>[i.k,i.msg])}}
+/* one word: right, a slip (hyphen, accent), the right word with the wrong or missing article, a spelling slip, or another word */
+function checkWord(g,w,alts){const G=norm(g),acc=[w.nl,...(alts||[])].map(norm);
+ if(acc.includes(G))return{res:'right'};
+ if(acc.map(strip).includes(strip(G)))return{res:'accent',msg:`Check the hyphen or accent: <b>${esc(w.nl)}</b>.`};
+ if(w.pos==='noun'){const word=lo(w.word),m=G.match(/^(de|het|een)\s+(.+)$/),body=m?m[2]:G;
+  const close=body===word||strip(body)===strip(word);
+  if(!m&&close)return{res:'wrong',mark:'Juist woord · lidwoord vergeten',msg:`Spelling correct, article missing: <b>${esc(w.nl)}</b>. Write every noun with de or het.`};
+  if(m&&m[1]==='een'&&close)return{res:'wrong',mark:'Juist woord · de of het?',msg:`Write it with de or het, not een: <b>${esc(w.nl)}</b>.`};
+  if(m&&close&&m[1]!==w.art)return{res:'wrong',mark:'Juist woord · verkeerd lidwoord',msg:`Right word, wrong article: <b>${esc(w.nl)}</b> is a ${AN(w.art)}.`};
+  if(w.pl&&(body===lo(w.pl)))return{res:'wrong',msg:`That is the plural (de ${esc(w.pl)}). One: <b>${esc(w.nl)}</b>.`};
+  if(dist(body,word)<=2){const why=spellWhy(body,word),artBad=m&&m[1]!==w.art;
+   return{res:'wrong',msg:`Spelling: <b>${esc(w.nl)}</b>${why&&why!=='spelling'?' · '+why:''}.${!m?' And write the article (de / het).':artBad?` And it is a ${AN(w.art)}.`:''}`}}}
+ else{const t=norm(w.nl);if(dist(G,t)<=2){const why=spellWhy(G,t);return{res:'wrong',msg:`Spelling: <b>${esc(w.nl)}</b>${why&&why!=='spelling'?' · '+why:''}.`}}}
+ return{res:'wrong'}}
+/* a single form (plural, adjective, verb): spelling slips named */
+function checkForm(g,want,also){const G=norm(g),acc=[want,...(also||[])].map(norm);if(acc.includes(G))return{res:'right'};
+ if(acc.map(strip).includes(strip(G)))return{res:'accent'};const t=norm(want),gg=G.replace(/^(de|het)\s+/,'');
+ if(dist(gg,t)<=2){const why=spellWhy(gg,t);return{res:'wrong',msg:`<b>${esc(want)}</b>${why&&why!=='spelling'?' · '+why:''}.`}}
+ return{res:'wrong'}}
+
+/* ---------- glosses: meaning | form, for a Dutch word ---------- */
+const FN_EN={de:'the (de-words and all plurals)',het:'the (het-words) · it',een:'a, an · one',er:'there',en:'and',maar:'but',want:'because (normal word order)',omdat:'because (verb at the end)',
+ ook:'also, too',niet:'not',geen:'no, not a',je:'you · your',jij:'you',ik:'I',hij:'he',ze:'she · they',zij:'she · they',we:'we',wij:'we',u:'you (polite)',jullie:'you (plural) · your',
+ mijn:'my',zijn:'his · (to be)',haar:'her',hun:'their',ons:'our (het-words)',onze:'our',deze:'this, these (de-words)',dit:'this (het-words)',die:'that, those (de-words)',dat:'that (het-words)',
+ in:'in',op:'on',aan:'on (a wall), at',achter:'behind',bij:'at, near',van:'of, from',uit:'out of',naar:'to',over:'over, about',tijdens:'during',rond:'around',hier:'here',daar:'there',
+ heel:'very',erg:'very',te:'too',nog:'still',al:'already',persoon:'person',twee:'two',drie:'three',vier:'four',vijf:'five',zes:'six',eerst:'first',luid:'loud(ly)',stil:'quiet',
+ thuis:'at home',buiten:'outside',binnen:'inside',mee:'along',wat:'what',wie:'who',waar:'where',hoe:'how',midden:'middle',tijd:'time'};
+const FORM_EN={sg:'',pl:'plural',ik:'ik-form',t:'hij / jij-form',jij:'jij-form',inv:'jij-form after the verb',inf:'infinitive'};
+function glossWord(w){w=lo(w).replace(/’/g,"'");const R=lookup(w);
+ if(!R.length)return FN_EN[w]?[FN_EN[w],'']:null;const r=R.find(x=>x.e.study)||R[0],e=r.e;
+ if(e.pos==='noun')return [enFirst(e.en)===e.en?e.en:e.en,r.f==='pl'?`plural of ${e.art} ${e.word}`:`${e.art?AN(e.art):''}${e.pl?' · plural: '+e.pl:''}`];
+ if(e.pos==='adj')return [e.en,r.f==='e'?`${e.base} + e`:e.noE?'never takes -e':`with -e: ${e.e}`];
+ if(e.pos==='verb'){const vs=R.filter(x=>x.e===e).map(x=>FORM_EN[x.f]).filter(Boolean);return [e.en,(e.inf!==w?e.inf+' · ':'')+[...new Set(vs)].join(', ')]}
+ return [e.en,e.pos==='prep'?'preposition':'']}
+
+/* ---------- pictures and model sentences from content/exam.json: a thing in a room, with adjectives, a number and a place ---------- */
+const NUMNL=['','een','twee','drie','vier','vijf','zes'],NUMEN=['','one','two','three','four','five','six'];
+const NOUN_BY_NL=new Map(NOUNS_ALL.map(e=>[lo((e.art?e.art+' ':'')+e.word),e]));
+const ADJ_BY=new Map(ADJ_ALL.map(e=>[e.base,e]));
+const nounNL=nl=>NOUN_BY_NL.get(lo(nl));
+const CATADJ={colour:Object.keys(EXAM.colours),pattern:['gestreept','geruit','gebloemd','effen'],shape:['rond','ovaal','vierkant','rechthoekig'],size:['groot','klein'],material:Object.keys(EXAM.materials)};
+const ADJ_ORDER=['size','shape','colour','pattern','material'];
+const pickR=(R,a)=>a[Math.floor(R()*a.length)];
+function adjsFor(item,R){const out=[];(item.cats||[]).forEach(group=>{const c=pickR(R,group);const opts=c==='material'&&item.materials?item.materials:c==='size'&&item.sizes?item.sizes:CATADJ[c];
+  const a=ADJ_BY.get(pickR(R,opts));if(a&&!out.some(x=>x.cat===a.cat))out.push(a)});
+ return out.sort((a,b)=>ADJ_ORDER.indexOf(a.cat)-ADJ_ORDER.indexOf(b.cat))}
+const adjForm=(a,e,pl,def)=>a.noE?a.base:(pl||def||e.art==='de')?a.e:a.base;
+/* een grote, grijze stoffen zetel · drie gestreepte kussens · de zetel */
+function npNL(o,def){const e=o.noun,pl=o.count>1;const fs=o.adjs.map(a=>adjForm(a,e,pl,def));
+ const adj=fs.map((f,k)=>f+(k<fs.length-1&&o.adjs[k+1].cat!=='material'?',':'')).join(' ');
+ const det=def?(pl?'de':e.art):pl?(o.bare?'':NUMNL[o.count]):'een';return [det,adj,pl?e.pl:e.word].filter(Boolean).join(' ')}
+const anEn=s=>/^[aeiou]/i.test(s)?'an '+s:'a '+s;
+function npEN(o){const pl=o.count>1,en=enFirst(o.noun.en),adj=o.adjs.map(a=>enFirst(a.en)).join(' ');const body=[adj,pl?(o.noun.enPl||en+'s'):en].filter(Boolean).join(' ');
+ return pl?(o.bare?body:NUMEN[o.count]+' '+body):anEn(body)}
+function erVerb(o){return o.verb||(o.noun.er&&o.noun.er[0])||'staan'}
+function whereNL(o,anch){return String(o.where||'').replace(/\{(\w+)\}/g,(m,k)=>anch[k]?`${anch[k].noun.art} ${anch[k].noun.word}`:'')}
+function whereEN(o,anch){return String(o.whereEn||'').replace(/\{(\w+)\}/g,(m,k)=>anch[k]?enFirst(anch[k].noun.en):'')}
+function erNL(o,anch){const v=ERW[erVerb(o)];return `Er ${o.count>1?v.pl:v.sg} ${npNL(o)} ${whereNL(o,anch)}.`.replace(/\s+\./,'.')}
+function erEN(o,anch){return cap(`there ${o.count>1?'are':'is'} ${npEN(o)} ${whereEN(o,anch)}`.trim())+'.'}
+/* one thing from a room: which noun, how many, which adjectives */
+function sceneObj(item,R,noun){const nl=noun||pickR(R,item.nouns),e=nounNL(nl);if(!e)return null;const c=item.count?pickR(R,item.count):1;
+ return{key:item.key,item,noun:e,count:e.pl?c:1,adjs:adjsFor(item,R),verb:item.verb||null,where:item.where,whereEn:item.whereEn,bare:!!item.nonum||(item.key==='gordijnen')}}
+/* the default anchor nouns of a room (the first noun of each thing), for sentences outside a picture */
+const anchorsOf=room=>Object.fromEntries(room.items.map(it=>[it.key,{noun:nounNL(it.nouns[0])}]).filter(x=>x[1].noun));
+const ROOM_OF=new Map();EXAM.rooms.forEach(room=>room.items.forEach(it=>it.nouns.forEach(nl=>{const k=lo(nl);if(!ROOM_OF.has(k))ROOM_OF.set(k,[]);ROOM_OF.get(k).push([room,it])})));
+/* an Er-sentence and its accepted variants (adjectives in either order) */
+function erVariants(o,anch){const out=[erNL(o,anch)];if(o.adjs.length===2){const b={...o,adjs:[o.adjs[1],o.adjs[0]]};out.push(erNL(b,anch))}
+ if(o.count>1&&!o.bare){const b={...o,bare:true};out.push(erNL(b,anch))}return out}
+
+/* ---------- exercises (terms) ----------
+   Every term can be asked up to three ways, from easy to hard: intro (see it) → options (pick it, warm-up) → write it.
+   accept = accepted written answers · check = the answer checker · the id is the progress key: keep it stable.
+   Words use the id of the word list; the others are lw: (lidwoord) · mv: (meervoud) · aj: (adjectief) · ez: (Er-zin) · rg: (regels). */
+const ITEMS=[];const add=(deck,id,make,x)=>ITEMS.push({deck,id,make,...(x||{})});
+const ENTRY=new Map(LEX.filter(e=>e.study&&e.id).map(e=>[e.id,e]));
+const NOUNS=NOUNS_ALL.filter(e=>e.study);
+function eSpell(a){const e=a.e,b=a.base;if(a.noE)return 'never takes -e';if(e===b+'e')return '+ e';return spellWhy(b+'e',e)}
+function wordNote(w){const e=ENTRY.get(w.id);if(!e)return null;
+ if(w.pos==='noun')return [`${AN(w.art)}`,w.pl?`plural: de ${w.pl}`:'no plural'].join(' · ');
+ if(w.pos==='adj')return e.noE?`${e.base} never takes -e`:e.attr?`with -e: ${e.e}${e.e!==e.base+'e'?' ('+eSpell(e)+')':''}`:null;
+ if(w.pos==='verb')return e.sep?`separable: ik ${e.stem} … ${e.pre} · hij ${e.t} … ${e.pre}`:`ik ${e.stem} · hij ${e.t} · wij ${e.wij}`;
+ return null}
+const sameEn=w=>WL.filter(x=>x!==w&&lo(x.en)===lo(w.en)).map(x=>x.nl);
+WL.forEach(w=>add('h'+w.ch,w.id,st=>{const alts=sameEn(w),pool=WL.filter(x=>x.pos===w.pos&&x!==w&&x.ch===w.ch).concat(WL.filter(x=>x.pos===w.pos&&x.ch!==w.ch));
+ if(st==='pick'&&Math.random()<.5)return{mode:'betek',eyebrow:'Betekenis',prompt:w.nl,say:w.nl,answer:w.en,options:mc(w.en,pool.slice(0,30).map(x=>x.en)),sayAns:w.nl,note:wordNote(w)};
+ const opts=w.pos==='noun'?shuffle([w.nl,`${w.art==='de'?'het':'de'} ${w.word}`,...shuffle(pool.slice(0,20).map(x=>x.nl)).slice(0,2)]):mc(w.nl,pool.slice(0,20).map(x=>x.nl));
+ return{mode:'vert',eyebrow:'Vertaling',prompt:w.en,sub:w.pos==='noun'?'with de or het':w.pos==='verb'?'the infinitive':'',answer:w.nl,accept:[w.nl,...alts],options:opts,sayAns:w.nl,note:wordNote(w),check:g=>checkWord(g,w,alts)}},
+ {word:w,kind:'word'}));
+/* Dit kan ik! sentences of a chapter: Vertaling (English → Dutch, the whole sentence) and Betekenis (pick the meaning) */
+const SENTS=CH.flatMap(c=>(c.sentences||[]).map(s=>({...s,ch:c.ch,pos:'sentence'})));
+SENTS.forEach(s=>add('h'+s.ch,s.id,st=>{const acc=[s.nl,...(s.alt||[])];
+ const pool=SENTS.filter(x=>x!==s).map(x=>x.en).concat(EXAM.places.flatMap(P=>P.rules.map(r=>r.en)));
+ if(st==='pick'&&Math.random()<.5)return{mode:'betek',eyebrow:'Betekenis · zin',prompt:s.nl,say:s.nl,answer:s.en,options:mc(s.en,shuffle(pool).slice(0,12)),sayAns:s.nl};
+ return{mode:'vert',eyebrow:'Vertaling · zin',prompt:s.en,sub:'the whole sentence',answer:s.nl,accept:acc,options:mc(s.nl,shuffle(SENTS.filter(x=>x!==s).map(x=>x.nl).concat(EXAM.places.flatMap(P=>P.rules.map(r=>r.nl)))).slice(0,12)),sayAns:s.nl,check:g=>checkSentAnswer(g,acc)}},
+ {word:s,kind:'zin'}));
+/* de of het? */
+function artNote(e){const t=[`${e.art} ${e.word}`];if(/je$/.test(e.lw))t.push('-je words are always het');if(e.pl)t.push(`plural: de ${e.pl}`);return t.join(' · ')}
+function checkArt(g,e){const G=norm(g);if(G===e.art||G===`${e.art} ${e.lw}`)return{res:'right'};const m=G.match(/^(de|het)\b/);
+ if(m)return{res:'wrong',msg:`<b>${esc(e.word)}</b> is a ${AN(e.art)}: <b>${e.art} ${esc(e.word)}</b>.`};return{res:'wrong',msg:'Write de or het.'}}
+NOUNS.forEach(e=>add('lw','lw:'+e.id,()=>({mode:'lidw',eyebrow:'Lidwoord',prompt:`___ ${e.word}`,sub:e.en,answer:e.art,accept:[e.art,`${e.art} ${e.lw}`],options:['de','het'],sayAns:`${e.art} ${e.word}`,note:artNote(e),check:g=>checkArt(g,e)}),
+ {pattern:1,block:'cf:lw',word:e.src,kind:'lw'}));
+/* meervoud */
+function plNote(e){const b=e.lw,p=lo(e.pl);if(p===b+'s'||p===b+"'s")return `${e.word} → ${e.pl}: + ${p.slice(b.length)}`;if(p===b+'en')return `${e.word} → ${e.pl}: + en`;
+ const w=spellWhy(b+'en',p);return `${e.word} → ${e.pl}${w&&w!=='spelling'?': + en, '+w:''}`}
+function plDistract(e){const b=e.lw;return [...new Set([b+'en',b+'s',b+"'s",eForm(b).replace(/e$/,'en'),b+b.slice(-1)+'en',b.replace(/(aa|ee|oo|uu)(?=[^aeiou]+$)/,m=>m[0])+'en'])].filter(x=>x!==lo(e.pl)&&x!==b)}
+function checkPl(g,e){const G=norm(g),p=lo(e.pl);if(G===p||G==='de '+p)return{res:'right'};if(G==='het '+p)return{res:'wrong',msg:`The plural always takes de: <b>de ${esc(e.pl)}</b>.`};
+ if(G===e.lw||G===`${e.art} ${e.lw}`)return{res:'wrong',msg:`That is one ${esc(enFirst(e.en))}. More than one: <b>de ${esc(e.pl)}</b>.`};
+ const r=checkForm(G.replace(/^de /,''),e.pl);return r.res==='wrong'&&!r.msg?{res:'wrong',msg:plNote(e)}:r}
+NOUNS.filter(e=>e.pl).forEach(e=>add('mv','mv:'+e.id,()=>({mode:'meerv',eyebrow:'Meervoud',prompt:`${e.art} ${e.word} → de ___`,sub:e.en,answer:e.pl,accept:[e.pl,'de '+e.pl],options:mc(e.pl,plDistract(e)),sayAns:`${e.art} ${e.word}, de ${e.pl}`,note:plNote(e),check:g=>checkPl(g,e)}),
+ {pattern:1,block:'cf:mv',word:e.src,kind:'mv'}));
+/* adjectief: een groen hemd · het groene hemd · groene hemden · het hemd is groen */
+const CLOTHES=NOUNS.filter(e=>e.src.ch===1&&!['kleur','patroon','mouw'].includes(e.lw));
+const FURN=NOUNS.filter(e=>e.src.ch===5&&e.er);
+const HOUSE=NOUNS.filter(e=>e.src.ch===4&&e.pl);
+function adjQ(A){const ch=A.src.ch,pool=ch===1?CLOTHES:ch===5?FURN:HOUSE,fr=pick(['een','een','def','pl','pred']);
+ const art=Math.random()<.5?'het':'de';let N=pick(pool.filter(n=>fr==='pl'?n.pl:fr==='een'?n.art===art:true))||pick(pool);if(fr==='pl'&&!N.pl)N=pick(pool.filter(n=>n.pl));
+ let prompt,want,why,full;
+ if(fr==='pred'){want=A.base;prompt=`${cap(N.art)} ${N.word} is ___.`;full=`${cap(N.art)} ${N.word} is ${A.base}.`;why='after is: no -e'}
+ else if(fr==='pl'){want=A.noE?A.base:A.e;const d=pick(['','de ','twee ']);prompt=`${d}___ ${N.pl}`;full=`${d}${want} ${N.pl}`;why='plural: + e'}
+ else if(fr==='def'){want=A.noE?A.base:A.e;prompt=`${N.art} ___ ${N.word}`;full=`${N.art} ${want} ${N.word}`;why=`after ${N.art}: + e`}
+ else{want=A.noE?A.base:N.art==='de'?A.e:A.base;prompt=`een ___ ${N.word}`;full=`een ${want} ${N.word}`;why=N.art==='het'?`${N.word} is a het-word: after een no -e`:`${N.word} is a de-word: + e`}
+ if(A.noE)why=`${A.base} never takes -e`;
+ const other=A.noE?A.base+'e':want===A.e?A.base:A.e;
+ return{mode:'adj',eyebrow:'Adjectief',prompt,sub:`${A.base} · ${A.en}`,answer:want,accept:[want,full],options:shuffle([want,other]),sayAns:full,note:why+(A.e!==A.base+'e'&&!A.noE&&want===A.e?` · ${A.base} → ${A.e}: ${eSpell(A)}`:''),
+  check:g=>{const G=norm(g);if(G===norm(want)||G===norm(full))return{res:'right'};if(G===norm(other)||G.endsWith(' '+norm(other)+' '+lo(fr==='pl'?N.pl:N.word)))return{res:'wrong',msg:why+': <b>'+esc(full)+'</b>.'};return checkForm(g,want,[full])}}}
+ADJ_ALL.filter(e=>e.study&&e.attr&&!/\s/.test(e.base)).forEach(A=>add('aj','aj:'+A.id,()=>adjQ(A),{pattern:1,block:'cf:aj',word:A.src,kind:'aj'}));
+/* Er staat / ligt / hangt: a thing from one of the rooms in exam.json */
+function erQ(e,st){const [room,item]=pick(ROOM_OF.get(lo(e.art+' '+e.word)));const o=sceneObj(item,Math.random,e.art+' '+e.word),anch=anchorsOf(room);
+ const nl=erNL(o,anch),en=erEN(o,anch),v=erVerb(o),want=o.count>1?ERW[v].pl:ERW[v].sg,acc=erVariants(o,anch);
+ const note=`${o.count>1?'two or more':'one thing'} · ${e.art} ${e.word} ${ERW[v].why}`;
+ if(st==='pick'||Math.random()<.4){const other=pick(['staan','liggen','hangen'].filter(x=>x!==v));
+  return{mode:'erzin',eyebrow:'Er-zin · het werkwoord',prompt:nl.replace(/^Er \S+/,'Er ___'),sub:en,answer:want,accept:[want],options:shuffle([ERW[v].sg,ERW[v].pl,ERW[other].sg,ERW[other].pl]),sayAns:nl,note,
+   check:g=>{const G=norm(g);if(G===want)return{res:'right'};const hit=Object.entries(ERW).find(([k,x])=>x.sg===G||x.pl===G);
+    if(hit&&hit[0]===v)return{res:'wrong',msg:`${o.count>1?'Two or more':'One thing'}: <b>Er ${want}</b>.`};if(hit)return{res:'wrong',msg:`${cap(e.art)} ${esc(e.word)} ${ERW[v].why}: <b>${ERW[v].sg} / ${ERW[v].pl}</b>.`};return checkForm(g,want)}}}
+ return{mode:'erzin',eyebrow:'Er-zin',prompt:en,sub:'Er + verb + what + where',answer:nl,accept:acc,sayAns:nl,note,check:g=>checkSentAnswer(g,acc)}}
+NOUNS.filter(e=>ROOM_OF.has(lo(e.art+' '+e.word))).forEach(e=>add('ez','ez:'+e.id,st=>erQ(e,st),{pattern:1,block:'cf:ez',word:e.src,kind:'ez'}));
+/* regels: Je moet … · Je mag … · Je mag geen … · Je mag … niet … */
+const KIND_NOTE={moet:'verplicht: Je moet + … + infinitive at the end',mag:'toegelaten: Je mag + … + infinitive at the end',geen:'verboden: Je mag + geen + noun (no de / het) + infinitive',niet:'verboden: Je mag + … + niet + infinitive'};
+const ruleAcc=r=>{const s=r.nl,out=[s,s.replace(/^Je /,'Jij ')];if(/\bgsm\b/.test(s))out.push(s.replace(/\bgsm\b/,'smartphone'));if(/\bsmartphone\b/.test(s))out.push(s.replace(/\bsmartphone\b/,'gsm'));return out};
+function chunksOf(s){const ws=s.replace(/\.$/,'').split(' '),out=[];for(let k=0;k<ws.length;k++){const w=ws[k],l=lo(w);
+  if(k>0&&['de','het','een','je','geen','mijn','het','op','aan','in'].includes(l)&&k<ws.length-1&&!/en$/.test(lo(ws[k+1]))||k>0&&['de','het','een'].includes(l)){out.push(w+' '+ws[k+1]);k++}else out.push(w)}return out}
+function ruleQ(r,P,st){const modal=r.nl.split(' ')[1],acc=ruleAcc(r);let t=st==='pick'?'gap':pick(['full','full','gap','order','neg']);if(t==='neg'&&r.kind!=='geen'&&r.kind!=='niet')t='full';
+ const base={mode:'regels',sub:r.en,sayAns:r.nl,note:KIND_NOTE[r.kind]};
+ if(t==='neg'){const gap=r.nl.replace(/\b(geen|niet)\b/,'___');return{...base,eyebrow:'Regels · geen of niet?',prompt:gap,answer:r.kind,accept:[r.kind],options:['geen','niet'],
+   check:g=>norm(g)===r.kind?{res:'right'}:{res:'wrong',msg:r.kind==='geen'?'Before a noun without de / het: <b>geen</b>.':'With the verb (or after a noun with de / het): <b>niet</b>.'}}}
+ if(t==='gap')return{...base,eyebrow:'Regels · moet of mag?',prompt:r.nl.replace(/^Je \S+/,'Je ___'),sub:`${r.en} (${r.kind==='moet'?'verplicht':r.kind==='mag'?'toegelaten':'verboden'})`,answer:modal,accept:[modal],options:['moet','mag'],
+   check:g=>norm(g)===modal?{res:'right'}:{res:'wrong',msg:modal==='moet'?'It is an obligation (verplicht): <b>moet</b>.':'Permission, or a prohibition with geen / niet: <b>mag</b>.'}};
+ if(t==='order'){const ch=shuffle(chunksOf(r.nl));return{...base,eyebrow:'Regels · zet in de juiste volgorde',prompt:ch.join(' · '),answer:r.nl,accept:acc,check:g=>checkSentAnswer(g,acc)}}
+ return{...base,eyebrow:'Regels',prompt:r.en,sub:'Je moet / Je mag / Je mag geen / Je mag … niet',answer:r.nl,accept:acc,check:g=>checkSentAnswer(g,acc)}}
+EXAM.places.forEach(P=>P.rules.forEach(r=>add('rg','rg:'+r.id,st=>ruleQ(r,P,st),{pattern:1,block:'cf:rg',rule:r,place:P,kind:'rg'})));
+
+const DECK_TXT={h1:{pl:'H1 · Wie is wie?',en:'clothes, colours and patterns'},h5:{pl:'H5 · Mijn favoriete kamer',en:'furniture, materials, where things are'},
+ h3:{pl:'H3 · Wat moet ik doen?',en:'rules, post, cards, rubbish'},h4:{pl:'H4 · Het appartement',en:'rooms, renting, describing a flat'}};
+const DECKS={};[1,5,3,4,...CH.map(c=>c.ch).sort((a,b)=>a-b)].forEach(n=>{const c=CH.find(x=>x.ch===n);if(c&&!DECKS['h'+n])DECKS['h'+n]=DECK_TXT['h'+n]||{pl:`H${n} · ${c.title}`,en:c.en||''}});
+Object.assign(DECKS,{lw:{pl:'De of het?',en:'the article of every noun'},mv:{pl:'Meervoud',en:'plurals'},aj:{pl:'Adjectief + e',en:'een groen hemd · het groene hemd'},
+ ez:{pl:'Er staat · ligt · hangt',en:'Er-sentences about a room'},rg:{pl:'Regels',en:'Je moet · Je mag · geen · niet'}});
+
+/* ---------- the learning path: what the exam needs first ---------- */
+const W_=it=>it.word||{};
+const STAGES=[
+ {n:'Kleding',en:'clothes: the words, with de or het',m:it=>W_(it).ch===1&&W_(it).pos==='noun'&&(it.kind==='word'||it.kind==='lw')},
+ {n:'Kleuren en patronen',en:'colours, patterns, long and short · adjective + e',m:it=>W_(it).ch===1&&(W_(it).pos!=='noun')&&it.kind!=='mv'},
+ {n:'Meubels',en:'furniture: the words, with de or het',m:it=>W_(it).ch===5&&W_(it).pos==='noun'&&(it.kind==='word'||it.kind==='lw')},
+ {n:'Er staat · ligt · hangt',en:'materials, shapes, prepositions, Er-sentences',m:it=>W_(it).ch===5&&it.kind!=='mv'||it.kind==='ez'},
+ {n:'Regels',en:'moeten, mogen, geen and niet',m:it=>it.kind==='rg'||['h3-moeten','h3-mogen','h3-verplicht','h3-toegelaten','h3-verboden'].includes(W_(it).id)},
+ {n:'Meervoud',en:'plurals of clothes and furniture',m:it=>it.kind==='mv'&&(W_(it).ch===1||W_(it).ch===5)},
+ {n:'Wat moet ik doen?',en:'chapter 3: post, cards, rubbish',m:it=>W_(it).ch===3},
+ {n:'Het appartement',en:'chapter 4: rooms, renting, adjectives',m:it=>W_(it).ch===4},
+ {n:'Nog meer',en:'everything else',m:()=>true}];
+ITEMS.forEach((it,i)=>{it.stage=STAGES.findIndex(s=>s.m(it));it.pos=i;it.kind=it.kind||'word';if(it.pattern)it.kind=it.kind;it.isNew=isNew(it.word||it.rule)});
+/* new content (marked "new" by the add-content procedure) comes first within its stage */
+const ORDER=ITEMS.slice().sort((a,b)=>a.stage-b.stage||(b.isNew-a.isNew)||a.pos-b.pos);
+
+/* ---------- progress (stored on this phone; build.py adds gist sync between devices) ---------- */
+const SKEY='nl-test12';
+let S={};try{S=JSON.parse(localStorage.getItem(SKEY)||'{}')||{}}catch(e){S={}}
+const saveLocal=()=>{try{localStorage.setItem(SKEY,JSON.stringify(S))}catch(e){}};
+const save=()=>{saveLocal();if(window.onProgressSaved)window.onProgressSaved()};
+let view='home';
+function mergeS(a,b){const out={};
+ new Set([...Object.keys(a),...Object.keys(b)]).forEach(k=>{if(k[0]==='_')return;const x=a[k],y=b[k];
+  out[k]=!x?{...y}:!y?{...x}:(y.n>x.n||(y.n===x.n&&y.b>x.b))?{...y}:{...x}});
+ const t=dayKey(),da=a._d&&a._d.d===t?a._d.n:0,db_=b._d&&b._d.d===t?b._d.n:0;
+ if(da||db_)out._d={d:t,n:Math.max(da,db_)};
+ const r=Math.max(a._r||0,b._r||0);if(r)out._r=r;
+ const ta=a._t&&a._t.d===t?a._t:null,tb=b._t&&b._t.d===t?b._t:null;
+ if(tb||ta)out._t={...(tb||ta),r:Math.max(ta?ta.r:0,tb?tb.r:0)};const mx=a._mix||b._mix;if(mx)out._mix=mx;['_hide','_show'].forEach(k=>{if(a[k]||b[k])out[k]={...(b[k]||{}),...(a[k]||{})}});const ac=a._acc||b._acc;if(ac)out._acc=ac;
+ if(a._bk||b._bk)out._bk={...(a._bk||{}),...(b._bk||{})};
+ if(a._ex||b._ex){out._ex={};new Set([...Object.keys(a._ex||{}),...Object.keys(b._ex||{})]).forEach(k=>{const x=(a._ex||{})[k]||{n:0,ok:0},y=(b._ex||{})[k]||{n:0,ok:0};out._ex[k]=x.n>=y.n?{...x}:{...y}})}
+ return out}
+function updSync(){const el=document.getElementById('sync');if(el)el.textContent='Progress is saved on this device only.'}
+const box=id=>S[id]?S[id].b:-1;
+const weight=id=>{const b=box(id);return b<0?2.5:[4,2.5,1,.5,.25][Math.min(b,4)]};
+/* a term counts as known at level 2+, and only fully while it has no fresh mistakes */
+const isKnown=id=>box(id)>=2&&!(S[id].ws>0);
+const mastery=its=>its.length?its.reduce((s,it)=>s+Math.min(Math.max(box(it.id),0),2)/2*(S[it.id]&&S[it.id].ws?0.5:1),0)/its.length:0;
+/* the forecast as a Flemish school score out of 10 */
+const GRADES=[[.85,'zeer goed','very good'],[.7,'goed','good'],[.5,'voldoende','pass'],[0,'onvoldoende','fail']];
+const gradeOf=m=>{const g=GRADES.find(g=>m>=g[0]);return{n:Math.round(m*10),name:g[1],en:g[2]}};
+const dayKey=()=>{const d=new Date();return `${d.getFullYear()}-${d.getMonth()+1}-${d.getDate()}`};
+const todayCount=()=>S._d&&S._d.d===dayKey()?S._d.n:0;
+/* spacing: a right answer sits out 1, 2, 4, 7… rounds; a mistake is due again right away */
+const round=()=>S._r||0;
+/* round mix: new / mistakes to fix / review of last-time-right; 20 written answers by default */
+const DEF_MIX={n:8,m:8,c:4};const mix=()=>({...DEF_MIX,...(S._mix||{})}),pace=()=>mix().n;
+const GAP=[0,1,2,4,7,12,20];
+/* right: up a level · wrong: back next round, and down one level only after 3 wrong in a row ·
+   minor slip (spelling detail, hint): no change in level */
+let AIDX=null;
+function creditSame(id,given){if(!AIDX){AIDX=new Map();ITEMS.forEach(it=>{const k=answerKey(it);if(k)(AIDX.get(k)||AIDX.set(k,[]).get(k)).push(it.id)})}
+ const it=ITEMS.find(x=>x.id===id);const keys=new Set([it&&answerKey(it),given?strip(norm(given)):null].filter(Boolean));
+ const credit=o=>{if(o===id)return;const t=S[o];if(t&&t.lr)return;S[o]={...(t||{b:0,n:0,w:0,f:dayKey(),due:round()+1}),b:Math.max(t?t.b:0,1),cr:1,dr:0}};
+ keys.forEach(k=>(AIDX.get(k)||[]).forEach(credit));
+ /* a noun written right with its article also shows you know de / het */
+ if(it&&it.kind==='word'&&it.word&&it.word.pos==='noun'&&ITEMS.some(x=>x.id==='lw:'+id))credit('lw:'+id)}
+function record(id,res,given){const s=S[id]||{b:0,n:0,w:0,f:dayKey()};s.n++;
+ if(res==='right'){s.b=Math.min(s.b+1,6);s.ws=0;s.dr=0;s.due=round()+1+GAP[s.b];s.lr='r';S[id]=s;try{creditSame(id,given)}catch(e){}}
+ else if(res==='wrong'){s.w++;s.ws=(s.ws||0)+1;if(s.ws>=3){s.b=Math.max(0,s.b-1);s.ws=0;s.dr=1}s.due=round();s.lr='w'}
+ else{s.due=round()+1;s.lr='w'}
+ S[id]=s;S._d={d:dayKey(),n:todayCount()+1};save()}
+function wsample(items,n){const pool=items.map(it=>({it,w:weight(it.id)}));const out=[];
+ while(out.length<n&&pool.length){let t=pool.reduce((s,p)=>s+p.w,0),r=Math.random()*t,k=0;for(;k<pool.length-1;k++){r-=pool[k].w;if(r<=0)break}out.push(pool.splice(k,1)[0].it)}return out}
+const EXAM_DAY=(()=>{const [y,m,d]=EXAM.date.split('-').map(Number);return new Date(y,m-1,d)})();
+const daysLeft=()=>{const n=new Date();return Math.round((EXAM_DAY-new Date(n.getFullYear(),n.getMonth(),n.getDate()))/864e5)};
+const DAYS_NL=['zo','ma','di','wo','do','vr','za'],DAYS_EN=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'],MONTH_EN=['January','February','March','April','May','June','July','August','September','October','November','December'];
+
+/* ---------- speech: the phone's Flemish voice (iPhone: Ellen), or any Dutch voice ---------- */
+const canSpeak='speechSynthesis' in window;let nlVoice=null;
+function loadVoices(){try{const v=speechSynthesis.getVoices();nlVoice=v.find(x=>/^nl[-_]BE/i.test(x.lang))||v.find(x=>/ellen/i.test(x.name))||v.find(x=>/^nl/i.test(x.lang))||null}catch(e){}}
+if(canSpeak){loadVoices();try{speechSynthesis.onvoiceschanged=loadVoices}catch(e){}}
+function say(t){if(!canSpeak||!t)return;try{const u=new SpeechSynthesisUtterance(String(t).replace(/___/g,'…'));u.lang=nlVoice?nlVoice.lang:'nl-BE';if(nlVoice)u.voice=nlVoice;u.rate=.9;speechSynthesis.cancel();speechSynthesis.speak(u)}catch(e){}}
+const SPK='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z" fill="currentColor"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg>';
+const spkBtn=t=>canSpeak&&t?`<button class="spk" data-say="${esc(t)}" aria-label="Play audio">${SPK}</button>`:'';
+let autoAudio=true;try{autoAudio=localStorage.getItem('nl-test12-audio')!=='0'}catch(e){}
+
+/* ---------- word glosses (tap or hover a Dutch word on teaching screens) ----------
+   Each gloss is “meaning | form”, from the word list (glossWord). */
+const NL_WORD=/([A-Za-zÀ-ÿ][A-Za-zÀ-ÿ'’-]*)/;
+function gl(t,pre,post,mk){const txt=String(t);let k=0;
+ return txt.split(NL_WORD).map((p,i)=>{if(i%2===0)return esc(p).replace(/\u0001/g,'<b class="fill">').replace(/\u0002/g,'</b>');
+  const kk=k++,g=glossWord(p),w=mk?mk(kk,p):esc(p);return g&&g[0]?`<span class="gw" tabindex="0" data-g="${esc(g.filter(Boolean).join('|'))}">${w}</span>`:w}).join('')}
+const glQ=(t,q,mk)=>gl(t,'','',mk);
+/* word-level alignment: similar words pair up (laarsen ↔ laarzen) */
+function alignW(a,b){const n=a.length,m=b.length,sim=(x,y)=>x===y?0:dist(x,y)<=Math.max(1,Math.round(Math.max(x.length,y.length)*.4))?0.5:1.2;
+ const D=Array.from({length:n+1},(_,i)=>{const r=new Array(m+1).fill(0);r[0]=i;return r});for(let j=0;j<=m;j++)D[0][j]=j;
+ for(let i=1;i<=n;i++)for(let j=1;j<=m;j++)D[i][j]=Math.min(D[i-1][j]+1,D[i][j-1]+1,D[i-1][j-1]+sim(a[i-1],b[j-1]));
+ const ops=[];let i=n,j=m;while(i>0||j>0){if(i>0&&j>0&&D[i][j]===D[i-1][j-1]+sim(a[i-1],b[j-1])){ops.push(a[i-1]===b[j-1]?['=',a[i-1]]:['~',a[i-1],b[j-1]]);i--;j--}
+  else if(i>0&&D[i][j]===D[i-1][j]+1){ops.push(['-',a[i-1]]);i--}else{ops.push(['+',b[j-1]]);j--}}
+ return{dist:D[n][m],ops:ops.reverse()}}
+/* the correct answer with what you missed in green: a word you left out or got wrong, or only the letters (laarzen, not laarsen) */
+function missedMarks(given,text){const D=[];String(text).split(NL_WORD).forEach((p,i)=>{if(i%2)D.push(lo(p))});
+ const G=norm(given).split(/[^A-Za-zÀ-ÿ'’-]+/).filter(Boolean);if(!G.length||!D.length)return null;
+ const r=alignW(G,D);if(r.dist>Math.max(2.2,D.length/2))return null;const M=new Map();let ti=0;
+ r.ops.forEach(([o,x,y])=>{if(o==='-')return;if(o==='='){ti++;return}if(o==='+'){M.set(ti++,'all');return}
+  const c=editOps([...x],[...y]);if(c.dist<=Math.max(2,y.length*.4)){const set=new Set();let j=0;c.ops.forEach(([o2])=>{if(o2==='-')return;if(o2!=='=')set.add(j);j++});M.set(ti,set)}else M.set(ti,'all');ti++});
+ return (k,w)=>{const m=M.get(k);if(!m)return esc(w);if(m==='all')return `<ins>${esc(w)}</ins>`;return [...w].map((ch,j)=>m.has(j)?`<ins>${esc(ch)}</ins>`:esc(ch)).join('').replace(/<\/ins><ins>/g,'')}}
+/* which correct answer to show: the one closest to what you wrote */
+function answerFor(given,shown){let t=String(shown);const pre=(t.match(/^For example: /)||[''])[0];t=t.slice(pre.length);
+ const alts=/[.!?…] \/ /.test(t)?t.split(' / '):[t];const G=norm(given).split(' ').filter(Boolean);
+ const d=a=>alignW(G,norm(a).split(' ').filter(Boolean)).dist;const best=alts.slice().sort((a,b)=>d(a)-d(b))[0];
+ return {pre,best,rest:alts.filter(a=>a!==best)}}
+const tip=document.createElement('div');tip.id='tip';tip.setAttribute('role','tooltip');tip.hidden=true;document.body.appendChild(tip);let tipOn=null;
+let tipAt=0;
+function showTip(el){tipAt=Date.now();if(tipOn)tipOn.classList.remove('on');tipOn=el;el.classList.add('on');
+ const [m,f,y]=el.dataset.g.split('|');tip.innerHTML=`<b>${esc(m)}</b>${f?`<span class="tf">${esc(f)}</span>`:''}${y?`<span class="ty">${esc(y)}</span>`:''}`;tip.hidden=false;
+ const r=el.getBoundingClientRect(),w=tip.offsetWidth,h=tip.offsetHeight;let x=Math.max(8,Math.min(r.left+r.width/2-w/2,innerWidth-w-8)),yy=r.top-h-8;if(yy<8)yy=r.bottom+8;
+ tip.style.left=x+'px';tip.style.top=yy+'px'}
+function hideTip(){tip.hidden=true;if(tipOn)tipOn.classList.remove('on');tipOn=null}
+let lastPtr='touch';document.addEventListener('pointerdown',e=>{lastPtr=e.pointerType||'touch'},true);
+document.addEventListener('click',e=>{const g=e.target.closest&&e.target.closest('.gw');if(g&&g.classList.contains('gx')&&g.closest('button'))return;if(g){if(tipOn===g&&lastPtr!=='mouse'&&Date.now()-tipAt>400)hideTip();else showTip(g)}else hideTip()});
+document.addEventListener('pointerover',e=>{if(e.pointerType!=='mouse')return;const g=e.target.closest&&e.target.closest('.gw');if(g&&g!==tipOn)showTip(g)});
+document.addEventListener('pointerout',e=>{if(e.pointerType!=='mouse'||!tipOn)return;if(!(e.relatedTarget&&tipOn.contains(e.relatedTarget)))hideTip()});
+document.addEventListener('focusin',e=>{if(e.target.classList&&e.target.classList.contains('gw'))showTip(e.target)});
+document.addEventListener('focusout',e=>{if(e.target===tipOn)hideTip()});
+addEventListener('scroll',hideTip,{passive:true});
+/* icons: Phosphor Icons (MIT) */
+const ICON={"play": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 256 256\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M128,32a96,96,0,1,0,96,96A96,96,0,0,0,128,32ZM108,168V88l64,40Z\" opacity=\"0.2\"/><path d=\"M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm48.24-94.78-64-40A8,8,0,0,0,100,88v80a8,8,0,0,0,12.24,6.78l64-40a8,8,0,0,0,0-13.56ZM116,153.57V102.43L156.91,128Z\"/></svg>", "resume": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 256 256\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M132.37,134.59,44.18,190.74A7.91,7.91,0,0,1,32,184.15V71.85a7.91,7.91,0,0,1,12.18-6.59l88.19,56.15A7.8,7.8,0,0,1,132.37,134.59Z\" opacity=\"0.2\"/><path d=\"M184,64V192a8,8,0,0,1-16,0V64a8,8,0,0,1,16,0Zm40-8a8,8,0,0,0-8,8V192a8,8,0,0,0,16,0V64A8,8,0,0,0,224,56Zm-80,72a15.76,15.76,0,0,1-7.33,13.34L48.48,197.49A15.91,15.91,0,0,1,24,184.15V71.85A15.91,15.91,0,0,1,48.48,58.51l88.19,56.15A15.76,15.76,0,0,1,144,128Zm-16.18,0L40,72.08V183.93Z\"/></svg>", "nut": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 256 256\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M216,112v16c0,53-88,88-88,112,0-24-88-59-88-112V112Z\" opacity=\"0.2\"/><path d=\"M232,104a56.06,56.06,0,0,0-56-56H136a24,24,0,0,1,24-24,8,8,0,0,0,0-16,40,40,0,0,0-40,40H80a56.06,56.06,0,0,0-56,56,16,16,0,0,0,8,13.83V128c0,35.53,33.12,62.12,59.74,83.49C103.66,221.07,120,234.18,120,240a8,8,0,0,0,16,0c0-5.82,16.34-18.93,28.26-28.51C190.88,190.12,224,163.53,224,128V117.83A16,16,0,0,0,232,104ZM80,64h96a40.06,40.06,0,0,1,40,40H40A40,40,0,0,1,80,64Zm74.25,135c-10.62,8.52-20,16-26.25,23.37-6.25-7.32-15.63-14.85-26.25-23.37C77.8,179.79,48,155.86,48,128v-8H208v8C208,155.86,178.2,179.79,154.25,199Z\"/></svg>", "fix": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 256 256\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M221.66,90.34,192,120,136,64l29.66-29.66a8,8,0,0,1,11.31,0L221.66,79A8,8,0,0,1,221.66,90.34Z\" opacity=\"0.2\"/><path d=\"M227.32,73.37,182.63,28.69a16,16,0,0,0-22.63,0L36.69,152A15.86,15.86,0,0,0,32,163.31V208a16,16,0,0,0,16,16H216a8,8,0,0,0,0-16H115.32l112-112A16,16,0,0,0,227.32,73.37ZM79.32,188,164,103.31,180.69,120,96,204.69ZM68,176.69,51.31,160,136,75.31,152.69,92Zm-20,2.62L76.69,208H48Zm144-70.62L147.32,64l24-24L216,84.69Z\"/></svg>", "test": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 256 256\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M224,56V216l-32-16-32,16-32-16L96,216,64,200,32,216V56a8,8,0,0,1,8-8H216A8,8,0,0,1,224,56Z\" opacity=\"0.2\"/><path d=\"M216,40H40A16,16,0,0,0,24,56V216a8,8,0,0,0,11.58,7.16L64,208.94l28.42,14.22a8,8,0,0,0,7.16,0L128,208.94l28.42,14.22a8,8,0,0,0,7.16,0L192,208.94l28.42,14.22A8,8,0,0,0,232,216V56A16,16,0,0,0,216,40Zm0,163.06-20.42-10.22a8,8,0,0,0-7.16,0L160,207.06l-28.42-14.22a8,8,0,0,0-7.16,0L96,207.06,67.58,192.84a8,8,0,0,0-7.16,0L40,203.06V56H216ZM60.42,167.16a8,8,0,0,0,10.74-3.58L76.94,152h38.12l5.78,11.58a8,8,0,1,0,14.32-7.16l-32-64a8,8,0,0,0-14.32,0l-32,64A8,8,0,0,0,60.42,167.16ZM96,113.89,107.06,136H84.94ZM136,128a8,8,0,0,1,8-8h16V104a8,8,0,0,1,16,0v16h16a8,8,0,0,1,0,16H176v16a8,8,0,0,1-16,0V136H144A8,8,0,0,1,136,128Z\"/></svg>", "learn": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 256 256\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M216,113.07v53.22a8,8,0,0,1-2,5.31c-11.3,12.59-38.9,36.4-86,36.4s-74.68-23.81-86-36.4a8,8,0,0,1-2-5.31V113.07L128,160Z\" opacity=\"0.2\"/><path d=\"M251.76,88.94l-120-64a8,8,0,0,0-7.52,0l-120,64a8,8,0,0,0,0,14.12L32,117.87v48.42a15.91,15.91,0,0,0,4.06,10.65C49.16,191.53,78.51,216,128,216a130,130,0,0,0,48-8.76V240a8,8,0,0,0,16,0V199.51a115.63,115.63,0,0,0,27.94-22.57A15.91,15.91,0,0,0,224,166.29V117.87l27.76-14.81a8,8,0,0,0,0-14.12ZM128,200c-43.27,0-68.72-21.14-80-33.71V126.4l76.24,40.66a8,8,0,0,0,7.52,0L176,143.47v46.34C163.4,195.69,147.52,200,128,200Zm80-33.75a97.83,97.83,0,0,1-16,14.25V134.93l16-8.53ZM188,118.94l-.22-.13-56-29.87a8,8,0,0,0-7.52,14.12L171,128l-43,22.93L25,96,128,41.07,231,96Z\"/></svg>", "sheet": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 256 256\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M232,56V200H160a32,32,0,0,0-32,32,32,32,0,0,0-32-32H24V56H96a32,32,0,0,1,32,32,32,32,0,0,1,32-32Z\" opacity=\"0.2\"/><path d=\"M232,48H160a40,40,0,0,0-32,16A40,40,0,0,0,96,48H24a8,8,0,0,0-8,8V200a8,8,0,0,0,8,8H96a24,24,0,0,1,24,24,8,8,0,0,0,16,0,24,24,0,0,1,24-24h72a8,8,0,0,0,8-8V56A8,8,0,0,0,232,48ZM96,192H32V64H96a24,24,0,0,1,24,24V200A39.81,39.81,0,0,0,96,192Zm128,0H160a39.81,39.81,0,0,0-24,8V88a24,24,0,0,1,24-24h64Z\"/></svg>", "set": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 256 256\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M230.1,108.76,198.25,90.62c-.64-1.16-1.31-2.29-2-3.41l-.12-36A104.61,104.61,0,0,0,162,32L130,49.89c-1.34,0-2.69,0-4,0L94,32A104.58,104.58,0,0,0,59.89,51.25l-.16,36c-.7,1.12-1.37,2.26-2,3.41l-31.84,18.1a99.15,99.15,0,0,0,0,38.46l31.85,18.14c.64,1.16,1.31,2.29,2,3.41l.12,36A104.61,104.61,0,0,0,94,224l32-17.87c1.34,0,2.69,0,4,0L162,224a104.58,104.58,0,0,0,34.08-19.25l.16-36c.7-1.12,1.37-2.26,2-3.41l31.84-18.1A99.15,99.15,0,0,0,230.1,108.76ZM128,168a40,40,0,1,1,40-40A40,40,0,0,1,128,168Z\" opacity=\"0.2\"/><path d=\"M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160Zm109.94-52.79a8,8,0,0,0-3.89-5.4l-29.83-17-.12-33.62a8,8,0,0,0-2.83-6.08,111.91,111.91,0,0,0-36.72-20.67,8,8,0,0,0-6.46.59L128,41.85,97.88,25a8,8,0,0,0-6.47-.6A111.92,111.92,0,0,0,54.73,45.15a8,8,0,0,0-2.83,6.07l-.15,33.65-29.83,17a8,8,0,0,0-3.89,5.4,106.47,106.47,0,0,0,0,41.56,8,8,0,0,0,3.89,5.4l29.83,17,.12,33.63a8,8,0,0,0,2.83,6.08,111.91,111.91,0,0,0,36.72,20.67,8,8,0,0,0,6.46-.59L128,214.15,158.12,231a7.91,7.91,0,0,0,3.9,1,8.09,8.09,0,0,0,2.57-.42,112.1,112.1,0,0,0,36.68-20.73,8,8,0,0,0,2.83-6.07l.15-33.65,29.83-17a8,8,0,0,0,3.89-5.4A106.47,106.47,0,0,0,237.94,107.21Zm-15,34.91-28.57,16.25a8,8,0,0,0-3,3c-.58,1-1.19,2.06-1.81,3.06a7.94,7.94,0,0,0-1.22,4.21l-.15,32.25a95.89,95.89,0,0,1-25.37,14.3L134,199.13a8,8,0,0,0-3.91-1h-.19c-1.21,0-2.43,0-3.64,0a8.1,8.1,0,0,0-4.1,1l-28.84,16.1A96,96,0,0,1,67.88,201l-.11-32.2a8,8,0,0,0-1.22-4.22c-.62-1-1.23-2-1.8-3.06a8.09,8.09,0,0,0-3-3.06l-28.6-16.29a90.49,90.49,0,0,1,0-28.26L61.67,97.63a8,8,0,0,0,3-3c.58-1,1.19-2.06,1.81-3.06a7.94,7.94,0,0,0,1.22-4.21l.15-32.25a95.89,95.89,0,0,1,25.37-14.3L122,56.87a8,8,0,0,0,4.1,1c1.21,0,2.43,0,3.64,0a8,8,0,0,0,4.1-1l28.84-16.1A96,96,0,0,1,188.12,55l.11,32.2a8,8,0,0,0,1.22,4.22c.62,1,1.23,2,1.8,3.06a8.09,8.09,0,0,0,3,3.06l28.6,16.29A90.49,90.49,0,0,1,222.9,142.12Z\"/></svg>", "nosync": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 256 256\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M240,128a80,80,0,0,1-80,80H72A56,56,0,1,1,85.92,97.74l0,.1A80,80,0,0,1,240,128Z\" opacity=\"0.2\"/><path d=\"M53.92,34.62A8,8,0,1,0,42.08,45.38L81.32,88.55l-.06.12A65,65,0,0,0,72,88a64,64,0,0,0,0,128h88a87.34,87.34,0,0,0,31.8-5.93l10.28,11.31a8,8,0,1,0,11.84-10.76ZM160,200H72a48,48,0,0,1,0-96c1.1,0,2.2,0,3.3.12A88.4,88.4,0,0,0,72,128a8,8,0,0,0,16,0,72.25,72.25,0,0,1,5.06-26.54l87,95.7A71.66,71.66,0,0,1,160,200Zm88-72a87.89,87.89,0,0,1-22.35,58.61A8,8,0,0,1,213.71,176,72,72,0,0,0,117.37,70a8,8,0,0,1-9.48-12.89A88,88,0,0,1,248,128Z\"/></svg>", "caret": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 256 256\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z\"/></svg>"};
+const ic=(k,cls)=>`<span class="ico${cls?" "+cls:""}">${ICON[k]}</span>`;
+const MI=p=>`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${p}</svg>`;
+const DICON={h1:MI('<path d="M8 3 3 6l2 5 3-1v11h8V10l3 1 2-5-5-3a4 4 0 0 1-8 0z"/>'),h3:MI('<circle cx="12" cy="12" r="9"/><path d="M5.6 5.6l12.8 12.8"/>'),
+ h4:MI('<path d="M4 21V9l8-6 8 6v12"/><path d="M9 21v-6h6v6"/>'),h5:MI('<path d="M4 11V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3"/><path d="M2 13a2 2 0 0 1 4 0v2h12v-2a2 2 0 0 1 4 0v5H2z"/><path d="M5 18v2M19 18v2"/>'),
+ lw:MI('<path d="M3 12V4h8l10 10-8 8z"/><circle cx="7.5" cy="7.5" r="1.5"/>'),mv:MI('<rect x="3" y="7" width="12" height="12" rx="2"/><path d="M7 3h12a2 2 0 0 1 2 2v12"/>'),
+ aj:MI('<path d="M12 3a9 9 0 1 0 0 18c1.5 0 2-1 2-2s-1-1.5-1-2.5 1-1.5 2.5-1.5H18a3 3 0 0 0 3-3c0-5-4-9-9-9z"/><circle cx="7.5" cy="11" r="1"/><circle cx="10" cy="7" r="1"/><circle cx="15" cy="7.5" r="1"/>'),
+ ez:MI('<path d="M12 21s-7-6.5-7-12a7 7 0 0 1 14 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/>'),rg:MI('<rect x="4" y="3" width="16" height="12" rx="2"/><path d="M12 15v6M8 21h8M8 8h8"/>'),
+ ex:MI('<path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><path d="M8 13h8M8 17h5"/>')};
+/* every Dutch label carries its English: tap plain text, hold (or hover) on buttons */
+const L=(nl,en,gr,why)=>`<span class="gw gw-plain gx" data-g="${esc([en,gr,why].filter(Boolean).join('|'))}">${esc(nl)}</span>`;
+let lpT=null,lpFired=false;
+document.addEventListener('pointerdown',e=>{const g=e.target.closest&&e.target.closest('.gx');if(!g||!g.closest('button'))return;lpFired=false;clearTimeout(lpT);lpT=setTimeout(()=>{lpFired=true;showTip(g)},450)});
+['pointerup','pointercancel','pointerleave'].forEach(t=>document.addEventListener(t,()=>clearTimeout(lpT)));
+document.addEventListener('click',e=>{if(lpFired){lpFired=false;e.preventDefault();e.stopPropagation()}},true);
+document.addEventListener('contextmenu',e=>{if(e.target.closest&&e.target.closest('.gx'))e.preventDefault()});
+const EYE={'het werkwoord':['het werkwoord','the verb: staat or staan, ligt or liggen, hangt or hangen'],'moet of mag?':['moet of mag?','obligation (moet) or permission (mag)'],
+ 'geen of niet?':['geen of niet?','geen + noun · niet + verb'],'zet in de juiste volgorde':['zet in de juiste volgorde','put the parts in the right order']};
+
+/* ---------- views ---------- */
+const app=$('#app'),nav=$('#nav');
+function setTab(t){[['home','t-home'],['sheet','t-sheet'],['set','t-set']].forEach(([k,id])=>$('#'+id).setAttribute('aria-current',t===k?'page':'false'))}
+function drawNav(){$('#t-home').innerHTML=ic('learn')+L('Oefenen','practise');$('#t-sheet').innerHTML=ic('sheet')+L('Spiekbriefje','cheat sheet');$('#t-set').innerHTML=ic('set')+L('Instellingen','settings')}
+let sess=null;
+/* terms you chose to hide stay out of rounds and counts */
+const DEFAULT_HIDE=/^$/;
+const hidden=it=>{const id=it.id||it;return !!((S._hide&&S._hide[id])||(DEFAULT_HIDE.test(id)&&id&&!(S._show&&S._show[id])))};
+const vis=()=>ITEMS.filter(it=>!hidden(it));
+function hideTerm(id){S._hide={...(S._hide||{}),[id]:1};if(S._show)delete S._show[id];save()}
+function showTerm(id){if(S._hide)delete S._hide[id];S._show={...(S._show||{}),[id]:1};save()}
+function today(){if(!S._t||S._t.d!==dayKey()){S._t={d:dayKey(),u0:ORDER.filter(it=>!S[it.id]&&!hidden(it)).length,r:0};save()}return S._t}
+const GROUP_COST=k=>Math.ceil(k*0.6);
+function slotsFor(list){const gs=new Set();let n=0;list.forEach(it=>{if(it.group)gs.add(it.group);else n++});gs.forEach(g=>n+=GROUP_COST(list.filter(x=>x.group===g).length));return n}
+/* which pile a term is in: new, fix (last written answer wrong, or never written yet), rev (last written answer right) */
+function pile(id){const t=S[id];if(!t)return 'new';if(t.lr)return t.lr==='r'?'rev':'fix';if(t.cr)return 'rev';return t.w>0&&t.b<2?'fix':t.b>=2?'rev':'fix'}
+function piles(pool){const ord=ORDER.filter(it=>pool.includes(it)&&!hidden(it));
+ return{unseen:ord.filter(it=>!S[it.id]),fix:ord.filter(it=>S[it.id]&&pile(it.id)==='fix'),rev:ord.filter(it=>S[it.id]&&pile(it.id)==='rev')}}
+/* new terms are cut first when things go badly: a weak last round, or a pile of mistakes */
+function newBudget(P){const M=mix(),acc=S._acc;let n=M.n,why=null;
+ if(acc&&acc.n>=8&&acc.ok/acc.n<0.5){n=Math.floor(M.n/2);why=`last round ${acc.ok}/${acc.n} right`}
+ if(acc&&acc.n>=8&&acc.ok/acc.n<0.3)n=Math.min(n,2);
+ if(P.fix.length>3*Math.max(M.m,4)){n=Math.min(n,Math.floor(M.n/2));why=why||`${P.fix.length} terms waiting to be fixed`}
+ return{n,why}}
+function pickNew(unseen,budget){const fresh=[],taken=new Set();let used=0,groups=0;const maxG=budget>=12?2:1;
+ for(const it of unseen){if(used>=budget)break;if(taken.has(it))continue;
+  if(it.group){if(groups>=maxG)continue;const mem=unseen.filter(x=>x.group===it.group),cost=GROUP_COST(mem.length);
+   if(used+cost>budget&&used>0)continue;mem.forEach(x=>{taken.add(x);fresh.push(x)});used+=cost;groups++}
+  else{taken.add(it);fresh.push(it);used++}}
+ return{fresh,used}}
+/* the hardest terms: many mistakes, recent mistakes, wrong streaks, dropped a level */
+function hardness(it){const t=S[it.id];if(!t||!(t.w>0))return 0;return t.w*2+(t.ws||0)*2+(t.lr==='w'?2:0)+(t.dr?3:0)+(t.n?t.w/t.n*4:0)-Math.min(t.b||0,4)*0.5}
+function hardest(max){const keys=new Set();return vis().filter(it=>hardness(it)>0).sort((a,b)=>hardness(b)-hardness(a)).filter(it=>{const k=answerKey(it);if(k&&keys.has(k))return false;if(k)keys.add(k);return true}).slice(0,max)}
+/* rapid fire: 5 cases of one pattern in a row, all written */
+const byKind=k=>()=>ITEMS.filter(i=>i.kind===k);
+const DRILLS=[['lw','De of het?',()=>{const L_=ITEMS.filter(i=>i.kind==='lw');return [...shuffle(L_.filter(i=>i.word.art==='het')).slice(0,3),...shuffle(L_.filter(i=>i.word.art==='de')).slice(0,2),...L_]}],
+ ['mv','Meervoud',byKind('mv')],['aj','Adjectief + e',byKind('aj')],['ez','Er staat · ligt · hangt',byKind('ez')],['rg','Moet · mag · geen · niet',byKind('rg')]];
+function startDrill(key){const d=DRILLS.find(x=>x[0]===key);const keys=new Set(),list=key==='lw'?d[2]():shuffle(d[2]()),pick5=list.filter(it=>{const k=it.id;if(keys.has(k))return false;keys.add(k);return true}).slice(0,5);
+ start(shuffle(pick5).map(it=>({it,st:'write',slot:'fix'})),'Reeks · '+d[1],false,{drill:1})}
+const AKEY=new Map();
+function answerKey(it){if(AKEY.has(it.id))return AKEY.get(it.id);let k=null;
+ if(!/^(lw|aj|ez|rg):/.test(it.id)){const q=it.make('write');const a=(q.accept&&q.accept[0])||q.answer;if(a)k=strip(norm(a))}
+ AKEY.set(it.id,k);return k}
+function planRound(pool){const P=piles(pool),M=mix(),B=newBudget(P);let {fresh,used}=pickNew(P.unseen,B.n);
+ const byDue=(a,b)=>((S[a.id].due??0)-(S[b.id].due??0))||Math.random()-.5;
+ const dueRev=P.rev.filter(it=>(S[it.id].due??0)<=round()).sort(byDue),laterRev=P.rev.filter(it=>(S[it.id].due??0)>round()).sort(byDue);
+ let nFix=Math.min(P.fix.length,M.m+(M.n-used)),nRev=Math.min(dueRev.length,M.c);
+ let spare=(M.m+(M.n-used)-nFix)+(M.c-nRev);
+ const addFix=Math.min(P.fix.length-nFix,spare);nFix+=addFix;spare-=addFix;
+ if(spare>0&&!(B.n<M.n)&&P.unseen.length>fresh.length){const more=pickNew(P.unseen,B.n+spare);spare-=Math.max(0,more.used-used);fresh=more.fresh;used=more.used}
+ const addDue=Math.min(dueRev.length-nRev,Math.max(0,spare));nRev+=addDue;spare-=addDue;
+ let fix=shuffle(P.fix).slice(0,nFix);
+ let rev=[...dueRev.slice(0,nRev),...laterRev.slice(0,Math.max(0,spare))];
+ /* never two terms with the same answer in one round: the second waits */
+ const keys=new Set(),keep=it=>{const k=answerKey(it);if(!k)return true;if(keys.has(k))return false;keys.add(k);return true};
+ fresh=fresh.filter(it=>keep(it)||!!it.group);fix=fix.filter(keep);rev=rev.filter(keep);
+ return{...P,fresh,fixSel:fix,revSel:rev,due:dueRev,why:used<M.n&&B.why?B.why:null,cut:B.n<M.n}}
+const written=it=>{const t=S[it.id];return !!(t&&(t.lr||t.cr||t.n>0))};
+const warm=it=>{const t=S[it.id];if(t&&t.cr&&!t.dr)return false;if(it.pattern)return false;return !!t&&((t.b===0&&!t.lr&&!(t.n>0))||!!t.dr)};
+/* pattern cases in a round come as one rapid-fire block of 5: your real cases count, extra varied cases are practice */
+const FAM=[['lw',/^lw:/],['mv',/^mv:/],['aj',/^aj:/],['ez',/^ez:/],['rg',/^rg:/]];
+const famOf=it=>{const f=FAM.find(([,re])=>re.test(it.id));return f?f[0]:null};
+const BURST=5;
+function makeBurst(fam,entries,usedKeys,R0){const d=DRILLS.find(x=>x[0]===fam),name=d?d[1]:fam;
+ const have=new Set(entries.map(e=>e.it.id)),fill=[],re=(FAM.find(f=>f[0]===fam)||[])[1];
+ const add=(it,slot,practice)=>{if(entries.length+fill.length>=BURST||have.has(it.id)||hidden(it))return;const k=answerKey(it);if(k&&usedKeys.has(k))return;if(k)usedKeys.add(k);have.add(it.id);fill.push({it,st:'write',slot,...(practice?{practice:1}:{})})};
+ if(re){shuffle(R0.fix.filter(it=>re.test(it.id))).forEach(it=>add(it,'fix'));R0.rev.filter(it=>re.test(it.id)&&(S[it.id].due??0)<=round()).forEach(it=>add(it,'rev'))}
+ if(d)shuffle(d[2]()).filter(it=>S[it.id]).forEach(it=>add(it,'fix',1));
+ const all=[...entries.filter(e=>e.st==='intro'),...shuffle([...entries.filter(e=>e.st!=='intro'),...fill])];
+ all.forEach((e,k)=>{e.burst={name,k:k+1,n:all.length}});return all}
+function buildRound(pool){const R0=planRound(pool);
+ let rest=shuffle([...R0.fixSel.map(it=>({it,st:warm(it)?'pick':'write',slot:'fix'})),...R0.revSel.map(it=>({it,st:'write',slot:'rev'}))]);
+ const fresh=R0.fresh.map(it=>({it,st:'intro',slot:'new'}));
+ const usedKeys=new Set([...R0.fresh,...R0.fixSel,...R0.revSel].map(answerKey).filter(Boolean));
+ const byFam={},plain=[];
+ [...fresh,...rest].forEach(e=>{const f=famOf(e.it);if(f)(byFam[f]=byFam[f]||[]).push(e);else plain.push(e)});
+ const blocks=Object.entries(byFam).map(([f,es])=>makeBurst(f,es,usedKeys,R0));
+ const pFresh=plain.filter(e=>e.st==='intro'),pRest=shuffle(plain.filter(e=>e.st!=='intro'));
+ pFresh.forEach((e,k)=>pRest.splice(Math.min(pRest.length,k*2),0,e));
+ blocks.forEach(bl=>{const at=Math.floor(Math.random()*(pRest.length+1));pRest.splice(at,0,...bl)});
+ return{queue:pRest,info:R0}}
+function currentStage(){const it=ORDER.find(it=>!hidden(it)&&(!S[it.id]||S[it.id].b<2));return it?it.stage:STAGES.length-1}
+const hintOf=q=>{const a=q.accept?q.accept[0]:q.answer;const w=String(a).replace(/[.!?]$/,'').split(' ');
+ return w.length>2?w.slice(0,Math.ceil(w.length/2)).join(' ')+' …':w.length===2?w[0]+' …':a.slice(0,Math.max(1,Math.ceil(a.length/2)))+'…'};
+
+const EXSTAT=id=>{const x=S._ex&&S._ex[id];return x?`${x.n}× · ${x.ok?'alles juist':x.last+' te verbeteren'}`:'nog niet'};
+function home(){sheetOff();delete app.dataset.mode;
+ hideTip();closeReview();view='home';sess=null;nav.hidden=false;app.className='app';setTab('home');
+ const m=mastery(vis()),g=gradeOf(m),known=vis().filter(it=>isKnown(it.id)).length;
+ const P=planRound(vis()),M=mix(),total=M.n+M.m+M.c,rl=Math.ceil(slotsFor(P.unseen)/pace()),dl=daysLeft();
+ const T=today(),met=vis().filter(it=>S[it.id]&&(S[it.id].f||'2026-10-25')===dayKey()).length,u0=P.unseen.length+met;
+ const goal=dl>0?Math.ceil(u0/dl):u0,left=Math.max(0,goal-met),onTrack=met>=goal,rToGo=Math.max(1,Math.ceil(left/pace()));
+ const frac=goal?Math.min(1,met/goal):1,C=2*Math.PI*15;
+ const when=dl>1?L(`nog ${dl} dagen`,`in ${dl} days`):dl===1?L('morgen!','tomorrow'):dl===0?L('vandaag!','today'):L('na het examen','after the exam');
+ const o=savedSess(),h=hardest(10),fixN=P.fix.length;
+ const chips=[L(`${P.fresh.length} nieuw`,`${P.fresh.length} new`,'',P.why?'Fewer new terms this round: '+P.why:''),L(`${P.fixSel.length} verbeteren`,`${P.fixSel.length} to fix`),L(`${P.revSel.length} herhalen`,`${P.revSel.length} to review`)];
+ const ed=EXAM_DAY;
+ app.innerHTML=`
+ ${THEME_BAND}
+ <header class="hd2">${LOGO}<div class="t">
+   <p class="eyebrow">${L(`Schriftelijk examen · H${EXAM.scope.join(', ')}`,`written exam · chapters ${EXAM.scope.join(', ')}${EXAM.noPerfectum?' · no perfectum':''}`)}</p>
+   <h1>${L(`${DAYS_NL[ed.getDay()]} ${ed.getDate()} oktober`,`${DAYS_EN[ed.getDay()]} ${ed.getDate()} ${MONTH_EN[ed.getMonth()]}`)}</h1>
+   <p class="when2">${when}</p></div>
+  <button class="grade-wrap" id="gradeb"><span class="grade">${g.n}<small>/10</small></span><span class="grade-lbl">${L(g.name,`${g.en} · ${g.n} out of 10`,'Flemish school marks: zeer goed, goed, voldoende, onvoldoende','Forecast from how many terms you know: known = right twice in a row, the last time written without a hint; a recent mistake counts half.')}</span></button></header>
+ ${(()=>{let ok=false;try{ok=localStorage.getItem('nl-hint1')==='1'}catch(e){}return ok?'':'<p class="hint1" id="hint1">Tap a Dutch word, or hold a button, to see what it means. <button class="sy-link" id="hint1x">OK</button></p>'})()}
+ <section class="today2">
+  <svg class="ring" viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="15" class="r0"/><circle cx="18" cy="18" r="15" class="r1" stroke-dasharray="${C.toFixed(1)}" stroke-dashoffset="${(C*(1-frac)).toFixed(1)}" transform="rotate(-90 18 18)"/></svg>
+  <div class="tx"><b>${met} / ${goal}</b>${L('nieuwe woorden vandaag','new words today','',`${T.r} ${T.r===1?'round':'rounds'} done today · about ${rl} ${rl===1?'round':'rounds'} left in total · ${fixN} terms to fix`)}</div>
+  <span class="pill2 ${onTrack?'ok':'behind'}">${onTrack?L('goed bezig','on track'):L(`nog ${rToGo} ${rToGo===1?'ronde':'rondes'}`,`${rToGo} more ${rToGo===1?'round':'rounds'} today`)}</span>
+ </section>
+ <button class="go2" id="${o?'go-resume':'go-learn'}">${ic(o?'resume':'play','gi')}<span class="l">
+   ${o?`<b>${L('Ronde afmaken','finish the round')}</b><span class="sub">${L(`nog ${o.queue.length-o.i} oefeningen`,`${o.queue.length-o.i} exercises to go`)}</span>`
+      :`<b>${L('Leren','learn')}</b><span class="sub">${L(`Ronde ${round()+1} · ${total} antwoorden`,`round ${round()+1} · ${total} answers`,'','Only written answers count; new terms get a card and a warm-up first.')}</span>
+   <span class="mixrow2">${chips.map(c=>`<i>${c}</i>`).join('')}</span>`}</span></button>
+ ${o?`<button class="sy-link newr" id="go-learn">${L('of begin een nieuwe ronde','or start a new round')}</button>`:''}
+ <section class="exam"><div class="exh"><h2>${L('Examen oefenen','practise the exam tasks')}</h2><span>${L('zoals op je blad','as on your exam sheet')}</span></div>
+  <div class="exbtns">${EXAM.drills.slice().sort((a,b)=>a.code.localeCompare(b.code)).map(d=>`<button class="exb" data-ex="${d.id}"><b>${esc(d.code)}</b><span>${L(EXSHORT[d.id]||d.nl,d.en)}</span><i class="${S._ex&&S._ex[d.id]&&S._ex[d.id].ok?'okc':''}">${EXSTAT(d.id)}</i></button>`).join('')}</div></section>
+ <div class="tiles2">
+  <button class="tile2 t-nut${h.length>=3?'':' off'}" id="go-nut">${ic('nut','ti')}${L('Harde noot','hard nut: your hardest terms','',h.length>=3?`Drill your ${h.length} hardest terms; a miss comes back up to 3 times. Does not use up a round.`:'Available once you have 3 terms with mistakes.')}</button>
+  <button class="tile2 t-fix${fixN?'':' off'}" id="go-weak">${ic('fix','ti')}${L('Fouten verbeteren','fix the mistakes','',fixN?`A round with only the ${fixN} terms to fix.`:'Nothing to fix right now.')}</button>
+  <button class="tile2 t-test" id="go-test">${ic('test','ti')}${L('Proefexamen','practice test','','20 written questions from everything you have met, no warm-ups or hints.')}</button>
+ </div>
+ <div class="sec2"><h2>${L('Onderwerpen','topics')}</h2><span>${L(`${known} van ${vis().length} gekend`,`${known} of ${vis().length} known`)}</span></div>
+ <div class="pills">${Object.entries(DECKS).map(([k,d])=>{const its=vis().filter(i=>i.deck===k),dm=Math.round(mastery(its)*100),nw=its.filter(i=>i.isNew).length;
+   return `<button class="pill3" data-deck="${k}"><span class="pi">${DICON[k]||ic("learn")}</span>${L(d.pl,d.en)}${nw?`<span class="tag nieuw">${nw} nieuw</span>`:''}<span class="pc">${dm}%</span><span class="pb"><i style="width:${dm}%"></i></span></button>`}).join('')}</div>`;
+ const hx=$('#hint1x');if(hx)hx.onclick=()=>{try{localStorage.setItem('nl-hint1','1')}catch(e){}const h1=$('#hint1');if(h1)h1.remove()};
+ $('#gradeb').onclick=()=>showTip(app.querySelector('#gradeb .gx'));
+ $('#go-learn').onclick=()=>{const r=buildRound(vis());start(r.queue,'Leren',false)};
+ const rs=$('#go-resume');if(rs)rs.onclick=()=>{if(!resumeSess())home()};
+ $('#go-nut').onclick=()=>{const hh=hardest(10);if(hh.length<3)return showTip(app.querySelector('#go-nut .gx'));start(shuffle(hh).map(it=>({it,st:'write',slot:'fix'})),'Harde noot',false,{nut:1})};
+ $('#go-test').onclick=()=>start(wsample(vis().filter(it=>S[it.id]).length>=20?vis().filter(it=>S[it.id]):vis(),20).map(it=>({it,st:'write'})),'Proefexamen',true);
+ $('#go-weak').onclick=()=>{if(!P.fix.length)return showTip(app.querySelector('#go-weak .gx'));start(shuffle(P.fix).slice(0,total).map(it=>({it,st:warm(it)?'pick':'write',slot:'fix'})),'Fouten verbeteren',false)};
+ app.querySelectorAll('.pill3').forEach(b=>b.onclick=()=>{const r=buildRound(ITEMS.filter(i=>i.deck===b.dataset.deck));start(r.queue,DECKS[b.dataset.deck].pl,false)});
+ app.querySelectorAll('[data-ex]').forEach(b=>b.onclick=()=>examView(b.dataset.ex));
+}
+const EXSHORT={sd1:'Beschrijf 2 personen',sd3:'5 zinnen: regels',sd4:'E-mail over je woning',sd5:'Beschrijf de kamer'};
+
+function settingsView(){
+ hideTip();closeReview();view='set';sess=null;nav.hidden=false;app.className='app';setTab('set');
+ const M=mix(),hid=ITEMS.filter(hidden);
+ app.innerHTML=`
+ <header class="row"><h1>${L('Instellingen','settings')}</h1></header>
+ <section class="setc"><h2>${L('Mix van een ronde','round mix','','Only written answers count. New terms are cut first when a round goes badly or mistakes pile up.')}</h2>
+  <div class="mix">${[['n','nieuw','new'],['m','verbeteren','to fix'],['c','herhalen','reviews']].map(([k,nl,en])=>`<span class="stp"><button data-k="${k}" data-d="-1" aria-label="fewer ${en}">−</button><b>${M[k]}</b><button data-k="${k}" data-d="1" aria-label="more ${en}">+</button><small>${L(nl,en)}</small></span>`).join('')}</div></section>
+ ${canSpeak?`<section class="setc"><label class="toggle"><input type="checkbox" id="aud" ${autoAudio?'checked':''}> ${L('Lees het antwoord voor','read the answer aloud')}</label><p class="note">${nlVoice?`Voice: ${esc(nlVoice.name)} (${esc(nlVoice.lang)})`:'No Dutch voice found on this device: the default voice is used.'}</p></section>`:''}
+ <section class="setc"><h2>${L('Synchroniseren','sync between devices')}</h2><p class="note" id="sync"></p></section>
+ ${hid.length?`<section class="setc"><details class="hidl"><summary>${L(`Verborgen (${hid.length})`,`hidden terms (${hid.length})`,'','They stay out of your rounds and counts. Tap one to bring it back.')}</summary><div class="hidrow">${hid.map(it=>{const q=it.make('write');return `<button class="ghost" data-show="${esc(it.id)}">${esc(q.answer||'')} <span class="muted">· ${esc(String(q.prompt).replace('___','…'))}</span></button>`}).join('')}</div></details></section>`:''}
+ <section class="setc"><button class="ghost" id="reset">${L('Voortgang wissen','reset progress')}</button></section>`;
+ updSync();
+ const a=$('#aud');if(a)a.onchange=()=>{autoAudio=a.checked;try{localStorage.setItem('nl-test12-audio',a.checked?'1':'0')}catch(e){}};
+ app.querySelectorAll('.stp button').forEach(b=>b.onclick=()=>{const M=mix(),k=b.dataset.k;M[k]=Math.max(0,Math.min(20,M[k]+ +b.dataset.d));if(M.n+M.m+M.c>0){S._mix=M;save()}settingsView()});
+ app.querySelectorAll('[data-show]').forEach(b=>b.onclick=()=>{showTerm(b.dataset.show);settingsView()});
+ const r=$('#reset');r.onclick=()=>{if(r.classList.contains('armed')){S={};save();home()}else{r.classList.add('armed');r.innerHTML=L('Tik nog eens om alles te wissen','tap again to erase all progress')}};
+}
+
+/* an unfinished round is kept on this device, so stopping (✕, closing the app) resumes at the same exercise */
+const SK='nl-test12-round';
+function saveSess(){if(!sess)return;try{localStorage.setItem(SK,JSON.stringify({title:sess.title,test:!!sess.test,nut:!!sess.nut,drill:!!sess.drill,i:sess.i,answeredAt:sess.answeredAt,fresh:sess.fresh,stage0:sess.stage0,
+ queue:sess.queue.map(e=>({id:e.it.id,st:e.st,slot:e.slot,retry:!!e.retry,again:!!e.again,tries:e.tries||0,practice:!!e.practice,burst:e.burst||null})),
+ log:sess.log.map(l=>({id:l.it.id,res:l.res,given:l.given,retry:!!l.retry,counts:!!l.counts,firstTry:!!l.firstTry,slot:l.slot})),done:[...(sess.done||[])],at:Date.now()}))}catch(e){}}
+function savedSess(){try{const o=JSON.parse(localStorage.getItem(SK)||'null');if(!o||!o.queue||o.i>=o.queue.length)return null;
+ if(Date.now()-(o.at||0)>3*864e5)return null;return o}catch(e){return null}}
+function clearSess(){try{localStorage.removeItem(SK)}catch(e){}}
+function resumeSess(){const o=savedSess();if(!o)return false;const byId=id=>ITEMS.find(x=>x.id===id);
+ const queue=o.queue.map(e=>({...e,it:byId(e.id)})).filter(e=>e.it);
+ const log=o.log.map(l=>{const it=byId(l.id);return it?{...l,it,q:it.make('write')}:null}).filter(Boolean);
+ let i=Math.min(o.i,queue.length);if(o.answeredAt===o.i)i++;if(i>=queue.length){clearSess();return false}
+ start(queue,o.title,o.test,{i,log,fresh:o.fresh||0,done:new Set(o.done||[]),stage0:o.stage0,nut:!!o.nut,drill:!!o.drill});return true}
+function start(queue,title,test,restore){clearSess();sess={title,test,queue,i:0,log:[],fresh:0,stage0:currentStage(),...(restore||{})};
+ const put=(e,off)=>sess.queue.splice(Math.min(sess.queue.length,sess.i+off),0,e);sess.put=put;nav.hidden=true;app.className='app quiz';saveSess();ask()}
+function promptHTML(q,fill,g){let p;if(g)p=fill!=null?gl(String(q.prompt).replace('___','\u0001'+fill+'\u0002')):gl(q.prompt).replace('___','<span class="blank"></span>');
+ else{p=esc(q.prompt);p=fill!=null?p.replace('___',`<b class="fill">${esc(fill)}</b>`):p.replace('___','<span class="blank"></span>')}return `<h2 class="prompt${q.big?' big':''}">${p}</h2>`}
+const topBar=(cur)=>`<div class="qtop"><button class="qx" id="qx" aria-label="Stop and go home">✕</button>${sess.hist&&sess.hist.length?'<button class="qx" id="qb" aria-label="Look at the previous exercise">←</button>':''}<div class="bar"><i style="width:${Math.round(sess.i/sess.queue.length*100)}%"></i></div><span class="count">${sess.i+1}/${sess.queue.length}</span></div>`;
+
+/* ---------- concept cards: one rule, shown once before its first exercise ---------- */
+const ROWSAY=(say,a,b)=>`<tr class="sayrow" data-say="${esc(say)}"><td>${a}</td><td>${b}</td></tr>`;
+const tab=(rows,head)=>`<div class="tw"><table class="btab">${head?`<thead><tr>${head.map(h=>`<th>${h}</th>`).join('')}</tr></thead>`:''}<tbody>${rows.map(([say,a,b])=>ROWSAY(say,a,b)).join('')}</tbody></table></div>`;
+const BLOCKS={
+ 'cf:lw':{eyebrow:'Lidwoord · één regel',title:'de of het?',concept:1,html:()=>tab(NOUNS.filter(e=>e.src.ch===1||e.src.ch===5).filter((e,k,a)=>e.art==='het'||a.filter(x=>x.art==='de').indexOf(e)<3).slice(0,9).map(e=>[`${e.art} ${e.word}`,`<b class="end">${e.art}</b> ${esc(e.word)}`,esc(e.en)]))+`<div class="fam"><p>Learn every noun with its article: you will write <b>de</b> or <b>het</b>. The plural is always <b>de</b> (de hemden). Words ending in <b>-je</b> are het-words (het nachtkastje).</p><p>After <b>een</b> you can't see the article, but the adjective shows it: een groot huis, een grote tafel.</p></div>`},
+ 'cf:mv':{eyebrow:'Meervoud · de regels',title:'one → more',concept:1,html:()=>tab([['de jas, de jassen','de jas','de <b class="end">jassen</b> · short vowel: double the s'],['de rok, de rokken','de rok','de <b class="end">rokken</b>'],['de laars, de laarzen','de laars','de <b class="end">laarzen</b> · s becomes z'],['de muur, de muren','de muur','de <b class="end">muren</b> · long vowel written once'],['de sjaal, de sjaals','de sjaal','de <b class="end">sjaals</b> · + s'],['de tafel, de tafels','de tafel','de <b class="end">tafels</b> · -el, -er, -en: + s'],['de sofa, de sofa\'s','de sofa','de <b class="end">sofa\'s</b> · after a, o, u: \'s']])+`<div class="fam"><p>Most nouns: <b>+ en</b>, with the spelling rules. Plurals always take <b>de</b>.</p></div>`},
+ 'cf:aj':{eyebrow:'Adjectief · één regel',title:'+ e or not?',concept:1,html:()=>tab([['een groen hemd','een groen hemd','het-word after een: <b class="end">no -e</b>'],['het groene hemd','het groene hemd','after het (de, dit, mijn …): <b class="end">+ e</b>'],['een groene jas','een groene jas','de-word: <b class="end">+ e</b>'],['groene hemden','groene hemden','plural: <b class="end">+ e</b>'],['het hemd is groen','het hemd is groen','after is / zijn: <b class="end">no -e</b>'],['een houten tafel','een houten tafel','-en, -e, plastic, effen: <b class="end">never -e</b>']])+`<div class="fam"><p>Spelling with -e: groot → <b>grote</b> (long vowel once), wit → <b>witte</b> (short vowel: double), grijs → <b>grijze</b>, lief → <b>lieve</b>.</p></div>`},
+ 'cf:ez':{eyebrow:'Er-zin · één regel',title:'Er staat · ligt · hangt',concept:1,html:()=>tab([['Er staat een kast tegen de muur.','Er <b class="end">staat</b> een kast tegen de muur.','upright'],['Er ligt een tapijt onder de tafel.','Er <b class="end">ligt</b> een tapijt onder de tafel.','flat'],['Er hangt een schilderij boven de zetel.','Er <b class="end">hangt</b> een schilderij boven de zetel.','on the wall'],['Er liggen drie kussens in de zetel.','Er <b class="end">liggen</b> drie kussens in de zetel.','two or more']])+`<div class="fam"><p><b>Er</b> + verb + what + where. One thing: <b>staat, ligt, hangt</b>. Two or more: <b>staan, liggen, hangen</b>.</p></div>`},
+ 'cf:rg':{eyebrow:'Regels · één regel',title:'Je moet · Je mag',concept:1,html:()=>tab([['Je moet op tijd komen.','Je <b class="end">moet</b> op tijd komen.','verplicht'],['Je mag een vraag stellen.','Je <b class="end">mag</b> een vraag stellen.','toegelaten'],['Je mag geen koffie drinken.','Je mag <b class="end">geen</b> koffie drinken.','verboden + noun'],['Je mag hier niet roken.','Je mag hier <b class="end">niet</b> roken.','verboden + verb']])+`<div class="fam"><p>moet / mag is the verb in 2nd place; the <b>infinitive goes to the end</b>. <b>geen</b> before a noun without de / het, <b>niet</b> with the verb.</p></div>`}};
+const blockDef=n=>({...BLOCKS[n],html:BLOCKS[n].html()});
+const blockSeen=n=>!!(S._bk&&S._bk[n]);
+function showBlock(cur,name){const B=blockDef(name);
+ app.innerHTML=`${topBar(cur)}
+ <article class="card intro"><p class="eyebrow">${esc(B.eyebrow)}<span class="tag">nieuw</span></p><h2 class="prompt">${esc(B.title)}</h2>${B.html}
+  <p class="note">${canSpeak?'Tap a row to hear it. ':''}From here these are written straight away.</p></article>
+ <div class="two"><button class="check" id="got">${L('Begrepen!','got it')}</button></div>`;
+ $('#qx').onclick=home;
+ $('#got').onclick=()=>{S._bk={...(S._bk||{}),[name]:1};save();ask()};
+ $('#got').focus({preventScroll:true})}
+
+/* ---------- modes: what kind of exercise this is ---------- */
+const MODES={
+ betek:{nl:'Betekenis',en:'meaning',gr:'Dutch → English',ic:MI('<path d="M4 19V5a2 2 0 0 1 2-2h12v16H6a2 2 0 0 0-2 2"/><path d="M8 7h6M8 11h4"/>')},
+ vert:{nl:'Vertaling',en:'translation',gr:'English → Dutch; nouns with de or het',ic:MI('<path d="M3 5h8"/><path d="M7 3v2c0 4-2 7-4 8"/><path d="M5 9c1 2 3 3.5 5 4"/><path d="m12 21 4.5-10L21 21"/><path d="M13.5 18h6"/>')},
+ lidw:{nl:'Lidwoord',en:'article',gr:'de or het?',ic:DICON.lw.replace('<svg','<svg')},
+ meerv:{nl:'Meervoud',en:'plural',gr:'one → more',ic:DICON.mv},
+ adj:{nl:'Adjectief',en:'adjective',gr:'with or without -e',ic:DICON.aj},
+ erzin:{nl:'Er-zin',en:'there is / there are',gr:'Er staat / ligt / hangt …',ic:DICON.ez},
+ regels:{nl:'Regels',en:'rules',gr:'Je moet · Je mag · geen · niet',ic:DICON.rg},
+ examen:{nl:'Examen',en:'exam task',gr:'write as on the exam',ic:DICON.ex}};
+const modeOf=(it,q)=>({m:q.mode||'vert',d:String(q.eyebrow||'').split(' · ')[1]||null});
+function subOf(q){return String(q.sub||'')}
+function headHTML(cur,q){const M=modeOf(cur.it,q),m=MODES[M.m],x=[];
+ if(cur.retry)x.push(`<span class="mx r">${L('2de poging','second try')}</span>`);
+ if(q.kind==='mc'&&!sess.test)x.push(`<span class="mx">${L('opwarming · telt niet','warm-up · does not count yet')}${cur.slot==='fix'&&S[cur.it.id]&&S[cur.it.id].dr?' · '+L('niveau gezakt','dropped a level','after 3 wrong in a row'):''}</span>`);
+ if(q.kind==='intro')x.push(`<span class="mx">${L('nieuw','new')}</span>`);
+ if(cur.it.isNew&&q.kind!=='intro')x.push(`<span class="mx r">${L('nieuw','new content from the book')}</span>`);
+ if(cur.practice)x.push(`<span class="mx">${L('extra','extra, does not count')}</span>`);
+ if(cur.burst)x.push(`<span class="mx">${L(`reeks ${cur.burst.k}/${cur.burst.n}`,`rapid fire: ${cur.burst.k} of ${cur.burst.n}`,'',esc(cur.burst.name))}</span>`);
+ const d=M.d&&EYE[M.d];
+ return {m:M.m,html:`<div class="lab"><span class="mode">${m.ic}${L(m.nl,m.en,m.gr)}</span>${d?`<span class="mdet">${L(d[0],d[1])}</span>`:''}${x.join('')}</div>`}}
+
+function ask(){hideTip();sheetOff();delete app.dataset.mode;
+ if(sess.i>=sess.queue.length)return results();
+ const cur=sess.queue[sess.i],b0=box(cur.it.id);
+ if(!cur.st)cur.st=sess.test?'write':b0<0?'intro':b0<1?'pick':'write';
+ if(sess.test)cur.st='write';
+ if(cur.st==='intro'&&b0>=0)cur.st=b0<1?'pick':'write';
+ if(cur.it.pattern&&cur.st==='pick')cur.st='write';
+ if(!sess.test&&cur.st==='pick'&&!cur.again&&written(cur.it)&&!(S[cur.it.id]&&S[cur.it.id].dr)&&!(sess.introduced&&sess.introduced.has(cur.it.id)))cur.st='write';
+ if(!sess.test&&cur.it.block&&!blockSeen(cur.it.block))return showBlock(cur,cur.it.block);
+ if(cur.st==='intro'&&cur.it.pattern){if(!S[cur.it.id]){S[cur.it.id]={b:1,n:0,w:0,due:round(),f:dayKey()};sess.fresh++;save()}cur.st='write'}
+ const q=cur.it.make(cur.st==='pick'?'pick':'write');cur.q=q;
+ if(cur.st==='pick'&&!q.options)cur.st='write';
+ q.kind=cur.st==='intro'?'intro':cur.st==='pick'?'mc':'type';
+ const canHint=!sess.test&&q.kind==='type';let usedHint=false;
+ const H=headHTML(cur,q);app.dataset.mode=H.m;const sub=subOf(q);
+
+ if(q.kind==='intro'){
+  app.innerHTML=`${topBar(cur)}
+  <article class="card intro">${H.html}
+   <p class="meaning">${esc(q.prompt)}</p><div class="prow"><h2 class="prompt">${gl(q.answer)}</h2>${spkBtn(q.sayAns)}</div>
+   ${q.note?`<p class="note">${esc(q.note)}</p>`:''}
+  </article>
+  <div class="two"><button class="check" id="got">${L('Begrepen!','got it')}</button><button class="next" id="knowit" style="background:var(--blue-soft);color:var(--blue)">${L('Ken ik al · later testen','I know this · test me later')}</button></div>
+  <button class="ghost ov" id="hideit">${L('Verberg · niet nu','hide · not now')}</button>`;
+  $('#qx').onclick=home;
+  if(autoAudio)say(q.sayAns);
+  $('#knowit').onclick=()=>{S[cur.it.id]={b:1,n:0,w:0,due:round()+2,f:dayKey()};save();sess.fresh++;sess.put({it:cur.it,st:'write',slot:'new'},3);next()};
+  $('#hideit').onclick=()=>hideAndSkip(cur.it.id);
+  $('#got').onclick=()=>{(sess.introduced=sess.introduced||new Set()).add(cur.it.id);S[cur.it.id]={b:0,n:0,w:0,due:round(),f:dayKey()};save();sess.fresh++;sess.put({it:cur.it,st:'pick',slot:'new'},3);next()};
+  $('#got').focus({preventScroll:true});
+  return}
+
+ const dutchPrompt=q.say||/___|·/.test(q.prompt)||q.mode==='lidw'||q.mode==='meerv'||q.mode==='adj';
+ app.innerHTML=`${topBar(cur)}
+ <article class="card">${H.html}
+  <div class="prow">${promptHTML(q,null,dutchPrompt)}${spkBtn(q.say)}</div>${sub?`<p class="sub">${esc(sub)}</p>`:''}
+  <p class="hint" id="hintx" hidden>${esc(hintOf(q))}</p></article>
+ ${q.kind==='mc'
+  ?`<div class="opts">${q.options.map((o,i)=>`<button class="opt" data-i="${i}"><kbd class="kn">${i+1}</kbd><span class="ot">${esc(o)}</span></button>`).join('')}</div><p class="ktyped" id="ktyped" hidden></p>`
+  :`<form class="typed" id="tf"><input id="ti" type="text" lang="nl" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" aria-label="Your answer" placeholder="Schrijf in het Nederlands…">
+     <div class="two"><button class="check" type="submit">${L('Controleer','check')}</button>${canHint?'<button class="next alt" type="button" id="hb">'+L('Tip','hint')+'</button>':''}</div></form>`}
+ <div id="fb"></div>`;
+ $('#qx').onclick=home;
+ if(q.kind==='mc'){const right=q.answer;app.querySelectorAll('.opt').forEach(btn=>btn.onclick=()=>{if(btn.classList.contains('done'))return;
+   const isOk=o=>o===right;const given=q.options[+btn.dataset.i],res=isOk(given)?'right':'wrong';
+   app.querySelectorAll('.opt').forEach(x=>{x.classList.add('done');x.setAttribute('aria-disabled','true');const o=q.options[+x.dataset.i];if(isOk(o))x.classList.add('right');else if(x===btn)x.classList.add('wrong');
+    const mn=meaningOf(o,q);if(mn){x.classList.add('gw','gw-plain');x.dataset.g=mn;if(x===btn&&!isOk(o))x.insertAdjacentHTML('beforeend',`<span class="omean">${esc(mn)}</span>`)}});
+   finish(res,given)})}
+ else{const ti=$('#ti');ti.focus();
+   const hb=$('#hb');if(hb)hb.onclick=()=>{usedHint=true;$('#hintx').hidden=false;hb.disabled=true;ti.focus()};
+   $('#tf').onsubmit=e=>{e.preventDefault();if(ti.readOnly){next();return}if(!ti.value.trim())return;
+     let r;if(q.check)r=q.check(ti.value);else{const g=norm(ti.value),acc=q.accept.map(norm);r={res:acc.includes(g)?'right':acc.map(strip).includes(strip(g))?'accent':'wrong'}}
+     if(usedHint&&r.res==='right')r.res='hint';
+     ti.readOnly=true;app.querySelector('#tf .two').hidden=true;finish(r.res,ti.value,r.msg,false,r)}}
+}
+
+const MARKS={hint:['Goed, met een tip.'],right:['Goed zo!','Super!','Proficiat!','Amai, goed!','Perfect!'],accent:['Bijna! Let op de schrijfwijze.'],wrong:['Oei…','Nog niet.','Helaas…']};
+function finish(res,given,msg,quick,r){r=r||{};
+ const cur=sess.queue[sess.i],q=cur.q,id=cur.it.id;
+ const prev=S[id]?{...S[id]}:null,prevDay=S._d?{...S._d}:null;
+ sess.done=sess.done||new Set();
+ const warmup=q.kind==='mc'&&!sess.test,counts=!warmup&&!cur.retry&&!sess.done.has(id)&&!cur.practice;if(counts)sess.done.add(id);
+ if(counts)record(id,res,given);else{S._d={d:dayKey(),n:todayCount()+1};save()}
+ const entry={it:cur.it,q,res,given,retry:cur.retry,counts,firstTry:!warmup&&!cur.retry,slot:cur.slot};sess.log.push(entry);
+ let requeued=false;
+ /* warm-up: a miss gets one more warm-up; after that (right or not) the written answer follows, exactly once */
+ if(warmup){if(res!=='right'&&!cur.again)sess.put({it:cur.it,st:'pick',slot:cur.slot,again:1},2);else sess.put({it:cur.it,st:'write',slot:cur.slot},3)}
+ else if(res!=='right'&&sess.nut&&(cur.tries||1)<3){sess.put({it:cur.it,st:'write',retry:true,tries:(cur.tries||1)+1,slot:cur.slot},3);requeued=true}
+ else if(res!=='right'&&!cur.retry&&!sess.nut&&!cur.practice){sess.queue.push({it:cur.it,st:'write',retry:true,slot:cur.slot});requeued=true}
+ sess.answeredAt=sess.i;saveSess();
+ if(quick)return next();
+ const shown=q.answer;
+ let tgt=q.kind==='type'&&q.accept?q.accept[0]:q.answer;
+ const pe=app.querySelector('.card .prompt');
+ if(pe&&String(q.prompt).includes('___'))pe.outerHTML=promptHTML(q,q.answer,1);
+ const cls=res==='right'||res==='hint'?'r':res==='accent'?'a':'w';
+ /* the result sheet: the correct answer (what you missed in green), what you actually said, why, then Volgende */
+ const typedMiss=res!=='right'&&res!=='hint'&&q.kind==='type';
+ const conf=typedMiss&&!r.mark?confusedWith(given,q):null;
+ const ns=r.notes||[];
+ let ansHTML='';
+ if(typedMiss){const A=answerFor(given,shown);ansHTML=esc(A.pre)+glQ(A.best,q,missedMarks(given,A.best))+A.rest.map(x=>' / '+glQ(x,q)).join('')}
+ else ansHTML=glQ(shown,q);
+ const rows=[];
+ if(conf)rows.push(['You said',`<p class="said">“${esc(conf.text)}” = ${esc(conf.mean)}</p>`]);
+ if(ns.length)rows.push(['Why',ns.map(([k,t])=>`<p><span class="wk">${esc(KIND[k]||k)}</span>${t}</p>`).join('')]);
+ const IC={pen:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16z"/></svg>',
+  ok:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>',
+  later:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>',
+  hide:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12s3.5-6 9-6 9 6 9 6-3.5 6-9 6-9-6-9-6z"/><path d="M4 4l16 16"/></svg>'};
+ const acts=[];
+ if(res!=='right'&&res!=='hint'&&tgt)acts.push(`<button class="act" id="drill">${IC.pen}${L('Schrijf 3×','write it 3 times')}</button>`);
+ if(res==='wrong'&&q.kind==='type'&&counts)acts.push(`<button class="act ov" id="ov">${IC.ok}${L('Was ook juist','my answer was correct too')}</button>`);
+ if(res==='right'&&counts&&!sess.test)acts.push(`<button class="act ov" id="easy">${IC.later}${L('Te makkelijk','too easy · later','','Pushes this term further back.')}</button>`);
+ if(!(sess.test||cur.practice))acts.push(`<button class="act ov hidebtn" id="hideit">${IC.hide}${L('Verberg','hide this term')}</button>`);
+ const notes=[msg||'',
+  q.note&&(res!=='right'||q.kind==='mc')?esc(q.note):'',
+  res==='hint'?'Write it once without the hint and it counts as known.':'',
+  res==='accent'?'Spelling counts on the exam, so this one stays on your list.':'',
+  warmup?'Warm-up: you write it later this round, and that answer counts. Tap any option to see what it means.':''].filter(Boolean);
+ const mark=r.mark&&res!=='right'?r.mark:pick(MARKS[res]);
+ $('#fb').innerHTML=`<div class="fb sheet ${cls}" role="region" aria-label="Result"><span class="grip" aria-hidden="true"></span>
+  <p class="mark">${esc(mark)}</p>
+  <div class="ansline"><p>${ansHTML}</p>${spkBtn(q.sayAns)}</div>
+  ${rows.length?`<div class="yb"><div class="box">${rows.map(([l,h])=>`<div class="yr">${l?`<small>${l}</small>`:''}${h}</div>`).join('')}</div></div>`:''}
+  ${notes.map(n=>`<p class="note">${n}</p>`).join('')}
+  <button class="next" id="nx">${L('Volgende','next')} →</button>
+  ${acts.length?`<div class="acts" style="--n:${acts.length}">${acts.join('')}</div>`:''}</div><div class="fbpad" aria-hidden="true"></div>`;
+ $('#nx').onclick=next;const hb2=$('#hideit');if(hb2)hb2.onclick=()=>hideAndSkip(id);
+ const dr=$('#drill');if(dr)dr.onclick=()=>drill(tgt,q);
+ const ez=$('#easy');if(ez)ez.onclick=()=>{const t=S[id];t.b=Math.min(t.b+1,6);t.due=round()+1+GAP[t.b];save();next()};
+ const ov=$('#ov');if(ov)ov.onclick=()=>{if(prev)S[id]=prev;else delete S[id];if(prevDay)S._d=prevDay;record(id,'right');entry.res='right';if(requeued)sess.queue.pop();next()};
+ /* the sheet sits over the bottom of the screen: leave room under the answer so nothing is hidden behind it */
+ const sh=app.querySelector('#fb .sheet'),pad=app.querySelector('#fb .fbpad');
+ const fit=()=>{if(pad&&sh&&sh.isConnected){pad.style.height=sh.offsetHeight+'px';document.body.classList.add('has-sheet');document.documentElement.style.setProperty('--sheet-h',sh.offsetHeight+'px')}};fit();
+ if(window.ResizeObserver&&sh){new ResizeObserver(fit).observe(sh)}
+ const ti=$('#ti');if(ti&&matchMedia('(pointer:coarse)').matches)ti.blur();
+ if(q.kind!=='type'||matchMedia('(pointer:coarse)').matches)$('#nx').focus({preventScroll:true});
+ requestAnimationFrame(()=>{if(pad)pad.scrollIntoView({block:'end',behavior:'smooth'})});
+ if(autoAudio)say(q.sayAns);
+}
+function sheetOff(){document.body.classList.remove('has-sheet')}
+function hideAndSkip(id){hideTerm(id);for(let k=sess.queue.length-1;k>sess.i;k--)if(sess.queue[k].it.id===id)sess.queue.splice(k,1);next()}
+function next(){sheetOff();kbuf='';if(sess){sess.answeredAt=null;app.querySelectorAll('input').forEach(x=>x.setAttribute('value',x.value));sess.hist=sess.hist||[];sess.hist.push(app.innerHTML);if(sess.hist.length>40)sess.hist.shift()}sess.i++;saveSess();ask()}
+function review(k){const H=sess.hist;closeReview();const ov=document.createElement('div');ov.id='review';
+ ov.innerHTML=`<div class="rv-bar"><button class="qx" id="rv-old" aria-label="Earlier exercise" ${k===0?'disabled':''}>←</button><span>${L('Vorige oefening','earlier exercise')} · −${H.length-k}</span><button class="rv-back" id="rv-cur">${L('Terug naar de oefening','back to where I was')} →</button></div><div class="rv-body">${H[k]}</div>`;
+ document.body.appendChild(ov);
+ ov.querySelectorAll('.rv-body .qtop,.rv-body #fb .ov,.rv-body #drill,.rv-body #nx,.rv-body .two').forEach(x=>x.remove());
+ ov.querySelectorAll('.rv-body button:not([data-say]),.rv-body input').forEach(x=>{x.disabled=true;x.removeAttribute('id')});
+ ov.querySelectorAll('.rv-body [id]').forEach(x=>x.removeAttribute('id'));
+ ov.querySelector('#rv-cur').onclick=closeReview;const o=ov.querySelector('#rv-old');if(o)o.onclick=()=>review(k-1);ov.scrollTop=0}
+function closeReview(){const r=document.getElementById('review');if(r)r.remove()}
+document.addEventListener('click',e=>{if(e.target&&e.target.id==='qb'&&sess&&sess.hist&&sess.hist.length)review(sess.hist.length-1)});
+
+/* optional copy drill after a miss: twice with the answer visible, the third time from memory */
+function drill(t,q){sheetOff();let n=0;const fb=$('#fb');
+ const draw=msg=>{
+  fb.innerHTML=`<div class="fb"><p class="eyebrow">${L('Schrijf het 3 keer','write it 3 times')} · ${n}/3</p>
+   ${n<2?`<div class="ansline"><p>${glQ(t,q)}</p>${spkBtn(q.sayAns)}</div>`
+     :`<p class="note">Last one: from memory.</p><div class="ansline" id="pk" hidden><p>${glQ(t,q)}</p></div><button type="button" class="ghost ov" id="peek">Show it</button>`}
+   <form class="typed" id="df"><input id="di" type="text" lang="nl" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" aria-label="Write the answer" placeholder="Schrijf het…">
+    <button class="check" type="submit">${L('Controleer','check')}</button></form>
+   ${msg?`<p class="note">${msg}</p>`:''}
+   <button class="ghost ov" id="dskip">${L('Stop · verder','stop and continue')} →</button></div>`;
+  const di=$('#di');di.focus();
+  const pk=$('#peek');if(pk)pk.onclick=()=>{$('#pk').hidden=false;pk.hidden=true;di.focus()};
+  $('#dskip').onclick=next;
+  $('#df').onsubmit=e=>{e.preventDefault();if(!di.value.trim())return;
+   if(normS(di.value)===normS(t)){n++;if(autoAudio&&n===3)say(q.sayAns);
+    if(n>=3){fb.innerHTML='<div class="fb r"><p class="mark">Klaar!</p></div>';setTimeout(next,700)}else draw('✓ Goed.')}
+   else draw('Not quite. Write it exactly as shown.')};
+  fb.scrollIntoView({block:'nearest',behavior:'smooth'})};
+ draw('')}
+
+function results(){delete app.dataset.mode;
+ hideTip();clearSess();
+ const first=sess.drill?sess.log.filter(l=>l.firstTry):sess.log.filter(l=>l.counts),ok=first.filter(l=>l.res==='right').length;
+ if(!sess.counted){sess.counted=1;if(!sess.nut&&!sess.drill){S._r=round()+1;today().r++;if(!sess.test&&first.length)S._acc={ok,n:first.length}}save()}
+ const missed=[];first.forEach(l=>{if(l.res!=='right'&&!missed.find(m=>m.it===l.it))missed.push(l)});
+ const cs=currentStage(),up=cs>sess.stage0;
+ app.innerHTML=`
+ <header class="row"><p class="eyebrow">${esc(sess.title)} · ronde ${round()} klaar</p>
+  <p class="score">${ok}<small> / ${first.length} ${L('juist geschreven','written right')}</small></p>
+  <p class="lede">${sess.fresh?`${sess.fresh} new term${sess.fresh>1?'s':''} this round. `:''}${!sess.test&&first.length&&ok/first.length<0.5?'Next round brings fewer new terms, so you can fix these first. ':''}${up?`<b>Next stage unlocked: ${esc(STAGES[cs].n)}.</b> `:''}${missed.length?'Missed questions came back once at the end. Here they are again:':'Clean round. Proficiat!'}</p></header>
+ ${missed.length?`<div class="miss"><ul>${missed.map(l=>`<li><p class="q">${esc(String(l.q.prompt).replace('___','…'))}${l.q.sub?' · '+esc(l.q.sub):''}</p><p class="a">${glQ(l.q.answer,l.q)}</p></li>`).join('')}</ul></div>`:''}
+ <div class="row">
+  ${sess.drill?`<button class="cta2" id="again-drill">Nog 5 · ${esc(sess.title.replace('Reeks · ',''))}</button>`:''}
+  <button class="cta" id="more"><span>${sess.test?'Verder leren':'Volgende ronde'}</span><small>${sess.test?L('terug naar het leren','back to learning'):L(`${mix().n+mix().m+mix().c} antwoorden`,`${mix().n+mix().m+mix().c} written answers`)}</small></button>
+  ${missed.length?'<button class="cta2" id="again">'+L('Nog eens: alleen de fouten','again: just the ones I missed')+'</button>':''}
+  <button class="ghost" id="hm">${L('Terug','go back')}</button></div>`;
+ if(missed.length)$('#again').onclick=()=>start(shuffle(missed.map(m=>({it:m.it,st:'write'}))),'Herhaling',sess.test);
+ const ad=$('#again-drill');if(ad){const key=(DRILLS.find(d=>'Reeks · '+d[1]===sess.title)||[])[0];ad.onclick=()=>startDrill(key)}
+ $('#more').onclick=()=>{const r=buildRound(vis());start(r.queue,'Leren',false)};
+ $('#hm').onclick=home}
+
+/* ---------- Spiekbriefje: the cheat sheet ---------- */
+/* reading texts with a text (chapter files: reading: [...], exam.json: reading: [...]) */
+const READ=[...CH.flatMap(c=>(c.reading||[]).map(r=>({...r,ch:c.ch}))),...(EXAM.reading||[])].filter(r=>r.text);
+function sheet(){
+ hideTip();closeReview();view='sheet';sess=null;nav.hidden=false;app.className='app';setTab('sheet');
+ const t=(head,rows,nlCols)=>`<div class="tw"><table class="wl"><thead><tr>${head.map(h=>`<th>${h}</th>`).join('')}</tr></thead><tbody>${rows.map(r=>`<tr>${r.map((c,i)=>nlCols.includes(i)?`<td class="say" data-say="${esc(sp(c))}">${gl(c)}</td>`:`<td>${esc(c)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+ const het=NOUNS.filter(e=>e.art==='het');
+ app.innerHTML=`
+ <header class="row"><p class="eyebrow">Spiekbriefje · cheat sheet</p><h1>${L('Alles voor het examen','everything for the exam')}</h1>
+  <p class="lede">${esc(EXAM.title)}: ${esc(EXAM.product||'')} · chapters ${EXAM.scope.join(', ')}${EXAM.noPerfectum?' · no perfectum':''}. ${canSpeak?'Tap blue Dutch text to hear it.':''}</p></header>
+ <details open><summary>Het examen · 4 schrijftaken</summary>
+  ${EXAM.drills.slice().sort((a,b)=>a.code.localeCompare(b.code)).map(d=>`<p class="rule"><b>${esc(d.code)} · ${esc(d.nl)}</b><br>${esc(d.task)}</p>`).join('')}
+ </details>
+ <details><summary>de of het? · het-woorden</summary>
+  <p class="tip">These are het-words; everything else in your word list is a de-word. Plural: always de.</p>
+  ${t(['het-word','plural','English'],het.map(e=>[`het ${e.word}`,e.pl?`de ${e.pl}`:'—',e.en]),[0,1])}
+ </details>
+ <details><summary>Adjectief + e</summary>
+  ${t(['example','rule'],[['een groen hemd','het-word after een: no -e'],['het groene hemd','after de / het / dit / mijn …: + e'],['een groene jas','de-word: + e'],['groene hemden','plural: + e'],['het hemd is groen','after is / zijn: no -e'],['een houten tafel','-en, -e, plastic, effen: never -e']],[0])}
+  ${t(['adjective','+ e','English'],ADJ_ALL.filter(a=>a.study&&a.attr&&!/\s/.test(a.base)).map(a=>[a.base,a.e,a.en]),[0,1])}
+ </details>
+ <details><summary>Er staat · ligt · hangt</summary>
+  ${t(['in a room','verb'],NOUNS.filter(e=>e.er).map(e=>[`${e.art} ${e.word}`,e.er.map(v=>ERW[v].sg+' / '+ERW[v].pl).join(' · ')]),[0,1])}
+  <p class="tip"><b>One thing:</b> Er staat / ligt / hangt een … <b>Two or more:</b> Er staan / liggen / hangen …</p>
+ </details>
+ <details><summary>Regels · moet · mag · geen · niet</summary>
+  ${t(['sentence','meaning'],EXAM.places.flatMap(p=>p.rules.slice(0,3)).map(r=>[r.nl,r.en]),[0])}
+ </details>
+ ${CH.map(c=>`<details><summary>H${c.ch} · ${esc(c.title)}</summary>${t(['Nederlands','plural','English'],c.words.map(w=>[w.nl,w.pl?'de '+w.pl:w.sep?'ik '+w.sep:'',w.en]),[0,1])}${(c.sentences||[]).length?`<p class="tip"><b>Dit kan ik!</b></p>${t(['zin','English'],c.sentences.map(x=>[x.nl,x.en]),[0])}`:''}</details>`).join('')}
+ ${READ.length?`<details><summary>Leesteksten · reading</summary>${READ.map(r=>`<div class="rule"><b>${esc(r.nl)}</b>${r.en?` <span class="muted">· ${esc(r.en)}</span>`:''}<p class="say" style="white-space:pre-line">${gl(r.text)}</p>
+   ${(r.questions||[]).map((q,k)=>`<details class="rq"><summary>${k+1}. ${gl(q.q)}</summary><p>${gl(q.a)}${q.en?` <span class="muted">· ${esc(q.en)}</span>`:''}</p></details>`).join('')}</div>`).join('')}</details>`:''}
+ <details id="rules"><summary>Grammatica · alle regels</summary>
+  ${RULES.map(r=>`<p class="rule"><b>${esc(r.t)}</b> <span class="muted">· ${esc(r.en)}</span><br>${esc(r.x)}<br><span class="muted">${r.ex.map(esc).join(' · ')}</span></p>`).join('')}
+ </details>`;
+}
+
+/* what an option means (shown after answering a multiple-choice question) */
+let MEANS=null;
+function meanTable(){if(MEANS)return MEANS;const m=new Map(),put=(k,v)=>{if(k&&v&&!m.has(k))m.set(k,v)};
+ WL.forEach(w=>{put(w.nl,w.en);put(w.en,'= '+w.nl);if(w.pos==='noun')put(`${w.art==='de'?'het':'de'} ${w.word}`,`✗ ${w.word} is a ${AN(w.art)}: ${w.nl}`)});
+ Object.values(ERW).forEach(v=>{});return MEANS=m}
+function meaningOf(opt,q){if(q.mean&&q.mean[opt])return q.mean[opt];const t=meanTable().get(opt);if(t)return t;const g=glossWord(opt);return g?g.filter(Boolean).join(' · '):null}
+/* a wrong answer that is another word of the course: name it */
+let ANS=null;
+function answerIndex(){if(ANS)return ANS;ANS=new Map();WL.forEach(w=>{ANS.set(strip(norm(w.nl)),{text:w.nl,mean:w.en,id:w.id});if(w.pl)ANS.set(strip(norm('de '+w.pl)),{text:'de '+w.pl,mean:'plural of '+w.nl,id:w.id})});return ANS}
+function confusedWith(given,q){const g=strip(norm(given));if(!g)return null;const own=new Set([...(q.accept||[]),q.answer].filter(Boolean).map(a=>strip(norm(a))));
+ const hit=answerIndex().get(g);if(!hit||own.has(strip(norm(hit.text))))return null;return hit}
+/* keyboard for multiple choice: 1–4 picks; typing letters highlights the matching option, Enter picks it */
+let kbuf='';
+document.addEventListener('keydown',e=>{
+ if(!sess||e.metaKey||e.ctrlKey||e.altKey||document.getElementById('review'))return;const opts=[...document.querySelectorAll('.opts .opt')];
+ if(opts.length&&opts[0].classList.contains('done')&&e.key==='Enter'){const nx=document.getElementById('nx');if(nx){e.preventDefault();nx.click()}return}
+ if(!opts.length||opts[0].classList.contains('done'))return;if(document.activeElement&&/INPUT|TEXTAREA/.test(document.activeElement.tagName))return;
+ const show=()=>{const t=document.getElementById('ktyped');const k=strip(kbuf.toLowerCase());let hit=-1;
+  opts.forEach((o,i)=>{const txt=strip(o.textContent.replace(/^\d/,'').toLowerCase());const m=k&&txt.startsWith(k);o.classList.toggle('khit',m&&hit<0);if(m&&hit<0)hit=i});
+  if(t){t.hidden=!kbuf;t.textContent=kbuf?`Typed: ${kbuf}${hit<0?' · no match':' · Enter to pick'}`:''}return hit};
+ if(/^[1-9]$/.test(e.key)&&!kbuf){const o=opts[+e.key-1];if(o){e.preventDefault();o.click()}return}
+ if(e.key==='Enter'){const h=show();if(h>=0){e.preventDefault();kbuf='';opts[h].click()}return}
+ if(e.key==='Backspace'){if(kbuf){e.preventDefault();kbuf=kbuf.slice(0,-1);show()}return}
+ if(e.key==='Escape'){kbuf='';show();return}
+ if(e.key.length===1&&/[\p{L}\p{N} ,.!?'-]/u.test(e.key)){e.preventDefault();kbuf+=e.key;show()}
+});
+document.addEventListener('click',e=>{const b=e.target.closest('[data-say]');if(b&&!e.target.closest('.gw'))say(b.dataset.say)});
+
+/* ---------- the look: a band of cement tiles on the home screen, the app mark (src/icon.svg, put in by build.py) ---------- */
+const THEME_BAND=`<div class="band" aria-hidden="true"><svg viewBox="0 0 390 30" preserveAspectRatio="xMidYMid slice"><defs><pattern id="tg" width="30" height="30" patternUnits="userSpaceOnUse"><rect width="30" height="30" fill="#233A5E"/><circle cx="0" cy="0" r="11" fill="#D9A441"/><circle cx="30" cy="0" r="11" fill="#D9A441"/><circle cx="0" cy="30" r="11" fill="#D9A441"/><circle cx="30" cy="30" r="11" fill="#D9A441"/><circle cx="15" cy="15" r="5" fill="#F4EFE5"/></pattern></defs><rect width="390" height="30" fill="url(#tg)"/></svg></div>`;
+const LOGO=`<span class="logo" aria-hidden="true"><svg viewBox="0 0 1024 1024"><rect width="1024" height="1024" fill="#233A5E"/><rect x="150" y="190" width="600" height="300" rx="150" fill="#F4EFE5"/><path d="M367.4560546875 422.6953125C383.1787109375 422.6953125 395.1953125 415.5078125 400.5859375 401.58203125H400.6982421875V420.0H445.1708984375V252.666015625H400.2490234375V316.904296875H400.13671875C392.6123046875 304.4384765625 382.392578125 298.7109375 367.0068359375 298.7109375C337.24609375 298.7109375 316.2451171875 324.2041015625 316.2451171875 360.478515625C316.2451171875 398.212890625 336.34765625 422.6953125 367.4560546875 422.6953125ZM380.8203125 387.431640625C368.5791015625 387.431640625 361.6162109375 376.875 361.6162109375 360.478515625C361.6162109375 344.1943359375 368.5791015625 333.75 380.8203125 333.75C393.0615234375 333.75 401.8212890625 344.1943359375 401.8212890625 360.478515625C401.8212890625 376.875 393.0615234375 387.431640625 380.8203125 387.431640625ZM522.998046875 422.6953125C554.21875 422.6953125 579.375 405.5126953125 583.7548828125 381.2548828125H543.9990234375C541.5283203125 387.65625 534.3408203125 391.474609375 524.794921875 391.474609375C511.767578125 391.474609375 503.90625 384.0625 503.5693359375 371.484375H584.2041015625V359.4677734375C584.2041015625 323.8671875 558.486328125 298.7109375 522.099609375 298.7109375C485.712890625 298.7109375 459.9951171875 324.4287109375 459.9951171875 360.703125C459.9951171875 396.9775390625 486.0498046875 422.6953125 522.998046875 422.6953125ZM503.90625 346.328125C505.478515625 336.5576171875 512.44140625 330.830078125 523.3349609375 330.830078125C534.228515625 330.830078125 541.19140625 336.5576171875 542.763671875 346.328125Z" fill="#233A5E"/><rect x="274" y="534" width="600" height="300" rx="150" fill="#D9A441"/><path d="M442.37890625 701.109375C442.37890625 687.408203125 448.3310546875 680.669921875 458.8876953125 680.669921875C469.4443359375 680.669921875 475.396484375 687.408203125 475.396484375 699.3125V764.0H520.318359375V689.205078125C520.318359375 660.6796875 506.7294921875 642.7109375 480.337890625 642.7109375C462.14453125 642.7109375 450.240234375 651.1337890625 442.37890625 664.2734375V596.666015625H397.45703125V764.0H442.37890625ZM598.1455078125 766.6953125C629.3662109375 766.6953125 654.5224609375 749.5126953125 658.90234375 725.2548828125H619.146484375C616.67578125 731.65625 609.48828125 735.474609375 599.9423828125 735.474609375C586.9150390625 735.474609375 579.0537109375 728.0625 578.716796875 715.484375H659.3515625V703.4677734375C659.3515625 667.8671875 633.6337890625 642.7109375 597.2470703125 642.7109375C560.8603515625 642.7109375 535.142578125 668.4287109375 535.142578125 704.703125C535.142578125 740.9775390625 561.197265625 766.6953125 598.1455078125 766.6953125ZM579.0537109375 690.328125C580.6259765625 680.5576171875 587.5888671875 674.830078125 598.482421875 674.830078125C609.3759765625 674.830078125 616.3388671875 680.5576171875 617.9111328125 690.328125ZM755.708984375 645.40625H731.2265625V613.0625H686.3046875V645.40625H666.314453125V679.546875H686.3046875V728.51171875C686.3046875 753.21875 699.8935546875 764.0 731.001953125 764.0H755.708984375V729.859375H741.55859375C733.3603515625 729.859375 731.2265625 727.7255859375 731.2265625 720.650390625V679.546875H755.708984375Z" fill="#233A5E"/></svg></span>`;
+
+/* ======================================================================
+   Exam drills (SD1, SD3, SD4, SD5): a picture made from content/exam.json, free text, the checker's report
+   and model answers. A picture is drawn from a number (seed), so it comes back the same after a reload.
+   ====================================================================== */
+const shuffleR=(R,a)=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(R()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+const HEX=c=>EXAM.colours[c]||c||'#999';
+const lum=h=>{const n=parseInt(String(h).slice(1),16);if(isNaN(n))return 1;return(0.299*(n>>16&255)+0.587*(n>>8&255)+0.114*(n&255))/255};
+const contrast=h=>lum(h)>.62?'#2B2F38':'#FFFFFF';
+let PID=0;
+/* a fill: colour, or colour with a pattern (gestreept, geruit, gebloemd, met bolletjes) */
+function fillDef(colour,pattern,defs){const c=HEX(colour);if(!pattern||pattern==='effen')return c;const id='pt'+(++PID),k=contrast(c);
+ const P={gestreept:`<rect width="10" height="10" fill="${c}"/><rect width="10" height="4" fill="${k}" opacity=".85"/>`,
+  geruit:`<rect width="10" height="10" fill="${c}"/><rect width="5" height="10" fill="${k}" opacity=".35"/><rect width="10" height="5" fill="${k}" opacity=".35"/>`,
+  gebloemd:`<rect width="12" height="12" fill="${c}"/><circle cx="6" cy="6" r="2.6" fill="${k}"/><circle cx="6" cy="2.8" r="1.6" fill="${k}" opacity=".8"/><circle cx="6" cy="9.2" r="1.6" fill="${k}" opacity=".8"/><circle cx="2.8" cy="6" r="1.6" fill="${k}" opacity=".8"/><circle cx="9.2" cy="6" r="1.6" fill="${k}" opacity=".8"/>`,
+  'met bolletjes':`<rect width="10" height="10" fill="${c}"/><circle cx="5" cy="5" r="2.2" fill="${k}"/>`}[pattern];
+ const s=pattern==='gebloemd'?12:10;defs.push(`<pattern id="${id}" width="${s}" height="${s}" patternUnits="userSpaceOnUse">${P}</pattern>`);return `url(#${id})`}
+
+/* ---------- SD1: a person ---------- */
+function makePerson(R,n){const P=EXAM.people,who=pickR(R,P.who),f=who.f,ok=x=>!x.only||(x.only==='f')===f;
+ const cols=Object.keys(EXAM.colours),col=(not)=>{let c;do{c=pickR(R,cols)}while(not&&not.includes(c));return c};
+ const pat=()=>R()<.6?'effen':pickR(R,['gestreept','geruit','gebloemd','met bolletjes']);
+ const items=[];let top=null;
+ if(f&&R()<P.dress.p){top={...P.dress,slot:'dress',colour:col(),pattern:pat(),len:pickR(R,P.dress.len),sleeves:pickR(R,P.dress.sleeves)};items.push(top)}
+ else if(!f&&R()<P.suit.p){top={noun:'het hemd',draw:'shirt',slot:'top',colour:pickR(R,['wit','lichtblauw']),pattern:'effen',sleeves:'lang'};items.push(top);items.push({...P.suit,slot:'suit',colour:pickR(R,P.suit.colours),pattern:'effen'})}
+ else{const t=pickR(R,P.top.filter(ok));top={...t,slot:'top',colour:col(),pattern:pat(),sleeves:pickR(R,t.sleeves)};items.push(top);const b=pickR(R,P.bottom.filter(ok));
+  items.push({...b,slot:'bottom',colour:b.colours?pickR(R,b.colours):col([top.colour]),pattern:b.plain?'effen':R()<.8?'effen':pat(),len:b.len?pickR(R,b.len):null})}
+ if(!items.some(i=>i.slot==='suit')){const o=P.over.find(o=>R()<o.p);if(o)items.push({...o,slot:'over',colour:col([top.colour]),pattern:'effen',len:o.len?pickR(R,o.len):null})}
+ const sh=pickR(R,P.shoes);items.push({...sh,slot:'shoes',colour:pickR(R,['zwart','bruin','wit','rood','blauw','grijs']),pattern:'effen',pl:true});
+ const acc=shuffleR(R,P.acc.filter(a=>ok(a)&&(!a.needs||items.some(i=>i.draw===a.needs))));const heads=['hat','cap','beanie'];let head=false,na=1+(R()<.6?1:0);
+ for(const a of acc){if(na<=0)break;if(heads.includes(a.draw)){if(head)continue;head=true}items.push({...a,slot:'acc',colour:a.plain?'zwart':col(),pattern:a.draw==='scarf'&&R()<.5?pickR(R,['gestreept','geruit']):'effen',pl:!!a.pl});na--}
+ return{n,who,items,skin:pickR(R,P.skin),hair:pickR(R,P.hair),alt:R()<.5}}
+/* the garment as a noun phrase: een lange, gebloemde jurk met korte mouwen · zwarte laarzen */
+function garmentObj(it){const e=nounNL(it.noun);const adjs=[];if(it.len)adjs.push(ADJ_BY.get(it.len));if(it.pattern&&it.pattern!=='effen'&&ADJ_BY.get(it.pattern)&&ADJ_BY.get(it.pattern).attr)adjs.push(ADJ_BY.get(it.pattern));
+ if(!it.plain)adjs.push(ADJ_BY.get(it.colour));return{noun:e,count:it.pl?2:1,bare:true,adjs:adjs.filter(Boolean),item:it}}
+const mouwen=it=>it.sleeves?` met ${it.sleeves==='lang'?'lange':'korte'} mouwen`:'';
+const mouwenEn=it=>it.sleeves?` with ${it.sleeves==='lang'?'long':'short'} sleeves`:'';
+const bolletjes=it=>it.pattern==='met bolletjes'?' met bolletjes':'';
+function garmentNL(it){return npNL(garmentObj(it))+bolletjes(it)+mouwen(it)}
+function garmentEN(it){const o=garmentObj(it);return npEN(o).replace(/^two /,'')+(it.pattern==='met bolletjes'?' with polka dots':'')+mouwenEn(it)}
+/* model answer for this picture */
+function personModel(p){const Pr=p.who.pron,pr=lo(Pr),Po=p.who.poss,it=p.items,top=it.find(i=>i.slot==='dress'||i.slot==='top'),bot=it.find(i=>i.slot==='bottom'||i.slot==='suit'),ov=it.find(i=>i.slot==='over'),
+  sh=it.find(i=>i.slot==='shoes'),acc=it.filter(i=>i.slot==='acc'),out=[`Persoon ${p.n} is ${p.who.nl}.`];
+ out.push(`${Pr} draagt ${garmentNL(top)}.`);
+ if(ov){const te=nounNL(top.noun);out.push(`Over ${te.art==='het'?'het':'de'} ${te.word} draagt ${pr} ${garmentNL(ov)}.`)}
+ if(bot)out.push(`${Pr} draagt ook ${garmentNL(bot)}.`);
+ const wear=acc.filter(a=>a.verb!=='heeft'),have=acc.filter(a=>a.verb==='heeft');
+ if(wear.length&&!wear[0].pl&&p.alt){const a=wear[0],e=nounNL(a.noun),c=a.colour;out.push(`${Po} ${e.word} is ${c}${a.pattern&&a.pattern!=='effen'&&ADJ_BY.get(a.pattern)?' en '+a.pattern:''}.`);out.push(`${Pr} draagt ${garmentNL(sh)}.`);wear.shift()}
+ else out.push(`${Po} ${nounNL(sh.noun).pl} zijn ${sh.colour}.`);
+ if(wear.length)out.push(`${Pr} draagt ook ${wear.map(garmentNL).join(' en ')}.`);
+ if(have.length)out.push(`${Pr} heeft ${have.map(a=>npNL({...garmentObj(a),adjs:[]})).join(' en ')}.`);
+ return out.join(' ')}
+function personEN(p){return [p.who.en,...p.items.map(garmentEN)]}
+function personSVG(p){const d=[],s=p.skin,h=p.hair,f=p.who.f,it=p.items,by=k=>it.find(i=>i.slot===k),dr=k=>it.find(i=>i.draw===k);
+ const fill=i=>fillDef(i.colour,i.pattern,d),o=[];
+ const top=by('dress')||by('top'),bot=by('bottom'),suit=by('suit'),ov=by('over'),sh=by('shoes');
+ if(f)o.push(`<ellipse cx="80" cy="56" rx="24" ry="36" fill="${h}"/>`);
+ /* arms and legs (skin) */
+ o.push(`<path d="M58 70 L45 144 M102 70 L115 144" stroke="${s}" stroke-width="13" stroke-linecap="round"/>`);
+ o.push(`<rect x="62" y="150" width="15" height="114" rx="6" fill="${s}"/><rect x="83" y="150" width="15" height="114" rx="6" fill="${s}"/>`);
+ /* bottom */
+ const bf=bot?fill(bot):suit?fill(suit):null;
+ if(bot&&bot.draw==='trousers'||suit)o.push(`<path d="M55 146 H105 L103 262 H84 L80 176 L76 262 H57 Z" fill="${bf}"/>`);
+ if(bot&&bot.draw==='shorts')o.push(`<path d="M55 146 H105 L104 198 H83 L80 172 L77 198 H56 Z" fill="${bf}"/>`);
+ if(bot&&bot.draw==='skirt'){const y=bot.len==='lang'?246:198;o.push(`<path d="M57 146 H103 L${bot.len==='lang'?116:112} ${y} H${bot.len==='lang'?44:48} Z" fill="${bf}"/>`)}
+ /* shoes */
+ const sc=fill(sh);
+ if(sh.draw==='boots')o.push(`<rect x="61" y="226" width="17" height="42" rx="5" fill="${sc}"/><rect x="82" y="226" width="17" height="42" rx="5" fill="${sc}"/><ellipse cx="67" cy="268" rx="12" ry="6" fill="${sc}"/><ellipse cx="93" cy="268" rx="12" ry="6" fill="${sc}"/>`);
+ else if(sh.draw==='sandals')o.push(`<ellipse cx="68" cy="268" rx="11" ry="5" fill="${s}"/><ellipse cx="92" cy="268" rx="11" ry="5" fill="${s}"/><path d="M58 266h20M82 266h20M60 270h18M82 270h18" stroke="${sc}" stroke-width="3"/>`);
+ else{o.push(`<ellipse cx="67" cy="267" rx="13" ry="7" fill="${sc}"/><ellipse cx="93" cy="267" rx="13" ry="7" fill="${sc}"/>`);if(sh.draw==='sneakers')o.push(`<path d="M55 271h25M81 271h25" stroke="#FFFFFF" stroke-width="3"/>`)}
+ /* top or dress */
+ const tf=fill(top);
+ if(top.slot==='dress'){const y=top.len==='lang'?250:204;o.push(`<path d="M57 66 Q80 60 103 66 L106 142 L${top.len==='lang'?120:114} ${y} H${top.len==='lang'?40:46} L54 142 Z" fill="${tf}"/>`)}
+ else o.push(`<path d="M57 66 Q80 60 103 66 L106 150 H54 Z" fill="${tf}"/>`);
+ const sl=top.sleeves==='lang'?'M58 70 L46 140 M102 70 L114 140':top.sleeves==='kort'?'M58 70 L52 100 M102 70 L108 100':'';
+ if(sl)o.push(`<path d="${sl}" stroke="${tf}" stroke-width="15" stroke-linecap="round"/>`);
+ if(top.draw==='shirt')o.push(`<path d="M72 63 L80 72 L88 63" fill="none" stroke="${contrast(HEX(top.colour))}" stroke-width="2" opacity=".6"/><path d="M80 74 V146" stroke="${contrast(HEX(top.colour))}" stroke-width="1.5" stroke-dasharray="2 6" opacity=".6"/>`);
+ if(top.draw==='jumper')o.push(`<rect x="54" y="142" width="52" height="8" fill="#000" opacity=".12"/>`);
+ /* suit jacket, coat, cardigan: open at the front */
+ const jacket=(c,yEnd)=>{const jf=fill(c);o.push(`<path d="M56 66 Q66 61 74 62 L80 100 L74 ${yEnd} H${yEnd>200?44:52} L54 140 Z" fill="${jf}"/><path d="M104 66 Q94 61 86 62 L80 100 L86 ${yEnd} H${yEnd>200?116:108} L106 140 Z" fill="${jf}"/><path d="M58 70 L46 140 M102 70 L114 140" stroke="${jf}" stroke-width="16" stroke-linecap="round"/>`)};
+ if(suit)jacket(suit,160);
+ if(ov)jacket(ov,ov.draw==='coat'?(ov.len==='lang'?226:178):152);
+ /* tie, belt, scarf, bag, gloves */
+ const tie=dr('tie');if(tie)o.push(`<path d="M77 66 H83 L85 74 L82 118 L80 122 L78 118 L75 74 Z" fill="${fill(tie)}"/>`);
+ const belt=dr('belt');if(belt)o.push(`<rect x="54" y="143" width="52" height="7" fill="${fill(belt)}"/><rect x="77" y="142" width="7" height="9" rx="1" fill="#D9A441"/>`);
+ const gl_=dr('gloves');if(gl_)o.push(`<circle cx="45" cy="146" r="7.5" fill="${fill(gl_)}"/><circle cx="115" cy="146" r="7.5" fill="${fill(gl_)}"/>`);else o.push(`<circle cx="45" cy="146" r="6" fill="${s}"/><circle cx="115" cy="146" r="6" fill="${s}"/>`);
+ const bag=dr('bag');if(bag)o.push(`<path d="M100 66 L126 126" stroke="${HEX(bag.colour)}" stroke-width="3"/><rect x="114" y="122" width="28" height="24" rx="5" fill="${fill(bag)}"/>`);
+ /* head */
+ o.push(`<rect x="74" y="52" width="12" height="14" fill="${s}"/><circle cx="80" cy="40" r="18" fill="${s}"/>`);
+ o.push(f?`<path d="M61 42 Q60 18 80 18 Q100 18 99 42 Q94 28 80 27 Q66 28 61 42 Z" fill="${h}"/>`:`<path d="M62 37 Q62 20 80 20 Q98 20 98 37 Q92 27 80 27 Q68 27 62 37 Z" fill="${h}"/>`);
+ o.push(`<circle cx="74" cy="41" r="1.8" fill="#2B2F38"/><circle cx="86" cy="41" r="1.8" fill="#2B2F38"/><path d="M75 48 Q80 52 85 48" fill="none" stroke="#2B2F38" stroke-width="1.5" stroke-linecap="round"/>`);
+ const scarf=dr('scarf');if(scarf){const sf=fill(scarf);o.push(`<rect x="64" y="55" width="32" height="10" rx="5" fill="${sf}"/><rect x="85" y="59" width="9" height="38" rx="3" fill="${sf}"/>`)}
+ const glasses=dr('glasses');if(glasses)o.push(`<circle cx="74" cy="41" r="5.5" fill="none" stroke="#2B2F38" stroke-width="1.8"/><circle cx="86" cy="41" r="5.5" fill="none" stroke="#2B2F38" stroke-width="1.8"/><path d="M79.5 41h1" stroke="#2B2F38" stroke-width="1.8"/>`);
+ const hat=dr('hat');if(hat)o.push(`<ellipse cx="80" cy="25" rx="30" ry="6" fill="${fill(hat)}"/><rect x="65" y="6" width="30" height="20" rx="7" fill="${fill(hat)}"/>`);
+ const cap=dr('cap');if(cap)o.push(`<path d="M62 30 Q62 14 80 14 Q98 14 98 30 Z" fill="${fill(cap)}"/><path d="M62 30 H46 Q50 25 62 26 Z" fill="${fill(cap)}"/>`);
+ const bea=dr('beanie');if(bea)o.push(`<path d="M61 32 Q61 10 80 10 Q99 10 99 32 Z" fill="${fill(bea)}"/><rect x="60" y="27" width="40" height="8" rx="3" fill="${fill(bea)}"/>`);
+ return `<svg viewBox="0 0 160 280" role="img" aria-label="Persoon ${p.n}: ${esc(personEN(p).join(', '))}"><defs>${d.join('')}</defs>${o.join('')}</svg>`}
+
+/* ---------- SD5: a room ---------- */
+function makeRoom(R){/* draw again until the room has at least 6 things, something that stands, lies and hangs, and every kind of adjective */
+ let r=null;for(let k=0;k<40;k++){r=makeRoom1(R);const t=new Set(r.objs.flatMap(o=>[erVerb(o),...o.adjs.map(a=>a.cat)]));
+  if(r.objs.length>=6&&['staan','liggen','hangen','colour','material','pattern','shape'].every(x=>t.has(x)))return r}return r}
+function makeRoom1(R){const room=pickR(R,EXAM.rooms),objs=[],anch={};
+ room.items.forEach(item=>{if(!item.always&&R()>=(item.p||1))return;const o=sceneObj(item,R);if(!o)return;objs.push(o);anch[item.key]=o});
+ const ok=objs.filter(o=>{const m=String(o.where||'').match(/\{(\w+)\}/g)||[];return m.every(x=>anch[x.slice(1,-1)])});
+ return{room,objs:ok,anch}}
+function roomModel(r){/* six sentences that together use staan, liggen, hangen and every kind of adjective in the picture */
+ const tags=o=>new Set([erVerb(o),...o.adjs.map(a=>a.cat)]),need=new Set(['staan','liggen','hangen','colour','material','pattern','shape']),out=[];
+ while(out.length<6){let best=null,bs=-1;r.objs.forEach(o=>{if(out.includes(o))return;const t=tags(o);let sc=[...t].filter(x=>need.has(x)).length*10+o.adjs.length;if(sc>bs){bs=sc;best=o}});
+  if(!best)break;out.push(best);tags(best).forEach(x=>need.delete(x))}
+ return out.sort((a,b)=>r.objs.indexOf(a)-r.objs.indexOf(b)).map(o=>erNL(o,r.anch)).join(' ')}
+const roomEN=r=>r.objs.map(o=>erEN(o,r.anch).replace(/^There (is|are) /,'').replace(/\.$/,''));
+function matHex(o,fallback){const m=o.adjs.find(a=>a.cat==='material'),c=o.adjs.find(a=>a.cat==='colour');
+ if(m&&EXAM.materials[m.base])return EXAM.materials[m.base];return c?HEX(c.base):fallback}
+const adjOf_=(o,cat)=>{const a=o.adjs.find(a=>a.cat===cat);return a?a.base:null};
+function roomSVG(r){const d=[],o=[];const W=r.room.window;
+ o.push(`<rect width="360" height="170" fill="#EFE6D6"/><rect y="170" width="360" height="90" fill="#C9A57A"/><rect y="166" width="360" height="6" fill="#B08C62"/>`);
+ if(W)o.push(`<rect x="${W[0]}" y="${W[1]}" width="${W[2]}" height="${W[3]}" fill="#F8F6F0" stroke="#B9AE98" stroke-width="3"/><rect x="${W[0]+4}" y="${W[1]+4}" width="${W[2]/2-6}" height="${W[3]/2-6}" fill="#CFE6F5"/><rect x="${W[0]+W[2]/2+2}" y="${W[1]+4}" width="${W[2]/2-6}" height="${W[3]/2-6}" fill="#CFE6F5"/><path d="M${W[0]+W[2]/2} ${W[1]}v${W[3]}M${W[0]} ${W[1]+W[3]/2}h${W[2]}" stroke="#B9AE98" stroke-width="3"/>`);
+ const order=['rug','curtains','painting','mirror','chandelier','wardrobe','cupboard','nightstand','bed','pillows','sofa','cushions','table','chairs','coffeetable','floorlamp','tablelamp','plant'];
+ r.objs.slice().sort((a,b)=>order.indexOf(a.item.draw)-order.indexOf(b.item.draw)).forEach(ob=>{const [x0,y0,w0,h0]=ob.item.at,size=adjOf_(ob,'size'),sc=size==='groot'?1.12:size==='klein'?.82:1;
+  const w=w0*sc,h=h0*sc,x=x0+(w0-w)/2,y=y0+(h0-h)*(ob.item.draw==='chandelier'?0:1),col=adjOf_(ob,'colour'),pat=adjOf_(ob,'pattern');
+  const f=pat&&pat!=='effen'?fillDef(col||'blauw',pat,d):matHex(ob,HEX(col||'grijs')),shape=adjOf_(ob,'shape'),round=shape==='rond'||shape==='ovaal',glass=adjOf_(ob,'material')==='glazen';
+  const D=ob.item.draw;
+  if(D==='sofa')o.push(`<rect x="${x}" y="${y}" width="${w}" height="${h*.6}" rx="10" fill="${f}"/><rect x="${x-6}" y="${y+h*.35}" width="18" height="${h*.62}" rx="8" fill="${f}"/><rect x="${x+w-12}" y="${y+h*.35}" width="18" height="${h*.62}" rx="8" fill="${f}"/><rect x="${x+8}" y="${y+h*.5}" width="${w-16}" height="${h*.36}" rx="6" fill="${f}"/><rect x="${x+8}" y="${y+h*.5}" width="${w-16}" height="${h*.36}" rx="6" fill="#fff" opacity=".14"/>`);
+  if(D==='cushions'||D==='pillows'){const n=ob.count,cw=Math.min(30,w/n-6);for(let k=0;k<n;k++)o.push(`<rect x="${x+k*(w/n)+(w/n-cw)/2}" y="${y}" width="${cw}" height="${h}" rx="6" fill="${f}" stroke="#00000022"/>`)}
+  if(D==='coffeetable'||D==='table'){const top=y+(D==='table'?10:6);o.push(`<path d="M${x+10} ${top} V${y+h} M${x+w-10} ${top} V${y+h}" stroke="${glass?'#8FB9CC':'#6B4A2B'}" stroke-width="4"/>`);
+   o.push(round?`<ellipse cx="${x+w/2}" cy="${top}" rx="${shape==='rond'?Math.min(w/2,h*1.2):w/2}" ry="${D==='table'?12:9}" fill="${glass?'#CFE9F4':f}" stroke="${glass?'#8FB9CC':'#00000030'}" stroke-width="2" ${glass?'opacity=".9"':''}/>`:`<rect x="${shape==='vierkant'?x+w*.18:x}" y="${top-7}" width="${shape==='vierkant'?w*.64:w}" height="12" rx="3" fill="${glass?'#CFE9F4':f}" stroke="${glass?'#8FB9CC':'#00000030'}" stroke-width="2"/>`)}
+  if(D==='rug')o.push(round?`<ellipse cx="${x+w/2}" cy="${y+h/2}" rx="${w/2}" ry="${h/2}" fill="${f}"/>`:`<path d="M${x+14} ${y} H${x+w-14} L${x+w} ${y+h} H${x} Z" fill="${f}"/>`);
+  if(D==='painting'){const fr='#8A5A34';o.push(round?`<ellipse cx="${x+w/2}" cy="${y+h/2}" rx="${w/2}" ry="${h/2}" fill="${fr}"/><ellipse cx="${x+w/2}" cy="${y+h/2}" rx="${w/2-5}" ry="${h/2-5}" fill="#9FD0B0"/>`:`<rect x="${shape==='vierkant'?x+(w-h)/2:x}" y="${y}" width="${shape==='vierkant'?h:w}" height="${h}" fill="${fr}"/><rect x="${(shape==='vierkant'?x+(w-h)/2:x)+5}" y="${y+5}" width="${(shape==='vierkant'?h:w)-10}" height="${h-10}" fill="#9FD0B0"/>`,`<circle cx="${x+w*.68}" cy="${y+h*.35}" r="${h*.12}" fill="#F7D23E"/><path d="M${x+8} ${y+h-6} l${w*.25} ${-h*.38} l${w*.18} ${h*.22} l${w*.15} ${-h*.15} l${w*.3} ${h*.31}z" fill="#3C9A55"/>`)}
+  if(D==='mirror')o.push(round?`<ellipse cx="${x+w/2}" cy="${y+h/2}" rx="${w/2}" ry="${h/2}" fill="#E8F1F5" stroke="#B9852B" stroke-width="4"/>`:`<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="#E8F1F5" stroke="#B9852B" stroke-width="4"/>`,`<path d="M${x+w*.3} ${y+h*.3} l${w*.25} ${-h*.12}" stroke="#fff" stroke-width="3"/>`);
+  if(D==='curtains'){const long=adjOf_(ob,'size')!=='kort',hh=long?166-y:h*.62;o.push(`<rect x="${x-4}" y="${y-2}" width="${w+8}" height="5" rx="2" fill="#6E7378"/><rect x="${x}" y="${y}" width="${w*.26}" height="${hh}" fill="${f}"/><rect x="${x+w*.74}" y="${y}" width="${w*.26}" height="${hh}" fill="${f}"/>`)}
+  if(D==='floorlamp')o.push(`<path d="M${x+w/2} ${y+h*.25} V${y+h}" stroke="#2B2F38" stroke-width="3"/><ellipse cx="${x+w/2}" cy="${y+h}" rx="12" ry="3.5" fill="#2B2F38"/><path d="M${x} ${y+h*.25} H${x+w} L${x+w*.75} ${y} H${x+w*.25} Z" fill="${f}"/>`);
+  if(D==='tablelamp')o.push(`<rect x="${x+w*.4}" y="${y+h*.45}" width="${w*.2}" height="${h*.55}" fill="#2B2F38"/><path d="M${x} ${y+h*.5} H${x+w} L${x+w*.78} ${y} H${x+w*.22} Z" fill="${f}"/>`);
+  if(D==='plant')o.push(`<path d="M${x+w*.2} ${y+h*.6} H${x+w*.8} L${x+w*.7} ${y+h} H${x+w*.3} Z" fill="#B0502D"/><ellipse cx="${x+w*.35}" cy="${y+h*.35}" rx="${w*.22}" ry="${h*.28}" fill="#3C9A55"/><ellipse cx="${x+w*.65}" cy="${y+h*.3}" rx="${w*.22}" ry="${h*.3}" fill="#2F8048"/><ellipse cx="${x+w*.5}" cy="${y+h*.18}" rx="${w*.2}" ry="${h*.22}" fill="#46A85F"/>`);
+  if(D==='chandelier'){const c=matHex(ob,'#2B2F38');o.push(`<path d="M${x+w/2} 0 V${y+h*.45}" stroke="#2B2F38" stroke-width="2"/><path d="M${x} ${y+h*.6} Q${x+w/2} ${y+h*.95} ${x+w} ${y+h*.6}" fill="none" stroke="${c==='#CFE9F4'?'#8FB9CC':c}" stroke-width="3"/>`);
+   [0,.5,1].forEach(t=>o.push(`<circle cx="${x+w*t}" cy="${y+h*.6}" r="5" fill="#F7D23E"/>`))}
+  if(D==='bed')o.push(`<rect x="${x}" y="${y}" width="${w*.12}" height="${h}" rx="4" fill="${matHex(ob,'#8A5A34')}"/><rect x="${x+w*.1}" y="${y+h*.4}" width="${w*.9}" height="${h*.42}" rx="6" fill="#F8F6F0"/><rect x="${x+w*.3}" y="${y+h*.38}" width="${w*.7}" height="${h*.46}" rx="6" fill="${col?HEX(col):'#93C8F2'}"/><rect x="${x+w*.12}" y="${y+h*.82}" width="${w*.86}" height="${h*.18}" fill="${matHex(ob,'#8A5A34')}"/>`);
+  if(D==='nightstand')o.push(`<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="3" fill="${f}"/><path d="M${x+4} ${y+h/2}H${x+w-4}" stroke="#00000040" stroke-width="2"/><circle cx="${x+w/2}" cy="${y+h*.28}" r="2" fill="#00000060"/>`);
+  if(D==='wardrobe'||D==='cupboard'){const lade=/ladekast/.test(ob.noun.lw);o.push(`<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="3" fill="${f}"/>`);
+   o.push(lade?[1,2,3].map(k=>`<path d="M${x+4} ${y+h*k/4}H${x+w-4}" stroke="#00000040" stroke-width="2"/>`).join(''):`<path d="M${x+w/2} ${y+4}V${y+h-4}" stroke="#00000040" stroke-width="2"/><circle cx="${x+w/2-6}" cy="${y+h/2}" r="2.5" fill="#00000060"/><circle cx="${x+w/2+6}" cy="${y+h/2}" r="2.5" fill="#00000060"/>`)}
+  if(D==='chairs'){const n=ob.count;for(let k=0;k<n;k++){const left=k%2===0,cx=left?x+8+Math.floor(k/2)*26:x+w-8-Math.floor(k/2)*26,cy=y+h*.55;
+    o.push(`<rect x="${cx-9}" y="${cy-30}" width="5" height="34" fill="${f}" ${left?'':'transform="translate(13 0)"'}/><rect x="${cx-10}" y="${cy}" width="20" height="5" fill="${f}"/><path d="M${cx-8} ${cy+5}v18M${cx+8} ${cy+5}v18" stroke="${f}" stroke-width="3"/>`)}}
+ });
+ return `<svg viewBox="0 0 360 260" role="img" aria-label="${esc(r.room.en)}: ${esc(roomEN(r).join(', '))}"><defs>${d.join('')}</defs>${o.join('')}</svg>`}
+
+/* ---------- SD3: a place with signs ---------- */
+function makeSigns(R){const P=pickR(R,EXAM.places),by=k=>shuffleR(R,P.rules.filter(r=>r.kind===k));const out=[];
+ ['moet','mag','geen','niet'].forEach(k=>{const r=by(k)[0];if(r)out.push(r)});shuffleR(R,P.rules).forEach(r=>{if(out.length<5&&!out.includes(r))out.push(r)});
+ return{place:P,rules:shuffleR(R,out)}}
+const SIGN_EN=r=>r.en.replace(/^You (have to|must|may not|may) /,'').replace(/\.$/,'');
+function signSVG(r){const e=esc(r.icon||'?');
+ if(r.kind==='moet')return `<svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="#2B5DB0"/><text x="32" y="42" text-anchor="middle" font-size="28">${e}</text></svg>`;
+ if(r.kind==='mag')return `<svg viewBox="0 0 64 64" aria-hidden="true"><rect x="3" y="3" width="58" height="58" rx="10" fill="#2E8B57"/><rect x="11" y="11" width="42" height="42" rx="6" fill="#FFFFFF"/><text x="32" y="42" text-anchor="middle" font-size="26">${e}</text></svg>`;
+ return `<svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="29" fill="#FFFFFF" stroke="#D0312D" stroke-width="6"/><text x="32" y="42" text-anchor="middle" font-size="26">${e}</text><path d="M13 13 L51 51" stroke="#D0312D" stroke-width="6" stroke-linecap="round"/></svg>`}
+function signsHTML(s){return `<p class="place">${esc(s.place.nl)}</p><div class="signs">${s.rules.map(r=>`<div class="sign">${signSVG(r)}<span>${esc(SIGN_EN(r))}</span></div>`).join('')}</div>`}
+
+/* ---------- the drill screen ---------- */
+const EXK='nl-test12-ex';
+const exState=()=>{try{return JSON.parse(localStorage.getItem(EXK)||'{}')||{}}catch(e){return{}}};
+const exSave=o=>{try{localStorage.setItem(EXK,JSON.stringify(o))}catch(e){}};
+let UNI=null;const universe=id=>{if(!UNI){const lw=nl=>{const e=nounNL(nl);return e?e.lw:null};
+  UNI={sd5:new Set(EXAM.rooms.flatMap(r=>r.items.flatMap(i=>i.nouns.map(lw))).filter(Boolean)),
+   sd1:new Set(['top','over','bottom','shoes','acc'].flatMap(k=>EXAM.people[k].map(x=>lw(x.noun))).concat([lw(EXAM.people.dress.noun),lw(EXAM.people.suit.noun)]).filter(Boolean))}}return UNI[id]};
+const NOUN_BY_LW=new Map(NOUNS_ALL.filter(e=>e.art).map(e=>[e.lw,e]));
+const SPEC={sd1:{min:4,needs:['dragen','colour']},sd5:{exact:6,erPos:true,needs:['er-staan','er-liggen','er-hangen','colour','material','pattern','shape','preps']},
+ sd3:{exact:5,needs:['moet','mag','geen','niet']},sd4:{min:9,letter:true,needs:['er3','comp2']}};
+function scene(id,seed){const R=rng(seed);if(id==='sd1')return{people:[makePerson(R,1),makePerson(R,2)]};if(id==='sd5')return makeRoom(R);if(id==='sd3')return makeSigns(R);return{}}
+function examView(id){hideTip();closeReview();sheetOff();view='exam';sess=null;nav.hidden=true;app.className='app quiz';app.dataset.mode='examen';
+ const D=EXAM.drills.find(d=>d.id===id),st=exState(),cur=st[id]=st[id]||{};if(!cur.seed)cur.seed=(Math.random()*1e9)|0;exSave(st);
+ const sc=scene(id,cur.seed),two=id==='sd1',texts=cur.text||(two?['','']:['']);
+ let pic='',en=[];
+ if(id==='sd1'){pic=`<div class="pic2">${sc.people.map(p=>`<div class="pic"><span class="ptag">${p.n}</span>${personSVG(p)}</div>`).join('')}</div>`;en=sc.people.map(p=>`Persoon ${p.n}: ${personEN(p).join(', ')}`)}
+ if(id==='sd5'){pic=`<div class="pic">${roomSVG(sc)}</div>`;en=[`${cap(sc.room.en)}:`,...roomEN(sc)]}
+ if(id==='sd3'){pic=`<div class="pic" style="flex-direction:column;align-items:center">${signsHTML(sc)}</div>`;en=sc.rules.map(r=>r.en)}
+ if(id==='sd4'){pic=`<div class="card"><p class="eyebrow">${L('E-mail van je leerkracht','e-mail from your teacher')}</p><p style="white-space:pre-line">${gl(D.mail)}</p></div>
+   <div class="card"><p class="eyebrow">${L('Vergelijk met','compare with')}</p><p><b>${gl(D.compare.nl)}</b></p><p class="note">${D.compare.facts.map(esc).join(' · ')}</p></div>`}
+ const ta=(k,label,ph)=>`${label?`<label class="tlab" for="ext${k}">${label}</label>`:''}<textarea id="ext${k}" lang="nl" autocapitalize="sentences" spellcheck="false" placeholder="${esc(ph)}" aria-label="${esc(label||'Your text')}">${esc(texts[k]||'')}</textarea><p class="count2" id="cnt${k}"></p>`;
+ app.innerHTML=`<div class="qtop"><button class="qx" id="qx" aria-label="Back to home">✕</button><span class="mode">${MODES.examen.ic}${L('Examen','exam task')}</span><span class="mdet">${esc(D.code)}</span><span class="count">${S._ex&&S._ex[id]?L(`poging ${S._ex[id].n+1}`,`attempt ${S._ex[id].n+1}`):''}</span></div>
+ <header class="row"><h1>${L(D.nl,D.en)}</h1><p class="task">${esc(D.task)}</p></header>
+ ${pic}
+ ${id!=='sd4'?`<div class="exrow"><button class="ghost" id="newpic">${L(id==='sd3'?'Andere plaats':'Nieuwe tekening','new picture')}</button><button class="ghost" id="showen">${L('In het Engels','show in English')}</button></div><ul class="enlist" id="enl" hidden>${en.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:''}
+ <form class="typed" id="exf">${two?ta(0,'Persoon 1',`Persoon 1 is een …`)+ta(1,'Persoon 2',`Persoon 2 is een …`):ta(0,'',id==='sd4'?'Beste …,\n\nIk woon in …\n\nMet vriendelijke groeten,\n…':id==='sd3'?'Je moet …':'Er staat …')}
+  <button class="check" type="submit">${L('Controleer','check')}</button></form>
+ <div id="exres" class="chk"></div>`;
+ $('#qx').onclick=()=>{saveTexts();home()};
+ const nb=$('#newpic');if(nb)nb.onclick=()=>{const s=exState();s[id]={seed:(Math.random()*1e9)|0,text:readTexts()};exSave(s);examView(id)};
+ const se=$('#showen');if(se)se.onclick=()=>{const l=$('#enl');l.hidden=!l.hidden};
+ const areas=[...app.querySelectorAll('#exf textarea')];
+ function readTexts(){return areas.map(a=>a.value)}
+ function saveTexts(){const s=exState();s[id]={...(s[id]||{}),seed:cur.seed,text:readTexts()};exSave(s)}
+ const spec=SPEC[id];
+ const upd=()=>areas.forEach((a,k)=>{const t=spec.letter?letterParts(a.value).body:a.value,n=splitSentences(t).length,want=spec.exact||spec.min;$('#cnt'+k).textContent=`${n} / ${want}${spec.min?'+':''} ${n===1?'zin':'zinnen'}`});
+ areas.forEach(a=>a.addEventListener('input',()=>{upd();saveTexts()}));upd();
+ $('#exf').onsubmit=e=>{e.preventDefault();saveTexts();showCheck(id,D,sc,readTexts())};
+ if(cur.checked&&texts.some(t=>t.trim()))showCheck(id,D,sc,texts,true)}
+function showCheck(id,D,sc,texts,quiet){const spec=SPEC[id],res=[];
+ if(id==='sd1')texts.forEach((t,k)=>{const p=sc.people[k];res.push({label:`Persoon ${k+1}`,r:checkText(t,{...spec,universe:universe('sd1'),scene:p.items.map(i=>({nl:i.noun,lw:[nounNL(i.noun)].filter(Boolean).flatMap(e=>[e.lw,lo(e.pl||'')])}))}),model:personModel(p)})});
+ else{const extra=id==='sd5'?{universe:universe('sd5'),scene:sc.objs.map(o=>({nl:o.count>1&&o.noun.pl?`de ${o.noun.pl}`:`${o.noun.art} ${o.noun.word}`,lw:[...o.item.nouns.map(n=>(nounNL(n)||{}).lw),lo(o.noun.pl||'')].filter(Boolean)}))}:{};res.push({label:'',r:checkText(texts[0],{...spec,...extra}),model:id==='sd5'?roomModel(sc):id==='sd3'?sc.rules.map(r=>r.nl).join(' '):null})}
+ const all=res.every(x=>x.r.ok),nIss=res.reduce((a,x)=>a+x.r.nIss+x.r.missing.length+(x.r.count?1:0),0),nS=res.reduce((a,x)=>a+x.r.n,0),nOk=res.reduce((a,x)=>a+x.r.S.filter(s=>!s.issues.length).length,0);
+ if(!quiet){S._ex={...(S._ex||{}),[id]:{n:((S._ex||{})[id]||{n:0}).n+1,ok:all,last:nIss}};save();const s=exState();s[id]={...(s[id]||{}),checked:1};exSave(s)}
+ const sentHTML=(s,k)=>`<div class="sent ${s.issues.length?'bad':s.tips.length?'tip':''}"><p class="st"><span class="n">${k+1}</span>${markSentence(s)}</p>
+   ${s.issues.length||s.tips.length?`<ul class="iss">${s.issues.map(i=>`<li><span class="wk">${esc(KIND[i.k]||i.k)}</span>${i.msg}</li>`).join('')}${s.tips.map(t=>`<li><span class="wk t">Tip</span>${t}</li>`).join('')}</ul>`:''}</div>`;
+ const block=x=>{const r=x.r,good=r.S.map((s,k)=>[s,k]).filter(([s])=>!s.issues.length&&!s.tips.length).map(([,k])=>k+1),shown=r.S.map((s,k)=>[s,k]).filter(([s])=>s.issues.length||s.tips.length);
+  return `${x.label?`<h3>${esc(x.label)}</h3>`:''}
+  ${r.count?`<div class="sent bad"><ul class="iss"><li><span class="wk">${L('Aantal zinnen','number of sentences')}</span>${esc(r.count)}</li></ul></div>`:''}
+  ${shown.map(([s,k])=>sentHTML(s,k)).join('')}
+  ${good.length?`<p class="okline">✓ ${good.length===r.n?'All sentences are right.':`${good.length===1?'Sentence':'Sentences'} ${good.join(', ')} ${good.length===1?'is':'are'} right.`}</p>`:''}
+  ${r.missing.map(m=>`<div class="sent tip"><ul class="iss"><li><span class="wk t">${L('Nog niet','not yet')}</span>${m}</li></ul></div>`).join('')}
+  ${r.tips.map(t=>`<p class="note">${t}</p>`).join('')}
+  ${x.model?`<div class="model"><small>${L('Voorbeeld bij deze tekening','an example for this picture')}</small><p>${gl(x.model)}</p>${spkBtn(x.model)}</div>`:''}`};
+ const bookModel=id==='sd1'?[EXAM.models.persoon1,EXAM.models.persoon2]:id==='sd5'?[EXAM.models.kamer]:id==='sd3'?[EXAM.models.regels]:[EXAM.models.woning];
+ $('#exres').innerHTML=`<div class="sum ${all?'ok':'bad'}"><p class="mark">${all?pick(['Proficiat!','Amai, perfect!','Super!']):nIss<=2?'Bijna!':'Nog wat werk'}</p>
+   <p>${nOk} van ${nS} zinnen juist${nIss?` · ${nIss} ${nIss===1?'ding':'dingen'} te verbeteren`:''}</p></div>
+  ${res.map(block).join('')}
+  <div class="model"><small>${L('Voorbeeld uit de les','the example from class')}</small>${bookModel.filter(Boolean).map(m=>`<p style="white-space:pre-line">${gl(m)}</p>`).join('')}</div>
+  <div class="exrow"><button class="ghost" id="exagain">${L('Verbeter je tekst','edit your text')} ↑</button><button class="ghost" id="exnew">${L('Nieuwe opdracht','new task')}</button></div>`;
+ $('#exagain').onclick=()=>{const a=app.querySelector('#exf textarea');if(a){a.scrollIntoView({behavior:'smooth',block:'center'});a.focus({preventScroll:true})}};
+ $('#exnew').onclick=()=>{const s=exState();s[id]={seed:(Math.random()*1e9)|0};exSave(s);examView(id);scrollTo(0,0)};
+ if(!quiet)requestAnimationFrame(()=>$('#exres').scrollIntoView({behavior:'smooth',block:'start'}))}
+
+drawNav();$('#t-home').onclick=()=>home();$('#t-sheet').onclick=sheet;$('#t-set').onclick=()=>settingsView();
+if(!resumeSess())home();
+</script>

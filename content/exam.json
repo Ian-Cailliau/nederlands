@@ -1,0 +1,177 @@
+{
+ "title": "Schriftelijk examen 1.2",
+ "date": "2026-10-29",
+ "scope": [1, 3, 4, 5],
+ "noPerfectum": true,
+ "note": "studeer boek schriftelijk deel 1-3-4-5, geen perfectum",
+ "product": "evaluatie schriftelijk PRODUCT 1: SD1, SD3, SD4, SD5",
+ "drills": [
+  {"id": "sd1", "code": "SD1", "nl": "Beschrijf persoon 1 en persoon 2", "en": "Describe person 1 and person 2", "min": 4, "people": 2,
+   "task": "Write at least 4 sentences about each person: what they wear, colours, patterns, long or short."},
+  {"id": "sd5", "code": "SD5", "nl": "Beschrijf de kamer", "en": "Describe the room", "exact": 6,
+   "task": "Write exactly 6 sentences. Use Er staat / staan, Er ligt / liggen and Er hangt / hangen, adjectives (colour, material, pattern, shape) and prepositions (in, op, onder, naast, voor, tussen, boven, tegen, aan)."},
+  {"id": "sd4", "code": "SD4", "nl": "Schrijf een e-mail over je woning", "en": "Write an e-mail about your home", "min": 9, "letter": true,
+   "task": "Answer your teacher's e-mail. Write at least 9 sentences: where you live and what your home looks like, at least 3 sentences with Er (Er is …, Er zijn …) and 2 with a comparative (groter dan …). Start with Beste / Dag + name, end with Met vriendelijke groeten and your name.",
+   "mail": "Beste cursist,\n\nIk wil graag meer weten over jouw woning. Waar woon je? Hoe ziet jouw woning eruit? Vergelijk jouw woning met het oude appartement van Yumi en Ken in Gent.\n\nVriendelijke groeten,\nJe leerkracht",
+   "compare": {"nl": "Het oude appartement van Yumi en Ken in Gent", "facts": ["52 m²", "1 slaapkamer", "gelijkvloers", "een klein terras (2 m²)", "geen lift", "geen garage", "€ 790 + € 60 kosten per maand", "bouwjaar 1993", "EPC C"]}},
+  {"id": "sd3", "code": "SD3", "nl": "Schrijf 5 zinnen", "en": "Write 5 sentences about the rules", "exact": 5,
+   "task": "Write 5 sentences with Je moet … + infinitive, Je mag … + infinitive, Je mag geen + noun and Je mag … niet + infinitive."}
+ ],
+ "models": {
+  "persoon1": "Persoon 1 is een vrouw. Ze draagt een lange, gebloemde jurk met korte mouwen. Over de jurk draagt ze een korte, bruine leren jas. Ze draagt ook zwarte laarzen en een grote, rode tas. Haar sjaal is geel en gestreept.",
+  "persoon2": "Persoon 2 is een man. Hij draagt een wit hemd met lange mouwen en een effen, blauwe das. Hij draagt ook een grijs kostuum en een zwarte leren riem. Zijn schoenen zijn bruin. Hij heeft een zwarte hoed en een bril.",
+  "kamer": "Er staat een grote, grijze stoffen zetel tegen de muur. Er staat een ronde, glazen salontafel voor de zetel. Er ligt een dik, rood tapijt onder de salontafel. Er liggen drie gestreepte kussens in de zetel. Er hangt een groot schilderij boven de zetel. Er hangen lange, blauwe gordijnen voor het raam.",
+  "woning": "Beste Sarah,\n\nIk woon in een appartement in Brugge. Het appartement ligt in een rustige straat, dicht bij het station. Er zijn twee slaapkamers. Er is een grote keuken met een eettafel. Er is ook een klein terras, maar er is geen tuin. De woonkamer is licht en modern. Mijn appartement is groter dan het oude appartement van Yumi en Ken in Gent. Hun appartement heeft maar één slaapkamer. Mijn appartement is ook duurder, want de huurprijs is 850 euro per maand. Ik woon hier graag, omdat de buurt gezellig is.\n\nMet vriendelijke groeten,\nAnna",
+  "regels": "Je moet op tijd komen. Je moet je smartphone uitzetten. Je mag een vraag stellen. Je mag in de klas geen koffie drinken. Je mag tijdens het examen niet praten."
+ },
+ "colours": {
+  "wit": "#FFFFFF", "geel": "#F7D23E", "rood": "#D7372F", "blauw": "#2E62C9", "groen": "#3C9A55", "oranje": "#F08A24",
+  "paars": "#7D4FB8", "roze": "#F3A6C2", "bruin": "#8A5A34", "grijs": "#9AA1A8", "zwart": "#25272B",
+  "lichtblauw": "#93C8F2", "donkerblauw": "#1F2F6E"
+ },
+ "materials": {"houten": "#B98149", "glazen": "#CFE9F4", "leren": "#6B3F22", "stoffen": null, "ijzeren": "#6E7378", "plastic": null},
+ "patterns": {"effen": "plain", "gestreept": "striped", "geruit": "checked", "gebloemd": "flowered", "met bolletjes": "polka-dot"},
+ "people": {
+  "who": [{"nl": "een vrouw", "en": "a woman", "f": true, "pron": "Ze", "poss": "Haar"}, {"nl": "een man", "en": "a man", "f": false, "pron": "Hij", "poss": "Zijn"}],
+  "skin": ["#F3CDA9", "#DDA77C", "#B07548", "#7B4B2B"],
+  "hair": ["#2B1D14", "#6B4226", "#D2A54E", "#8E8E8E", "#A4401F"],
+  "top": [
+   {"noun": "het hemd", "draw": "shirt", "sleeves": ["lang", "kort"]},
+   {"noun": "het T-shirt", "draw": "tee", "sleeves": ["kort"]},
+   {"noun": "de bloes", "draw": "blouse", "only": "f", "sleeves": ["lang", "kort"]},
+   {"noun": "de trui", "draw": "jumper", "sleeves": ["lang"]},
+   {"noun": "de sweater", "draw": "jumper", "sleeves": ["lang"]}
+  ],
+  "over": [
+   {"noun": "de jas", "draw": "coat", "p": 0.35, "len": ["lang", "kort"]},
+   {"noun": "het vest", "draw": "cardigan", "p": 0.2}
+  ],
+  "bottom": [
+   {"noun": "de broek", "draw": "trousers"},
+   {"noun": "de jeansbroek", "draw": "trousers", "colours": ["blauw", "donkerblauw", "lichtblauw", "zwart"], "plain": true},
+   {"noun": "de short", "draw": "shorts"},
+   {"noun": "de rok", "draw": "skirt", "only": "f", "len": ["lang", "kort"]}
+  ],
+  "dress": {"noun": "de jurk", "draw": "dress", "p": 0.45, "len": ["lang", "kort"], "sleeves": ["lang", "kort"]},
+  "suit": {"noun": "het kostuum", "draw": "suit", "p": 0.35, "colours": ["grijs", "zwart", "donkerblauw", "blauw", "bruin"]},
+  "shoes": [
+   {"noun": "de schoen", "draw": "shoes"}, {"noun": "de sneaker", "draw": "sneakers"},
+   {"noun": "de laars", "draw": "boots"}, {"noun": "de sandaal", "draw": "sandals"}
+  ],
+  "acc": [
+   {"noun": "de hoed", "draw": "hat"}, {"noun": "de pet", "draw": "cap"}, {"noun": "de muts", "draw": "beanie"},
+   {"noun": "de sjaal", "draw": "scarf"}, {"noun": "de das", "draw": "tie", "needs": "shirt", "only": "m"},
+   {"noun": "de riem", "draw": "belt"}, {"noun": "de tas", "draw": "bag"},
+   {"noun": "de bril", "draw": "glasses", "plain": true, "verb": "heeft"}, {"noun": "de handschoen", "draw": "gloves", "pl": true}
+  ]
+ },
+ "rooms": [
+  {"id": "woonkamer", "nl": "de woonkamer", "en": "living room", "window": [18, 34, 70, 78],
+   "items": [
+    {"key": "zetel", "nouns": ["de zetel", "de sofa"], "draw": "sofa", "at": [126, 108, 132, 64], "where": "tegen de muur", "whereEn": "against the wall", "cats": [["size", "colour"], ["material", "pattern"]], "materials": ["stoffen", "leren"], "always": true},
+    {"key": "kussens", "nouns": ["het kussen"], "draw": "cushions", "at": [140, 112, 104, 22], "count": [2, 3], "where": "in {zetel}", "whereEn": "on the {zetel}", "cats": [["pattern", "colour"]], "p": 0.85},
+    {"key": "salontafel", "nouns": ["de salontafel"], "draw": "coffeetable", "at": [150, 186, 84, 26], "where": "voor {zetel}", "whereEn": "in front of the {zetel}", "cats": [["shape"], ["material"]], "materials": ["glazen", "houten"], "always": true},
+    {"key": "tapijt", "nouns": ["het tapijt"], "draw": "rug", "at": [118, 204, 148, 30], "where": "onder {salontafel}", "whereEn": "under the {salontafel}", "cats": [["size", "colour"], ["pattern"]], "p": 0.9},
+    {"key": "schilderij", "nouns": ["het schilderij"], "draw": "painting", "at": [162, 40, 60, 42], "where": "boven {zetel}", "whereEn": "above the {zetel}", "cats": [["size"], ["shape"]], "p": 0.9},
+    {"key": "gordijnen", "nouns": ["het gordijn"], "draw": "curtains", "at": [10, 26, 86, 132], "count": [2], "where": "voor het raam", "whereEn": "in front of the window", "cats": [["size", "colour"], ["pattern"]], "p": 0.85},
+    {"key": "lamp", "nouns": ["de lamp"], "draw": "floorlamp", "at": [270, 80, 30, 92], "verb": "staan", "where": "naast {zetel}", "whereEn": "next to the {zetel}", "cats": [["size", "colour"]], "p": 0.7},
+    {"key": "plant", "nouns": ["de plant"], "draw": "plant", "at": [96, 132, 28, 52], "where": "tussen het raam en {zetel}", "whereEn": "between the window and the {zetel}", "cats": [["size"]], "p": 0.6},
+    {"key": "luchter", "nouns": ["de luchter"], "draw": "chandelier", "at": [176, 0, 34, 30], "where": "boven {salontafel}", "whereEn": "above the {salontafel}", "cats": [["colour"], ["material"]], "materials": ["glazen", "ijzeren"], "p": 0.5}
+   ]},
+  {"id": "slaapkamer", "nl": "de slaapkamer", "en": "bedroom", "window": [262, 30, 72, 76],
+   "items": [
+    {"key": "bed", "nouns": ["het bed", "het tweepersoonsbed"], "draw": "bed", "at": [96, 116, 150, 78], "where": "tegen de muur", "whereEn": "against the wall", "cats": [["size"], ["material", "colour"]], "materials": ["houten", "ijzeren"], "always": true},
+    {"key": "kussens", "nouns": ["het kussen"], "draw": "pillows", "at": [104, 118, 70, 16], "count": [2], "where": "op {bed}", "whereEn": "on the {bed}", "cats": [["colour", "pattern"]], "p": 0.8},
+    {"key": "nachtkastje", "nouns": ["het nachtkastje"], "draw": "nightstand", "at": [50, 144, 40, 40], "where": "naast {bed}", "whereEn": "next to the {bed}", "cats": [["size"], ["material"]], "materials": ["houten", "plastic"], "always": true},
+    {"key": "lamp", "nouns": ["de lamp"], "draw": "tablelamp", "at": [56, 112, 28, 32], "verb": "staan", "where": "op {nachtkastje}", "whereEn": "on the {nachtkastje}", "cats": [["size", "colour"]], "p": 0.8},
+    {"key": "kleerkast", "nouns": ["de kleerkast", "de ladekast"], "draw": "wardrobe", "at": [258, 88, 72, 100], "where": "naast {bed}", "whereEn": "next to the {bed}", "cats": [["size"], ["material"]], "materials": ["houten"], "p": 0.85},
+    {"key": "tapijt", "nouns": ["het tapijt"], "draw": "rug", "at": [102, 206, 130, 26], "where": "voor {bed}", "whereEn": "in front of the {bed}", "cats": [["shape", "colour"], ["pattern"]], "p": 0.8},
+    {"key": "schilderij", "nouns": ["het schilderij"], "draw": "painting", "at": [140, 36, 62, 40], "where": "boven {bed}", "whereEn": "above the {bed}", "cats": [["size"], ["shape"]], "p": 0.7},
+    {"key": "spiegel", "nouns": ["de spiegel"], "draw": "mirror", "at": [26, 42, 34, 54], "where": "aan de muur", "whereEn": "on the wall", "cats": [["shape"], ["size"]], "p": 0.6},
+    {"key": "gordijnen", "nouns": ["het gordijn"], "draw": "curtains", "at": [254, 22, 88, 130], "count": [2], "where": "voor het raam", "whereEn": "in front of the window", "cats": [["size", "colour"], ["pattern"]], "p": 0.8}
+   ]},
+  {"id": "eetkamer", "nl": "de eetkamer", "en": "dining room", "window": [268, 30, 70, 80],
+   "items": [
+    {"key": "tafel", "nouns": ["de tafel"], "draw": "table", "at": [104, 140, 132, 52], "where": "in het midden van de kamer", "whereEn": "in the middle of the room", "cats": [["size", "shape"], ["material"]], "materials": ["houten", "glazen"], "always": true},
+    {"key": "stoelen", "nouns": ["de stoel"], "draw": "chairs", "at": [92, 128, 156, 70], "count": [2, 4], "where": "rond {tafel}", "whereEn": "around the {tafel}", "cats": [["colour"], ["material"]], "materials": ["houten", "plastic", "ijzeren"], "always": true},
+    {"key": "luchter", "nouns": ["de luchter"], "draw": "chandelier", "at": [154, 0, 34, 30], "where": "boven {tafel}", "whereEn": "above the {tafel}", "cats": [["size"], ["material"]], "materials": ["glazen", "ijzeren"], "p": 0.8},
+    {"key": "kast", "nouns": ["de kast", "de ladekast"], "draw": "cupboard", "at": [16, 96, 66, 92], "where": "tegen de muur", "whereEn": "against the wall", "cats": [["size"], ["material"]], "materials": ["houten"], "p": 0.85},
+    {"key": "plant", "nouns": ["de plant"], "draw": "plant", "at": [238, 132, 30, 56], "where": "naast het raam", "whereEn": "next to the window", "cats": [["size"]], "p": 0.7},
+    {"key": "tapijt", "nouns": ["het tapijt"], "draw": "rug", "at": [80, 200, 180, 30], "where": "onder {tafel}", "whereEn": "under the {tafel}", "cats": [["shape", "colour"], ["pattern"]], "p": 0.7},
+    {"key": "schilderij", "nouns": ["het schilderij"], "draw": "painting", "at": [130, 36, 80, 46], "where": "aan de muur", "whereEn": "on the wall", "cats": [["size"], ["shape"]], "p": 0.8},
+    {"key": "spiegel", "nouns": ["de spiegel"], "draw": "mirror", "at": [26, 26, 36, 52], "where": "boven {kast}", "whereEn": "above the {kast}", "cats": [["shape"]], "p": 0.5},
+    {"key": "gordijnen", "nouns": ["het gordijn"], "draw": "curtains", "at": [260, 22, 86, 130], "count": [2], "where": "voor het raam", "whereEn": "in front of the window", "cats": [["size", "colour"], ["pattern"]], "p": 0.7}
+   ]}
+ ],
+ "places": [
+  {"id": "klas", "nl": "In de klas", "en": "In the classroom", "rules": [
+   {"id": "klas-1", "kind": "moet", "nl": "Je moet op tijd komen.", "en": "You have to be on time.", "icon": "⏰"},
+   {"id": "klas-2", "kind": "moet", "nl": "Je moet je gsm uitzetten.", "en": "You have to switch off your phone.", "icon": "📴"},
+   {"id": "klas-3", "kind": "mag", "nl": "Je mag een vraag stellen.", "en": "You may ask a question.", "icon": "✋"},
+   {"id": "klas-4", "kind": "geen", "nl": "Je mag in de klas geen koffie drinken.", "en": "You may not drink coffee in the classroom.", "icon": "☕"},
+   {"id": "klas-5", "kind": "niet", "nl": "Je mag tijdens het examen niet praten.", "en": "You may not talk during the exam.", "icon": "🤫"},
+   {"id": "klas-6", "kind": "mag", "nl": "Je mag water drinken.", "en": "You may drink water.", "icon": "💧"},
+   {"id": "klas-7", "kind": "moet", "nl": "Je moet je boek meebrengen.", "en": "You have to bring your book.", "icon": "📖"},
+   {"id": "klas-8", "kind": "geen", "nl": "Je mag in de klas geen ijsje eten.", "en": "You may not eat an ice cream in the classroom.", "icon": "🍦"}
+  ]},
+  {"id": "zwembad", "nl": "In het zwembad", "en": "At the swimming pool", "rules": [
+   {"id": "zwembad-1", "kind": "moet", "nl": "Je moet eerst douchen.", "en": "You have to shower first.", "icon": "🚿"},
+   {"id": "zwembad-2", "kind": "moet", "nl": "Je moet een badmuts dragen.", "en": "You have to wear a swimming cap.", "icon": "🏊"},
+   {"id": "zwembad-3", "kind": "mag", "nl": "Je mag een zwembril dragen.", "en": "You may wear swimming goggles.", "icon": "🥽"},
+   {"id": "zwembad-4", "kind": "geen", "nl": "Je mag in het zwembad geen schoenen dragen.", "en": "You may not wear shoes at the pool.", "icon": "👟"},
+   {"id": "zwembad-5", "kind": "niet", "nl": "Je mag aan het zwembad niet lopen.", "en": "You may not run by the pool.", "icon": "🏃"},
+   {"id": "zwembad-6", "kind": "niet", "nl": "Je mag hier niet duiken.", "en": "You may not dive here.", "icon": "🤿"},
+   {"id": "zwembad-7", "kind": "mag", "nl": "Je mag van de glijbaan gaan.", "en": "You may go down the slide.", "icon": "🛝"},
+   {"id": "zwembad-8", "kind": "geen", "nl": "Je mag in het zwembad geen eten meenemen.", "en": "You may not take food into the pool.", "icon": "🍔"}
+  ]},
+  {"id": "park", "nl": "In het park", "en": "In the park", "rules": [
+   {"id": "park-1", "kind": "moet", "nl": "Je moet je hond aan de leiband houden.", "en": "You have to keep your dog on a lead.", "icon": "🐕"},
+   {"id": "park-2", "kind": "mag", "nl": "Je mag op het gras zitten.", "en": "You may sit on the grass.", "icon": "🌱"},
+   {"id": "park-3", "kind": "niet", "nl": "Je mag in het park niet fietsen.", "en": "You may not cycle in the park.", "icon": "🚲"},
+   {"id": "park-4", "kind": "geen", "nl": "Je mag geen bloemen plukken.", "en": "You may not pick flowers.", "icon": "🌷"},
+   {"id": "park-5", "kind": "niet", "nl": "Je mag de eendjes niet voederen.", "en": "You may not feed the ducks.", "icon": "🦆"},
+   {"id": "park-6", "kind": "mag", "nl": "Je mag hier picknicken.", "en": "You may have a picnic here.", "icon": "🧺"},
+   {"id": "park-7", "kind": "moet", "nl": "Je moet je afval in de vuilnisbak gooien.", "en": "You have to put your rubbish in the bin.", "icon": "🗑️"}
+  ]},
+  {"id": "bus", "nl": "Op de bus", "en": "On the bus", "rules": [
+   {"id": "bus-1", "kind": "moet", "nl": "Je moet een ticket hebben.", "en": "You must have a ticket.", "icon": "🎫"},
+   {"id": "bus-2", "kind": "moet", "nl": "Je moet je ticket scannen.", "en": "You have to scan your ticket.", "icon": "📱"},
+   {"id": "bus-3", "kind": "mag", "nl": "Je mag je hond meenemen.", "en": "You may take your dog with you.", "icon": "🐕"},
+   {"id": "bus-4", "kind": "geen", "nl": "Je mag op de bus geen ijsje eten.", "en": "You may not eat an ice cream on the bus.", "icon": "🍦"},
+   {"id": "bus-5", "kind": "niet", "nl": "Je mag niet met de chauffeur praten.", "en": "You may not talk to the driver.", "icon": "🗣️"},
+   {"id": "bus-6", "kind": "niet", "nl": "Je mag op de bus niet roken.", "en": "You may not smoke on the bus.", "icon": "🚭"}
+  ]},
+  {"id": "straat", "nl": "Op straat", "en": "In the street", "rules": [
+   {"id": "straat-1", "kind": "moet", "nl": "Je moet een helm dragen.", "en": "You have to wear a helmet.", "icon": "⛑️"},
+   {"id": "straat-2", "kind": "niet", "nl": "Je mag hier niet oversteken.", "en": "You may not cross here.", "icon": "🚸"},
+   {"id": "straat-3", "kind": "niet", "nl": "Je mag hier niet parkeren.", "en": "You may not park here.", "icon": "🅿️"},
+   {"id": "straat-4", "kind": "mag", "nl": "Je mag hier fietsen.", "en": "You may cycle here.", "icon": "🚲"},
+   {"id": "straat-5", "kind": "moet", "nl": "Je moet aan het rode licht stoppen.", "en": "You have to stop at the red light.", "icon": "🚦"},
+   {"id": "straat-6", "kind": "geen", "nl": "Je mag op straat geen afval achterlaten.", "en": "You may not leave rubbish in the street.", "icon": "🚯"},
+   {"id": "straat-7", "kind": "niet", "nl": "Je mag niet over het spoor lopen.", "en": "You may not walk across the railway track.", "icon": "🚆"}
+  ]},
+  {"id": "bibliotheek", "nl": "In de bibliotheek", "en": "In the library", "rules": [
+   {"id": "bibliotheek-1", "kind": "moet", "nl": "Je moet stil zijn.", "en": "You have to be quiet.", "icon": "🤫"},
+   {"id": "bibliotheek-2", "kind": "moet", "nl": "Je moet je boeken op tijd terugbrengen.", "en": "You have to bring your books back on time.", "icon": "📚"},
+   {"id": "bibliotheek-3", "kind": "mag", "nl": "Je mag boeken lenen.", "en": "You may borrow books.", "icon": "📖"},
+   {"id": "bibliotheek-4", "kind": "geen", "nl": "Je mag in de bibliotheek geen eten meenemen.", "en": "You may not take food into the library.", "icon": "🍔"},
+   {"id": "bibliotheek-5", "kind": "niet", "nl": "Je mag hier niet telefoneren.", "en": "You may not make phone calls here.", "icon": "📵"},
+   {"id": "bibliotheek-6", "kind": "mag", "nl": "Je mag de computer gebruiken.", "en": "You may use the computer.", "icon": "💻"},
+   {"id": "bibliotheek-7", "kind": "niet", "nl": "Je mag niet luid praten.", "en": "You may not talk loudly.", "icon": "🗣️"}
+  ]},
+  {"id": "afval", "nl": "Thuis: het afval", "en": "At home: the rubbish", "rules": [
+   {"id": "afval-1", "kind": "moet", "nl": "Je moet het afval sorteren.", "en": "You have to sort the rubbish.", "icon": "♻️"},
+   {"id": "afval-2", "kind": "moet", "nl": "Je moet de vuilniszak op dinsdag buitenzetten.", "en": "You have to put the rubbish bag out on Tuesday.", "icon": "🗑️"},
+   {"id": "afval-3", "kind": "mag", "nl": "Je mag oude kleren in de kledingcontainer gooien.", "en": "You may put old clothes in the clothes container.", "icon": "👕"},
+   {"id": "afval-4", "kind": "geen", "nl": "Je mag geen glas in de vuilniszak gooien.", "en": "You may not put glass in the rubbish bag.", "icon": "🍾"},
+   {"id": "afval-5", "kind": "niet", "nl": "Je mag het oud papier niet in de vuilniszak gooien.", "en": "You may not put waste paper in the rubbish bag.", "icon": "📰"}
+  ]}
+ ],
+ "reading": [
+  {"id": "immoweb", "kind": "ads", "nl": "Twee advertenties op Immoweb", "en": "Two ads on Immoweb", "ads": [
+   {"city": "Gent", "m2": 52, "bedrooms": 1, "floor": "gelijkvloers", "rent": 790, "costs": 60, "built": 1993, "epc": "C"},
+   {"city": "Deinze", "m2": 147, "bedrooms": 3, "floor": "3de verdieping", "rent": 830, "costs": 75, "built": 2016, "epc": "A"}],
+   "note": "Questions: correct / niet correct / geen info. Comes in v2."},
+  {"id": "yumi", "kind": "mail", "nl": "De e-mail van Yumi aan Clara", "en": "Yumi's e-mail to Clara about the new apartment", "note": "Text to be added from the photo. Comes in v2."}
+ ]
+}
