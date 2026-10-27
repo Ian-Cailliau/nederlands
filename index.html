@@ -534,10 +534,17 @@ function spellWhy(g,t){g=lo(g);t=lo(t);if(g===t)return '';
  if(sw(g,'au','ou')===t||sw(g,'ou','au')===t)return t.includes('ou')?'this word is written with ou':'this word is written with au';
  if(strip(g)===strip(t))return 'check the hyphen or accent';
  return 'spelling'}
-/* the known word closest to an unknown one (small slips only) */
-function nearest(w){w=lo(w);if(w.length<3)return null;const lim=w.length<=5?1:2;let best=null;
- for(const k of ALLKEYS()){if(Math.abs(k.length-w.length)>lim)continue;if(k[0]!==w[0]&&!(k[1]===w[1]&&k[0]===w[1]))continue;const d=dist(w,k);if(d>lim)continue;const sc=d*10+(k.slice(-1)===w.slice(-1)?0:3)+(FORMS.has(k)?0:1)+Math.abs(k.length-w.length)*0.5;if(!best||sc<best.sc)best={d,k,sc}}
- return best&&best.k}
+/* the known word closest to an unknown one (small slips only).
+   prefer = the words of the model answer, when there is one: at the same or a smaller distance they win (groete → grote, not groene).
+   A swapped consonant changes the sound, so at the same distance an extra or missing letter wins over it (s/z, f/v, d/t excepted). */
+const VOW=new Set('aeiouy'),SOUND=new Set(['sz','zs','fv','vf','dt','td']);
+function nearest(w,prefer){w=lo(w);if(w.length<3)return null;const lim=w.length<=5?1:2;
+ const pick=keys=>{let best=null;for(const k of keys){if(Math.abs(k.length-w.length)>lim)continue;if(k[0]!==w[0]&&!(k[1]===w[1]&&k[0]===w[1]))continue;const E=editOps(w,k),d=E.dist;if(d>lim)continue;
+   const cons=E.ops.filter(o=>o[0]==='~'&&!VOW.has(strip(o[1]))&&!VOW.has(strip(o[2]))&&!SOUND.has(o[1]+o[2])).length;
+   const sc=d*10+(k.slice(-1)===w.slice(-1)?0:3)+(FORMS.has(k)?0:1)+Math.abs(k.length-w.length)*0.5+cons*1.5;if(!best||sc<best.sc)best={d,k,sc}}return best};
+ const lex=pick(ALLKEYS()),pre=prefer&&prefer.length?pick(prefer):null;
+ if(pre&&(!lex||pre.d<=lex.d))return pre.k;
+ return lex&&lex.k}
 
 /* ---------- reading a sentence ----------
    tokens() → words and punctuation · checkSentence() → the issues in one sentence, each with the reason,
@@ -552,7 +559,8 @@ const COP=new Set(['is','zijn','ben','bent','was','waren','wordt','worden','blij
 const NAMES=['gent','brugge','kortrijk','antwerpen','brussel','deinze','leuven','mechelen','oostende','hasselt','luik','namen','parijs','londen','amsterdam','belgië','nederland','frankrijk','duitsland','polen','spanje','italië','engeland','vlaanderen','wallonië','nederlands','frans','engels','pools','duits','spaans','italiaans','arabisch','belg','belgisch','pool'];
 const KIND={name:'Hoofdletter',comp:'Vergelijken',conj:'omdat / want',spelling:'Spelling',art:'de / het',adj:'Adjectief',verb:'Werkwoord',subj:'Onderwerp',order:'Woordvolgorde',er:'Er-zin',inf:'Infinitief',neg:'geen / niet',num:'Meervoud',cap:'Hoofdletter',punct:'Punt'};
 
-function checkSentence(raw){
+function checkSentence(raw,prefer){
+ prefer=Array.isArray(prefer)?prefer:null;
  const T=tokens(raw),W=T.filter(t=>!t.p),issues=[],tips=[],facts={cats:new Set(),preps:new Set(),nouns:new Set(),verbs:new Set(),er:null,modal:null};
  const iss=(k,msg,at)=>{if(!issues.some(x=>x.k===k&&x.msg===msg))issues.push({k,msg,at:at||[]})};
  T.forEach((t,j)=>{if(!t.p)return;const prev=T[j-1];if(t.raw===','&&prev&&!prev.p)prev.comma=1});
@@ -561,7 +569,7 @@ function checkSentence(raw){
  if(!/[.!?]$/.test(s))iss('punct','End the sentence with a full stop.');
  W.forEach((t,k)=>{if(NAMES.includes(t.w)&&/^[a-zà-ÿ]/.test(t.raw))iss('name',`Names of towns, countries and languages start with a capital: <b>${esc(cap(t.raw))}</b>`,[k])});
  /* spelling: a word that is not in the word list but close to one */
- W.forEach((t,k)=>{if(known(t.w)||NAMES.includes(t.w)||/^[A-ZÀ-Þ]/.test(t.raw)&&k>0)return;const nb=nearest(t.w);if(!nb)return;
+ W.forEach((t,k)=>{if(known(t.w)||NAMES.includes(t.w)||/^[A-ZÀ-Þ]/.test(t.raw)&&k>0)return;const nb=nearest(t.w,prefer);if(!nb)return;
   const ne=adjR(nb).find(r=>r.e.noE&&t.w===r.e.base+'e'),why=ne?'never takes -e':spellWhy(t.w,nb);iss('spelling',`<del>${esc(t.raw)}</del> → <ins>${esc(nb)}</ins>${why&&why!=='spelling'?' · '+why:''}`,[k]);t.w=nb;t.fixed=nb});
  /* noun phrases: determiner? number? adjectives, then the noun */
  const NPS=[],inNP=new Map(),PRED=[];
@@ -714,7 +722,7 @@ function letterParts(text){const L=String(text||'').split(/\n/);let greet=null,c
   if(CLOSE.test(t)&&t.split(/\s+/).length<=5){close=t;return}if(close&&t.split(/\s+/).length<=3&&!/[.!?]$/.test(t)){name=t;return}body.push(l)});
  return{greet,close,name,body:body.join('\n')}}
 function checkText(text,spec){spec=spec||{};let letter=null;if(spec.letter){letter=letterParts(text);text=letter.body}
- const S=splitSentences(text).map(checkSentence),n=S.length,F=S.map(r=>r.facts);
+ const S=splitSentences(text).map(x=>checkSentence(x)),n=S.length,F=S.map(r=>r.facts);
  S.forEach(r=>{r.tips=r.tips.filter(t=>spec.erPos||t.k!=='erzijn').map(t=>t.msg||t)});
  let count=null;if(spec.exact&&n!==spec.exact)count=`${n} sentence${n===1?'':'s'}: write exactly ${spec.exact}.`;else if(spec.min&&n<spec.min)count=`${n} sentence${n===1?'':'s'}: write at least ${spec.min}.`;
  const missing=(spec.needs||[]).filter(k=>NEED[k]&&!NEED[k][2](F)).map(k=>NEED[k][1]);
@@ -731,7 +739,7 @@ const bag=s=>normS(s).split(' ').sort().join(' ');
 /* a whole sentence: one of the accepted ones, or the same words in another good order; otherwise the checker says why */
 function checkSentAnswer(g,acc){const G=normS(g),A=acc.map(normS);
  if(A.includes(G))return{res:'right'};if(A.map(strip).includes(strip(G)))return{res:'accent'};
- let t=String(g).trim();t=cap(t)+(/[.!?]$/.test(t)?'':'.');const r=checkSentence(t),I=r.issues.filter(i=>i.k!=='cap'&&i.k!=='punct');
+ let t=String(g).trim();t=cap(t)+(/[.!?]$/.test(t)?'':'.');const pref=[...new Set(acc.flatMap(a=>tokens(a).filter(x=>!x.p).map(x=>x.w)))],r=checkSentence(t,pref),I=r.issues.filter(i=>i.k!=='cap'&&i.k!=='punct');
  const lastW=x=>x.split(' ').pop();
  if(!I.length&&A.some(a=>bag(a)===bag(G)&&lastW(a)===lastW(G)))return{res:'right',msg:'Also correct: the same words in another order.'};
  return{res:'wrong',notes:I.map(i=>[i.k,i.msg])}}

@@ -37,6 +37,7 @@ const WRONG=[
  // spelling
  ['Je mag hier niet eeten.','spelling: eeten → eten · a long vowel at the end of a syllable is written once'],
  ['Ze draagt een groote tas.','spelling: groote → grote · a long vowel at the end of a syllable is written once'],
+ ['Er staat een groete houten kast tegen de muur.','spelling: groete → grote'],
  ['Hij draagt een wite broek.','spelling: wite → witte · short vowel: the consonant after it doubles'],
  ['Ze draagt grijse kousen.','spelling: grijse → grijze · s becomes z between vowels'],
  ['Hij draagt zwarte laarsen.','spelling: laarsen → laarzen · s becomes z between vowels'],
@@ -67,6 +68,10 @@ const RIGHT=['Je moet je gsm uitzetten.','Je mag hier niet roken.','Je mag de ho
   c=checkText('Je moet op tijd komen. Je moet je gsm uitzetten. Je mag water drinken. Je mag hier niet eten. Je mag niet roepen.',SPEC.sd3);
   T('SD3 without geen: “geen” is still missing',c.missing.map(t).some(m=>/geen/.test(m))&&!c.ok,c.missing.map(t));
   c=checkText('Ik woon in Brugge. Mijn huis is groot.',SPEC.sd4);T('SD4 without greeting and closing: both asked for',!c.ok&&c.missing.map(t).join(' ').match(/Beste|Dag/)&&c.missing.map(t).join(' ').match(/groeten/),c.missing.map(t));
+  /* a slip in a translation is corrected towards the model answer (feedback 27 Oct: groete was turned into groene) */
+  const sa=checkSentAnswer('Er staat een groete, houten kast tegen de muur',['Er staat een grote houten kast tegen de muur.']),san=(sa.notes||[]).map(n=>n[0]+': '+t(n[1]));
+  T('translation: “groete” → “grote” from the model answer, not “groene”',sa.res==='wrong'&&san.includes('spelling: groete → grote')&&!san.some(n=>/groene/.test(n)),san);
+  const sb=checkSentAnswer('Ze draagt een groene jas',['Ze draagt een groene jas.']);T('translation: a right sentence stays right',sb.res==='right',sb);
   /* every model answer is clean */
   const dirty=[];for(let seed=1;seed<=40;seed++){
    const room=scene('sd5',seed),m5=roomModel(room);c=checkText(m5,SPEC.sd5);if(!c.ok)dirty.push(['sd5',seed,m5,c.count,c.missing.map(t),c.S.flatMap(s=>s.issues.map(i=>t(i.msg)))]);
